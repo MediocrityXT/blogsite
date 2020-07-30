@@ -1,7 +1,16 @@
 ---
+
 title: 第一次发文
 date: 2020-07-29 13:25:08
+categories: 编程
+excerpt: "记录一些关于markdown语法的尝试"
+math: true
+tags: hello world
 ---
+
+
+
+藏在开头的话: ~~这typora怎么用微软输入法打第一个汉字的时候自动跑到Front-Matter字段去了 好烦~~
 
 # 初出茅庐
 
@@ -15,9 +24,52 @@ _斜体文本_
 ~~下划线文本~~
 ```
 
-井号加空格 产生标题
+井号 `#` 加空格 产生标题
 
----
+## 数学公式
+
+使用latex格式输入公式，*typora使用mathjax渲染*
+$$
+\{\frac{a}{(1+b)}\cdot2\pi\alpha\}
+$$
+
+> 在文章 Front-matter 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度
+
+H<sub>2</sub>O——typora自带`<sub>`标签实现下标
+
+## 代码块
+
+这里截取一段微信小程序代码 来自`musicmood` ~~小程序真难做啊~~
+
+```js
+  getMood:function(){
+    const db = wx.cloud.database()
+    db.collection("musicmood").where({
+      music:this.data.musicUrl,
+      openid:this.data.openid
+    }).get()
+    .then(res=>{
+      this.setData({
+        timeSample:res.data[0].time,
+        resonanceSample:res.data[0].resonance,
+        feelingSample:res.data[0].feeling
+      })
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+  }
+```
+
+-别来
+
+-危险
+
+-**前** **后** **夹** **击**
+
+![QQ图片20200730152128](QQ图片20200730152128.jpg)
+
+## 超链接
 
 ```
 <https://www.baidu.com>
@@ -34,3 +86,17 @@ _斜体文本_
 > 还有[百度]（https://www.baidu.com)
 
 [百度](https://www.baidu.com)
+
+---
+
+### 解决的问题
+
+banner加载不了	=> 	***注意文件后缀名***
+
+图片无法get	=>	本地预览的时候在文件夹里，实际生成网址在根目录，需要手动删去图片前文件夹名
+
+---
+
+### 暂存的问题
+
+能不能每次new的时候自动生成更多Front-Matter字段？
