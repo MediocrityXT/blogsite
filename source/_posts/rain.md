@@ -7,10 +7,14 @@ excerpt: "应邀而作而却流落此地"
 ---
 
 <center>
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=500 height=80 src="//music.163.com/outchain/player?type=2&id=546281919&auto=0&height=66"></iframe>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=80 src="//music.163.com/outchain/player?type=2&id=546281919&auto=0&height=66"></iframe>
 </center>
 
-> <center>雨入花心各成甘苦，水归器内各关方圆。——王以太《Liquor Whisper》 </center>
+
+> <center>雨入花心自成甘苦，水归器内各关方圆。
+>     <p align = 'right'>
+>       ——王以太《Liquor Whisper》 
+>     </p></center>
 
 # 雨 水 江
 
