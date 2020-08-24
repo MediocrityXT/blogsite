@@ -97,9 +97,9 @@ data模板固定，只需要替换songmid即可得到不同歌曲对应data。�
 
 > var l="getplaysongvkey"+(Math.random()+"").replace("0.","");
 
-对u.y.qq.com/cgi-bin/musics.fcg发送的请求中:
+对u.y.qq.com/cgi-bin/musics.fcg发送的get请求中:
 
-getplaysonvkey后面的实际上是随机数
+getplaysongvkey后面的实际上是随机数
 
 g_tk是函数getACSRFToken获得的令牌
 
