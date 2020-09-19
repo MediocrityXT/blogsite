@@ -36,17 +36,21 @@ WSL2需要1909以及小版本1049以上的系统。docker desktop需要家庭版
 
 主流的linux图形化界面[^1]之中，我在xfce和gnome中纠结了一段时间。
 
-我打算在主力电脑上装gnome，轻薄本上来xfce试试。
+我原本打算在主力电脑上装gnome，轻薄本上来xfce试试。
 
-[^1]:可以参考https://www.cnblogs.com/chenmingjun/p/8506995.html
+结果wsl上怎么装vnc和xlaunch怎么配置都没获取到视频信号输入，气得我^@&)(\$&^@)$)@(&*
+
+---
+
+经历了漫长的痛苦之后，放弃了原想法。现在WSL上准备不做图形化了，WSL定位在于跑一些大型的linux程序。轻薄本上ubuntu desktop，自带gnome图形化界面，轻松许多。
 
 # 轻薄本改造
 
 我决定对我的千元本中柏ezbook2进行改造。原本的win10系统跑起来非常慢，不够流畅；我突发奇想，既然要装linux，为什么不直接在这个本子上装一个呢？
 
-“查拉图斯特拉的沉沦自此开始”
+> “查拉图斯特拉的沉沦自此开始”
 
-我用u盘下了ubuntu镜像之后，直接覆盖掉原本的win10，能打开。然后问题来了：
+我用u盘下了ubuntu镜像之后，直接覆盖掉原本的win10，系统看起来运行正常。然后问题来了：
 
 - 找不到wifi适配器。用`lspci`和`ip a`指令都无法看到我的网卡。
 - 触摸板没有任何反应。
@@ -61,3 +65,25 @@ WSL2需要1909以及小版本1049以上的系统。docker desktop需要家庭版
 然后依然没有找到网卡。
 
 问了淘宝客服，没有给予任何帮助，服务态度贼差。小心中柏！
+
+---
+
+在售后群里下到我这个老款ezbook2的驱动包，发现我的wifi和蓝牙是同一个集成模块：AP6212。
+
+~~人家开发板上用这个小模块。你给我笔记本上装个网卡就这？？~~
+
+继续google，发现AP6212使用的固件是broadcom的43430。
+
+不断谷歌之后采取了如下办法：
+
+1. 重装最新版本ubuntu——从18.04升到20.04（新系统自带许多驱动，装完新系统声卡和触摸板立即能用了）
+2. 输入`dmesg | grep "brcm"` 查看linux内核关于brcm的日志。这一步非常重要，提供非常多关键信息！
+3. 发现问题在于某些固件并没有加载上。
+4. 在看了200+帖子和文章之后，找到一个奇妙的方法[^2]：将/lib/firmware/brcm中43430的已有驱动文件直接复制改名成所需驱动文件(比如`brcmfmac43430a0-sdio.AP6212.txt`改成`brcmfmac43430a0-sdio.txt`) ~~你还别说 真有用 绝了~~
+5. 通过上述方法，将wifi和蓝牙所需固件放入brcm文件夹后`reboot`
+6. Wi-Fi and bluetooth work well~XD
+
+[^1]: 可以参考https://www.cnblogs.com/chenmingjun/p/8506995.html
+[^2]: 感谢ask ubuntu！https://askubuntu.com/questions/1156698/wifi-driver-not-found-in-mini-pc-ubuntu-18-04
+
+ 
