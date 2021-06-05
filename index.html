@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blogsite/img/favicon.png">
+  <link rel="icon" href="/blogsite/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#1773C5">
+  <meta name="description" content="">
+  <meta name="author" content="XT">
+  <meta name="keywords" content="">
+  
+  <title>SummerSecret</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/blogsite/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"mediocrityxt.github.io","root":"/blogsite/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/blogsite/js/utils.js" ></script>
+  <script  src="/blogsite/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/blogsite/">&nbsp;<strong>SummerSecret</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blogsite/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blogsite/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blogsite/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blogsite/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blogsite/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/blogsite/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="尝试感同身受">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2021/06/05/%E7%8B%82%E6%83%B3%E6%9A%97%E6%B6%8C%E5%91%93%E8%AF%AD/" target="_self">
+          狂想/暗涌/呓语
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2021/06/05/%E7%8B%82%E6%83%B3%E6%9A%97%E6%B6%8C%E5%91%93%E8%AF%AD/" target="_self">
+          
+          
+            
+          
+          “被缚的普罗米修斯”
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-05 09:42" pubdate>
+              2021-06-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/blogsite/categories/%E6%96%87%E5%AD%A6/">文学</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E8%AF%97/">诗</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2021/06/05/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bnote/" target="_self">
+          YOLO笔记/pytorch CUDA踩坑/MobileNet
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2021/06/05/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bnote/" target="_self">
+          
+          
+            
+          
+          YOLOCV三任务：分类、目标检测、区域分割
+YOLOv1-v5是目标检测经典算法
+目标检测分两类：
+
+Region-free, one stage
+Region-based, two stage
+
+YOLO是前者，一次读取图片同时完成网格划分和分类。
+YOLOv1思想是通过每个grid预测(可n个)bounding box来标出目标，每个box的信息由box中间点在grid内的x/y坐标、box
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-05 08:54" pubdate>
+              2021-06-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/blogsite/categories/%E7%9F%A5%E8%AF%86/">知识</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2021/01/08/%E6%9D%82%E7%BB%AA/" target="_self">
+          杂绪
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2021/01/08/%E6%9D%82%E7%BB%AA/" target="_self">
+          
+          
+            
+          
+          2021/1/8更新
+很久没有写下语句了。每天的生活只需要单词和意识的碎片就能够驱动。那样的日子我觉得是浪费了的。
+我先声明，我的观点只是我没来由的主观臆断，你如果不接受，well，you are the boss of your mind。
+我只是想把支离破碎的思绪，在这个地方放一放。
+1一人思。二人说。三人听。四人则泯然矣。
+这算是我最近独处时间增长之后的一个领悟。Solitude creat
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-08 22:11" pubdate>
+              2021-01-08
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+            
+              <a href="/blogsite/tags/%E8%AF%97/">诗</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2020/12/06/StoryOfMyMac/" target="_self">
+          StoryOfMyMac
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2020/12/06/StoryOfMyMac/" target="_self">
+          
+          
+            
+          
+          冲动消费冲动消费
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-06 01:35" pubdate>
+              2020-12-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/blogsite/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2020/11/24/%E7%94%B5%E5%BD%B1%E5%88%86%E4%BA%AB/" target="_self">
+          电影分享
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2020/11/24/%E7%94%B5%E5%BD%B1%E5%88%86%E4%BA%AB/" target="_self">
+          
+          
+            
+          
+          想在这里分享一下近期看的一些电影，我会打分再辅以一些简短的影评。我总觉得电影是所有影视媒体里最有力量的，可以影响人的情绪，花点时间看一些佳作真的是审美体验和人生经验的双重洗礼。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-24 22:27" pubdate>
+              2020-11-24
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2020/11/04/%E4%BB%96%E7%9A%84%E4%B8%96%E7%95%8C/" target="_self">
+          他的世界
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2020/11/04/%E4%BB%96%E7%9A%84%E4%B8%96%E7%95%8C/" target="_self">
+          
+          
+            
+          
+          
+每个人都像一个气泡 有的气泡会汇聚到一起而我像一个失散的 沸水壶内壁上最不起眼的一个小泡 看着壶中央那许许多多的沉沉浮浮的汇聚与消散我维持着自己的形态 但是 这又有什么用呢
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-04 22:05" pubdate>
+              2020-11-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/blogsite/categories/%E6%96%87%E5%AD%A6/">文学</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E5%B0%8F%E8%AF%B4/">小说</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2020/09/21/%E8%AF%AD%E5%A2%83/" target="_self">
+          网络环境的语境之争
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2020/09/21/%E8%AF%AD%E5%A2%83/" target="_self">
+          
+          
+            
+          
+          碎片时代的语境：严肃——娱乐
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-21 00:46" pubdate>
+              2020-09-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/blogsite/categories/%E7%9F%A5%E8%AF%86/">知识</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2020/09/13/%E5%BF%83%E7%97%85%E8%B0%83%E6%9F%A5%E8%AE%B0%E5%BD%95/" target="_self">
+          心病调查记录
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2020/09/13/%E5%BF%83%E7%97%85%E8%B0%83%E6%9F%A5%E8%AE%B0%E5%BD%95/" target="_self">
+          
+          
+            
+          
+          人啊，容易得病。所谓病，是异于平常的状态。有种病，它传染性不强，一旦发展起来却十分严重。它是心病。而且有很多明显的症状和表象。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-13 19:31" pubdate>
+              2020-09-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/blogsite/categories/%E6%96%87%E5%AD%A6/">文学</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E6%95%A3%E6%96%87/">散文</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2020/09/08/linux/" target="_self">
+          linux
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2020/09/08/linux/" target="_self">
+          
+          
+            
+          
+          用WSL2安装linux，实现图形化界面以及安装docker。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-08 17:02" pubdate>
+              2020-09-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/blogsite/categories/%E9%85%8D%E7%BD%AE/">配置</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E6%8A%98%E8%85%BE/">折腾</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blogsite/2020/08/30/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/" target="_self">
+          物联网复习
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/blogsite/2020/08/30/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/" target="_self">
+          
+          
+            
+          
+          传感器的“少部分”内容，这门课真是折磨...
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-30 16:12" pubdate>
+              2020-08-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/blogsite/categories/%E7%9F%A5%E8%AF%86/">知识</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blogsite/tags/%E5%A4%8D%E4%B9%A0/">复习</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/blogsite/page/2/#board">2</a><a class="extend next" rel="next" href="/blogsite/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/blogsite/js/events.js" ></script>
+<script  src="/blogsite/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/blogsite/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/blogsite/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/blogsite/js/boot.js" ></script>
+
+
+</body>
+</html>
