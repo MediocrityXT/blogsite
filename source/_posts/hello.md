@@ -1,11 +1,12 @@
 ---
 
-title: 第一次发文
+title: markdown/hexo
 date: 2020-07-29 13:25:08
+updated: 2021-06-05 11:25:08
 categories: 编程
 excerpt: "记录一些关于markdown语法的尝试"
 math: true
-tags: hello world
+tags: [折腾,感悟]
 ---
 
 
@@ -135,8 +136,29 @@ banner加载不了	=> 	***注意文件后缀名***
 
 图片无法get	=>	本地预览的时候在文件夹里，实际生成网址在根目录，需要手动删去图片前文件夹名
 
----
+能不能每次new的时候自动生成更多Front-Matter字段？ => 博客目录scaffolds文件夹下就是hexo new生成文件的模板
 
-### 暂存的问题
+现在的根目录下`_config.fluid.yml`是主题配置文件。
+可以通过`npm update --save hexo-theme-fluid`来更新主题。
 
-能不能每次new的时候自动生成更多Front-Matter字段？
+Hexo Front Matter字段都是YAML语言，冒号后面必须加空格；
+如果想要多标签、多分类，两种写法:
+
+1. 分行
+
+```
+tags:
+- tag1
+- tag2
+```
+
+2. 元组
+
+```
+tags: [tag1,tag2]
+```
+
+# 博客期待实现功能
+
+Hexo可以用api来实现返回不同的首页显示文字。可以增加显示每天天气、温度的功能？
+
