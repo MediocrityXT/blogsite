@@ -1,7 +1,8 @@
 ---
 title: 雨 水 江
 date: 2020-07-25 00:37:03
-categories: 文学
+updated: 2020-07-25 00:37:03
+categories: 文
 tags: 散文
 excerpt: "应邀而作而却流落此地"
 ---

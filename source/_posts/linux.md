@@ -1,6 +1,7 @@
 ---
-title: linux
+title: 被WSL2折磨到win本刷Linux
 date: 2020-09-08 17:02:06
+updated: 2020-09-08 17:02:06
 categories: 配置
 tags: 折腾
 excerpt: "用WSL2安装linux，实现图形化界面以及安装docker。"

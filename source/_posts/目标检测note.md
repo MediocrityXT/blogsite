@@ -1,8 +1,10 @@
 ---
-title: YOLO笔记/pytorch CUDA踩坑/MobileNet
+title: YOLO笔记/MobileNet/pytorch CUDA踩坑
 date: 2021-06-05 08:54:48
+updated: 2021-06-05 08:54:48
 categories: 知识
 tags: 笔记
+Math: true
 ---
 
 # YOLO
@@ -30,25 +32,43 @@ NMS(非极大值抑制)适用于多目标检测，尤其是不同bounding box重
 
 MobileNet大量使用深度可分离卷积，是常用于手机的轻量级网络。
 
+## V1
+
 深度可分离卷积减少了参数量，减少了计算量。https://blog.csdn.net/flyfish1986/article/details/94006907
 
 我理解的深度卷积Depthwise Conv是指沿着深度方向（不同通道）依次卷积。
 
 MobileNetV1的网络结构如上图所示。首先是一个3x3的标准卷积，s2进行下采样。然后就是堆积深度可分离卷积，并且其中的部分深度卷积会利用s2进行下采样。然后采用平均池化层将feature变成1x1，根据预测类别大小加上全连接层，最后是一个softmax层。整个网络有28层，其中深度卷积层有13层。
 
+## V2
+
 MobileNetV2：
 
-![img](https://pic1.zhimg.com/80/v2-367f4025a0d45fc8e2769db6a119a530_1440w.jpg)
+![v2结构](https://pic1.zhimg.com/80/v2-367f4025a0d45fc8e2769db6a119a530_1440w.jpg)
 
-参考ResNet中三层残差神经元结构，先PW升维，DW在6维度空间卷积来过滤数据，再PW降维。
+参考ResNet中三层残差神经元结构，但先PW升维，DW在6维度空间卷积来过滤数据，再PW降维，这就叫Inverted bottleneck
 
 > ResNet的思想:output(x) = f(x)+x，学习f(x)=0能更快收敛、output里的x解决了梯度消失问题
 
-为了解决ReLU函数造成低维信息丢失问题，加入linear bottleneck。
+ReLU函数在低维会导致信息丢失问题，把最后一层低维状态的的ReLU换成线性激活函数。再加上shortcut，所以叫Inverted residual and linear bottleneck。
 
-Linear Bottleneck具体优势和原理？
+## V3
 
-V3的模型后半部分使用h-swish激活函数。每个bottleneck with residual增加了池化和全连接层FC，
+MobileNet V2之后谷歌在18年7月发布了MnasNet，思想是针对特定平台（比如Pixel手机）进行网络架构的搜索，使模型运行的延迟更低。它在ImageNet分类任务上是MobileNetV2的1.5倍快，在COCO目标检测任务上也比MobileNet更快且更准。（但是这个搜索时长以天计数）
+
+受到这个模型中的[Squeeze And Excitation](https://muzhan.blog.csdn.net/article/details/108523659)部分（看做一种轻型的attention模块）的启发，MobileNet V3的block也将SE加在DWconv之后，与MnasNet不同的是它将sigmoid函数换成了hard swish激活函数
+
+在用MnasNet和NetAdap搜索之后作者还主要对得到的网络进行了如下优化：
+
+1. 原本最后几层的设计计算代价太高。原本在bottleneck和池化层之间还有一个1x1conv来生成高维特征；现在将这个1x1conv移到7x7池化层后面，在池化之后卷积的计算量从7x7倍减少到1倍。因为这个重要的特征生成层的计算量大大减小，那么前面的升维滤波的inverted bottleneck就多余了，直接删除。最后的结果就是在相似的准确度下减少了11%的Latency。
+   ![](https://img-blog.csdnimg.cn/20190606161948714.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDQ3NDcxOA==,size_16,color_FFFFFF,t_70)
+
+2. V3的模型后半部分使用h-swish激活函数。
+   $$
+   \text {h-swish}[x]=x\frac{\text {ReLU6} (x+3)} 6
+   $$
+   相较于普通的swish函数，用ReLU代替Sigmoid大大减少计算量，且由于使用ReLU6还减少了不同的sigmoid计算方法带来的数值误差，且这个可被当分段函数计算还减少了内存访问带来的延迟。
+   ![](https://img-blog.csdnimg.cn/2019060616204688.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDQ3NDcxOA==,size_16,color_FFFFFF,t_70)
 
 # Pytorch CUDA安装注意事项
 

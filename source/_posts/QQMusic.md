@@ -1,8 +1,9 @@
 ---
 title: QQ音乐API
 date: 2020-08-02 14:33:56
+updated: 2020-08-02 14:33:56
 categories: 编程
-tags: web爬虫
+tags: 爬虫
 ---
 
 在做微信小程序MusicMood期间没有实现QQ音乐的API。现在参考大佬文章之后实现了搜索并下载免费音乐的API功能。主要由python编写，需导入sign.js。[项目地址](https://github.com/MediocrityXT/QQmusicAPI)

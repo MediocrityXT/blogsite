@@ -1,17 +1,15 @@
 ---
 
-title: markdown/hexo
+title: markdown笔记/hexo记录
 date: 2020-07-29 13:25:08
-updated: 2021-06-05 11:25:08
+updated: 2021-05-29 11:25:08
 categories: 编程
 excerpt: "记录一些关于markdown语法的尝试"
 math: true
 tags: [折腾,感悟]
 ---
 
-
-
-藏在开头的话: ~~这typora怎么用微软输入法打第一个汉字的时候自动跑到Front-Matter字段去了 好烦~~
+~~这typora怎么用微软输入法打第一个汉字的时候自动跑到Front-Matter字段去了 好烦~~
 
 # 初出茅庐
 
@@ -62,8 +60,6 @@ $$
 
 H<sub>2</sub>O——typora自带`<sub>`标签实现下标
 
-
-
 ## 代码块
 
 这里截取一段微信小程序代码 来自`musicmood` ~~小程序真难做啊~~
@@ -94,7 +90,7 @@ H<sub>2</sub>O——typora自带`<sub>`标签实现下标
 
 -**前** **后** **夹** **击**
 
-![QQ图片20200730152128](QQ图片20200730152128.jpg)
+![累了.jpg](QQ图片20200730152128.jpg)
 
 ## 超链接
 
@@ -130,7 +126,7 @@ H<sub>2</sub>O——typora自带`<sub>`标签实现下标
 
 ---
 
-### 解决的问题
+# 解决的Hexo问题
 
 banner加载不了	=> 	***注意文件后缀名***
 
@@ -138,10 +134,9 @@ banner加载不了	=> 	***注意文件后缀名***
 
 能不能每次new的时候自动生成更多Front-Matter字段？ => 博客目录scaffolds文件夹下就是hexo new生成文件的模板
 
-现在的根目录下`_config.fluid.yml`是主题配置文件。
-可以通过`npm update --save hexo-theme-fluid`来更新主题。
+Hexo-generator-index的lib里的generator负责index页面的文章排序。
 
-Hexo Front Matter字段都是YAML语言，冒号后面必须加空格；
+Hexo Front Matter字段都是YAML语言，冒号后面必须加空格，字段名本身不区分大小写；
 如果想要多标签、多分类，两种写法:
 
 1. 分行
@@ -161,4 +156,14 @@ tags: [tag1,tag2]
 # 博客期待实现功能
 
 Hexo可以用api来实现返回不同的首页显示文字。可以增加显示每天天气、温度的功能？
+
+Apple-Touch-Icon是显示在Safari书签栏的大LOGO。
+图标搜索的优先级如下：
+
+- 如果没有跟相应设备推荐尺寸一致的图标，那个会优先使用比推荐尺寸大，但最接近推荐尺寸的图标。
+- 如果没有比推荐尺寸大的图标，会优先选择最接近推荐尺寸的图标。
+- 如些有多个图标符合推荐尺寸，会优先选择包含关键字precomposed的图标。
+
+比如知乎的Size有60x60,76x76,120x120,152x152
+不周山博客的Size只有180x180但显示了
 
