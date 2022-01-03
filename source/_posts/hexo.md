@@ -1,17 +1,24 @@
 ---
 
 title: markdown笔记/hexo记录
+typora-root-url: ./hexo
 date: 2020-07-29 13:25:08
-updated: 2021-05-29 11:25:08
+updated: 2021-12-04 02:20:08
 categories: 编程
-excerpt: "记录一些关于markdown语法的尝试"
+excerpt: "记录一些关于为hexo博客用typora写markdown的尝试"
 math: true
 tags: [折腾,感悟]
 ---
 
-~~这typora怎么用微软输入法打第一个汉字的时候自动跑到Front-Matter字段去了 好烦~~
+# 博客期待实现功能
+
+**Hexo PDF问题**:能不能对于pdf进行显示 而且不是控件中移动 而是每页每页像图片一样放在博文里 不用滚动条
+
+Hexo可以用api来实现返回不同的首页显示文字。可以增加显示每天天气、温度的功能？ => 只需要找到好用的天气API
 
 # 初出茅庐
+
+~~这typora怎么用微软输入法打第一个汉字的时候自动跑到Front-Matter字段去了 好烦~~
 
 第一次使用markdown，记录一下 ~~复制来的~~
 
@@ -92,6 +99,8 @@ H<sub>2</sub>O——typora自带`<sub>`标签实现下标
 
 ![累了.jpg](QQ图片20200730152128.jpg)
 
+typora解析图片的根目录和hexo博客部署之后有点差别。typora可读入`![a](/a.jpg)`该相对路径下的图片。但是hexo部署之后只可读入`![a](a.jpg)`该相对路径下的图片。若需要在Front Matter部分加入`typora-root-url: ./$fileName`可以减少要删的，从删`$fileName/`到只删`/`，但实质没有区别
+
 ## 超链接
 
 ```
@@ -116,13 +125,13 @@ H<sub>2</sub>O——typora自带`<sub>`标签实现下标
 
 > 还有[百度]（https://www.baidu.com)
 
-[百度](https://www.baidu.com)
+[百度](https://www.baidu.com/#dada )
 
 ---
 
 这里也可以在括号中输入#(标题名称)做到**页面内跳转**
 
-[实例](#暂存的问题)
+[实例](#超链接)
 
 ---
 
@@ -153,11 +162,7 @@ tags:
 tags: [tag1,tag2]
 ```
 
-# 博客期待实现功能
-
-Hexo可以用api来实现返回不同的首页显示文字。可以增加显示每天天气、温度的功能？
-
-Apple-Touch-Icon是显示在Safari书签栏的大LOGO。
+对网站大图标和小图标都进行了优化：Apple-Touch-Icon是显示在Safari书签栏的大LOGO。
 图标搜索的优先级如下：
 
 - 如果没有跟相应设备推荐尺寸一致的图标，那个会优先使用比推荐尺寸大，但最接近推荐尺寸的图标。
@@ -166,4 +171,6 @@ Apple-Touch-Icon是显示在Safari书签栏的大LOGO。
 
 比如知乎的Size有60x60,76x76,120x120,152x152
 不周山博客的Size只有180x180但显示了
+
+
 

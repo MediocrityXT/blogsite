@@ -1,5 +1,6 @@
 ---
 title: QQ音乐API
+typora-root-url: ./QQMusic
 date: 2020-08-02 14:33:56
 updated: 2020-08-02 14:33:56
 categories: 编程

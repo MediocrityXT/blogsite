@@ -1,12 +1,12 @@
 ---
-title: YOLO笔记/MobileNet/pytorch CUDA踩坑
+title: CV知识
 date: 2021-06-05 08:54:48
 updated: 2021-06-05 08:54:48
 categories: 知识
 tags: 笔记
+excerpt: YOLO笔记/MobileNet/pytorch CUDA踩坑
 Math: true
 ---
-
 # YOLO
 
 CV三任务：分类、目标检测、区域分割
