@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,35 +9,53 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/blogsite/img/apple-touch-icon.png">
   <link rel="icon" href="/blogsite/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f85e5">
-  <meta name="description" content="暑期实习参加的为期十天的微信小程序云开发训练营，接触到了很多我未曾踏足的领域">
   <meta name="author" content="XT">
   <meta name="keywords" content="">
   
+    <meta name="description" content="暑期实习参加的为期十天的微信小程序云开发训练营，接触到了很多我未曾踏足的领域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序开发体验">
+<meta property="og:url" content="https://mediocrityxt.github.io/blogsite/2020/07/30/wxprogram/index.html">
+<meta property="og:site_name" content="SummerSecret">
+<meta property="og:description" content="暑期实习参加的为期十天的微信小程序云开发训练营，接触到了很多我未曾踏足的领域">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/30/wxprogram/vlcsnap-2019-02-19-18h40m16s972.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/30/wxprogram/vlcsnap-2019-02-19-18h40m30s526.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/30/wxprogram/image-20200730232143254.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/30/wxprogram/image-20200730230947938.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/30/wxprogram/image-20200730234005493.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/30/wxprogram/image-20200801011806200.png">
+<meta property="article:published_time" content="2020-07-30T08:40:03.000Z">
+<meta property="article:modified_time" content="2020-07-30T08:40:03.000Z">
+<meta property="article:author" content="XT">
+<meta property="article:tag" content="感悟">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mediocrityxt.github.io/blogsite/2020/07/30/wxprogram/vlcsnap-2019-02-19-18h40m16s972.png">
+  
+  
   <title>微信小程序开发体验 - SummerSecret</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/blogsite/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
   
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
     
   
 
   
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
   
-
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -46,7 +64,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/blogsite/css/main.css" />
@@ -56,19 +74,20 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"mediocrityxt.github.io","root":"/blogsite/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"mediocrityxt.github.io","root":"/blogsite/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blogsite/local-search.xml"};
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/blogsite/">&nbsp;<strong>SummerSecret</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/blogsite/">
+      <strong>SummerSecret</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -142,13 +161,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -171,37 +191,35 @@
               <div class="mt-3">
   
   
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-07-30 16:40" pubdate>
-        2020年7月30日 下午
-      </time>
+    <div class="mt-1">
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-07-30 16:40" pubdate>
+          2020年7月30日 下午
+        </time>
+        
+      </span>
+    </div>
+    <div class="mt-1">
       
-    </span>
+    </div>
   
 </div>
 
 <div class="mt-1">
   
-</div>
-
-<div class="mt-1">
-  
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      5.6k 字
     </span>
   
 
   
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-clock-fill"></i>
       
       
-      26
-       分钟
+      47 分钟
     </span>
   
 
@@ -233,8 +251,8 @@
             <h1 style="display: none">微信小程序开发体验</h1>
             
             <div class="markdown-body">
-              <p><img src="vlcsnap-2019-02-19-18h40m16s972.png" srcset="/blogsite/img/loading2.gif" lazyload alt="vlcsnap-2019-02-19-18h40m16s972"></p>
-<p><img src="vlcsnap-2019-02-19-18h40m30s526.png" srcset="/blogsite/img/loading2.gif" lazyload alt="vlcsnap-2019-02-19-18h40m30s526"></p>
+              <p><img src="vlcsnap-2019-02-19-18h40m16s972.png" srcset="/blogsite/img/loading.gif" lazyload alt="vlcsnap-2019-02-19-18h40m16s972"></p>
+<p><img src="vlcsnap-2019-02-19-18h40m30s526.png" srcset="/blogsite/img/loading.gif" lazyload alt="vlcsnap-2019-02-19-18h40m30s526"></p>
 <p>十天时间说来不长，主要有如下收获</p>
 <ul>
 <li>GitHub版本管理使用</li>
@@ -247,14 +265,14 @@
 <h1 id="微信小程序开发"><a href="#微信小程序开发" class="headerlink" title="微信小程序开发"></a>微信小程序开发</h1><h2 id="个人相册-miniprogram-1"><a href="#个人相册-miniprogram-1" class="headerlink" title="个人相册    miniprogram-1"></a>个人相册    <code>miniprogram-1</code></h2><h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><blockquote>
 <p>本地从相机拍摄或图库上传图片<del>不知道为什么api的两个选择都是从图库上传没有区别</del>，选择已有相册/新建相册存入，并可以查看各相册。</p>
 </blockquote>
-<p><img src="image-20200730232143254.png" srcset="/blogsite/img/loading2.gif" lazyload alt="上传后预览界面" title="上传后预览界面"></p>
-<p><img src="image-20200730230947938.png" srcset="/blogsite/img/loading2.gif" lazyload alt="相册界面"/></p>
+<p><img src="image-20200730232143254.png" srcset="/blogsite/img/loading.gif" lazyload alt="上传后预览界面" title="上传后预览界面"></p>
+<p><img src="image-20200730230947938.png" srcset="/blogsite/img/loading.gif" lazyload alt="相册界面"></p>
 <p>这个部分实现比较简单，可以通过这个作业对微信小程序的结构有一个基本了解，并且接触到前后端的基本工作范围。<del>前四天熬到3点把云上传和云查看功能做完然后发现其实这是后几天的工作QAQ</del></p>
 <h3 id="图像处理功能"><a href="#图像处理功能" class="headerlink" title="图像处理功能"></a>图像处理功能</h3><blockquote>
 <p>可以对图片进行基础的处理（如水印、美颜等）</p>
 </blockquote>
 <p>看完云开发guidebook我信心满满，挑明了sharp库随便用用就行，介不似送吗？</p>
-<p>于是我开始了 <strong><em>长达两天的导库尝试</em></strong> </p>
+<p>于是我开始了 <em><strong>长达两天的导库尝试</strong></em> </p>
 <blockquote>
 <p>什么叫做放弃希望啊？——战术后仰 </p>
 </blockquote>
@@ -262,7 +280,7 @@
 <p><strong>惊为天人！</strong></p>
 <p>canvas???未曾设想的道路…</p>
 <p>于是就变成了导入选定图片到画布然后加上text成为水印图</p>
-<p><img src="image-20200730234005493.png" srcset="/blogsite/img/loading2.gif" lazyload alt="图像处理页面" title="图像处理界面"></p>
+<p><img src="image-20200730234005493.png" srcset="/blogsite/img/loading.gif" lazyload alt="图像处理页面" title="图像处理界面"></p>
 <p>（水印text为微信用户名，上面的图是本地原图，下面是画布效果）<del>竟然画布里的画质比上面的还好</del></p>
 <p>至于css滤镜…只能本地显示不能保存修改啊…何况css不支持随着js变量直接更改滤镜参数…所以…滤镜按钮现在是个摆设嘿嘿</p>
 <p>（html用style标签好像可以做到给样式传变量）</p>
@@ -299,23 +317,35 @@
 <p>随后决定让用户从手机存储中上传音乐。但是我又发现微信只有图片选择上传API<code>wx.chooseImage</code>，不支持其他类型文件。如果非要实现，可能得用<code>FileSystemManager</code>来从头实现该选择与上传的功能，十分复杂。</p>
 <p>最后，我决定在云存储里预置两首测试音乐<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="ＴＲＡ＄Ｈ - ＡＬＯＮＥ.mp3 ，邓丽君 - 独上西楼.mp3
 ">[1]</span></a></sup>，通过<code>button</code>选歌😓。</p>
-<h3 id="音乐播放器"><a href="#音乐播放器" class="headerlink" title="音乐播放器"></a>音乐播放器</h3><p><img src="image-20200801011806200.png" srcset="/blogsite/img/loading2.gif" lazyload alt="image-20200801011806200"></p>
+<h3 id="音乐播放器"><a href="#音乐播放器" class="headerlink" title="音乐播放器"></a>音乐播放器</h3><p><img src="image-20200801011806200.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20200801011806200"></p>
 <p>用slider做了一个简单的进度条，获取<code>duration</code>和<code>currentTime</code>并通过format将描述转为分：秒。</p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">format:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">origin</span>)</span>&#123;<br>  <span class="hljs-keyword">let</span> time=origin.toFixed(<span class="hljs-number">0</span>)<br>  <span class="hljs-keyword">let</span> second = time%<span class="hljs-number">60</span><br>  <span class="hljs-keyword">let</span> minute = (time-second)/<span class="hljs-number">60</span><br>  <span class="hljs-keyword">if</span>(second&lt;<span class="hljs-number">10</span>)&#123;<br>    <span class="hljs-keyword">return</span> minute+<span class="hljs-string">&#x27;:0&#x27;</span>+second<br>  &#125;<br>  <span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-keyword">return</span> minute+<span class="hljs-string">&#x27;:&#x27;</span>+second<br>  &#125; <br>&#125;,<br></code></pre></div></td></tr></table></figure>
+
 <p>另外innerAudioContext在Page()前面就加上<code>const innerAudioContext = wx.createInnerAudioContext();</code>在onShow()加入<code>register</code>函数以启动所有长效监听函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">registerAudioContext:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-keyword">let</span> that = <span class="hljs-built_in">this</span><br>  innerAudioContext.onCanplay(<span class="hljs-function">() =&gt;</span> &#123;<br>    innerAudioContext.duration; <span class="hljs-comment">//必须写，不然获取不到。。。</span><br>  &#125;)<br>  innerAudioContext.onTimeUpdate(<span class="hljs-function">(<span class="hljs-params">res</span>)=&gt;</span>&#123;      <span class="hljs-comment">//随着时间变化 取样  但是这个函数发生的时间间隔不稳定 或许有需要时可以使用setInterval()来在外界单独写一个监听函数</span><br>    that.setData(&#123;<br>      <span class="hljs-attr">audioDuration</span>: that.format(innerAudioContext.duration),<br>      <span class="hljs-attr">audioCurrent</span>: that.format(innerAudioContext.currentTime),<br>      <span class="hljs-attr">sliderTime</span>: innerAudioContext.currentTime/innerAudioContext.duration * <span class="hljs-number">100</span><br>    &#125;);<br>    that.sample()<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;取样于&#x27;</span>+innerAudioContext.currentTime)<br>  &#125;)<br>  innerAudioContext.onPlay(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>    that.setData(&#123;<br>      <span class="hljs-attr">isPlaying</span>:<span class="hljs-literal">true</span><br>    &#125;)<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;onPlay触发&#x27;</span>+res)<br>  &#125;)<br>  innerAudioContext.onPause(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>    that.setData(&#123;<br>      <span class="hljs-attr">isPlaying</span>:<span class="hljs-literal">false</span><br>    &#125;)<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;onPause触发&#x27;</span>+res)<br>  &#125;)<br>  innerAudioContext.onEnded(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>    that.setData(&#123;<br>      <span class="hljs-attr">isPlaying</span>: <span class="hljs-literal">false</span><br>    &#125;)<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;播放结束&#x27;</span> + res);<br>  &#125;)<br>  innerAudioContext.onError(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>      <span class="hljs-comment">// 播放音频失败的回调</span><br>      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;播放音频失败&#x27;</span> + res);<br>    &#125;)<br>    innerAudioContext.onStop(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>    that.setData(&#123;<br>      <span class="hljs-attr">isPlaying</span>: <span class="hljs-literal">false</span><br>    &#125;)<br>      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;播放终止stop&#x27;</span> + res);<br>    &#125;)<br>&#125;,<br></code></pre></div></td></tr></table></figure>
+
 <h3 id="数据库所用云函数"><a href="#数据库所用云函数" class="headerlink" title="数据库所用云函数"></a>数据库所用云函数</h3><p>唯一数据库云函数<code>uploadMood</code>用来新增mood记录。同用户同音乐新上传的mood会重写代替以前的mood记录。</p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-comment">// 云函数入口文件</span><br><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;wx-server-sdk&#x27;</span>)<br><br>cloud.init(&#123;<br>  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV<br>&#125;)<br><span class="hljs-keyword">const</span> db = cloud.database()  <span class="hljs-comment">//获取数据库的引用</span><br><br><span class="hljs-comment">// 云函数入口函数</span><br><span class="hljs-built_in">exports</span>.main = <span class="hljs-keyword">async</span> (event, context) =&gt; &#123;<br>  <span class="hljs-keyword">let</span> check = db.collection(<span class="hljs-string">&quot;musicmood&quot;</span>).where(&#123;<br>    <span class="hljs-attr">music</span>:event.music,<br>    <span class="hljs-attr">openid</span>:event.openid<br>  &#125;).get()<br>  <span class="hljs-built_in">console</span>.log(check)<br>  <span class="hljs-keyword">if</span>(check)&#123;<br>    <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">&quot;musicmood&quot;</span>).where(&#123;<br>      <span class="hljs-attr">music</span>:event.music,<br>      <span class="hljs-attr">openid</span>:event.openid<br>    &#125;).remove()<br>  &#125;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">&quot;musicmood&quot;</span>).add(&#123;<br>      <span class="hljs-attr">data</span>:&#123;<br>        <span class="hljs-attr">music</span>:event.music,<br>        <span class="hljs-attr">openid</span>:event.openid,<br>        <span class="hljs-attr">time</span>:event.timeSample,<br>        <span class="hljs-attr">resonance</span>:event.resonanceSample,<br>        <span class="hljs-attr">feeling</span>:event.feelingSample<br>      &#125;<br>    &#125;)<br>    .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>      <span class="hljs-built_in">console</span>.log(res)<br>    &#125;)<br>    .catch(<span class="hljs-built_in">console</span>.error)<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
 <h3 id="重播情绪"><a href="#重播情绪" class="headerlink" title="重播情绪"></a>重播情绪</h3><p>首先选择用户（未实现），获得对应openid之后访问数据库，请求该用户的音乐mood和comment记录，选择播放音乐后在本地播放音乐同时将数据可视化。</p>
 <p><del>以下为倒叙</del></p>
 <p>可视化需要将存在云上的取样数组解开并得到对应时间的情绪具体数值。<code>desample</code>将判断超过取样time就取出resonance和feeling数值。</p>
 <p>所以需要考虑到<code>onTimeUpdate</code>监听方法的时间间隔不稳定（0.1s-0.3s间不定)，可能对情绪重播效果存在负面影响。</p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">desample:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-keyword">let</span> index = <span class="hljs-built_in">this</span>.data.index<br>  <span class="hljs-keyword">let</span> timeSample = <span class="hljs-built_in">this</span>.data.timeSample<br>  <span class="hljs-keyword">if</span>(index == timeSample.length) <span class="hljs-keyword">return</span> <span class="hljs-comment">//index不能超过Sample长度</span><br>  <span class="hljs-keyword">let</span> resonanceSample = <span class="hljs-built_in">this</span>.data.resonanceSample<br>  <span class="hljs-keyword">let</span> feelingSample = <span class="hljs-built_in">this</span>.data.feelingSample<br>  <br>  <span class="hljs-keyword">if</span>(timeSample[index]&lt;=innerAudioContext.currentTime)&#123;<br>    <span class="hljs-built_in">this</span>.setData(&#123;<br>      <span class="hljs-attr">resonance</span>:resonanceSample[index],<br>      <span class="hljs-attr">feeling</span>:feelingSample[index]<br>    &#125;)<br>    <span class="hljs-built_in">this</span>.setData(&#123;<br>      <span class="hljs-attr">index</span>:index+<span class="hljs-number">1</span><br>    &#125;)<br>  &#125;<br>&#125;,<br></code></pre></div></td></tr></table></figure>
+
+
+
 <p>因为已经在数据库设置所有人可读，所以使用本地函数<code>getMood</code>读取数据即可。</p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">getMood:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-keyword">const</span> db = wx.cloud.database()<br>  db.collection(<span class="hljs-string">&quot;musicmood&quot;</span>).where(&#123;<br>    <span class="hljs-attr">music</span>:<span class="hljs-built_in">this</span>.data.musicUrl,<br>    <span class="hljs-attr">openid</span>:<span class="hljs-built_in">this</span>.data.openid<br>  &#125;).get()<br>  .then(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>&#123;<br>    <span class="hljs-built_in">this</span>.setData(&#123;<br>      <span class="hljs-attr">timeSample</span>:res.data[<span class="hljs-number">0</span>].time,<br>      <span class="hljs-attr">resonanceSample</span>:res.data[<span class="hljs-number">0</span>].resonance,<br>      <span class="hljs-attr">feelingSample</span>:res.data[<span class="hljs-number">0</span>].feeling<br>    &#125;)<br>  &#125;)<br>  .catch(<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(err)<br>  &#125;)<br>&#125;,<br></code></pre></div></td></tr></table></figure>
+
+
+
 <p>在获取openid的时候出现了一些问题：login云函数回调速度较慢，必须要异步才能对getMood传入正确openid而非undefined。</p>
 <p>Promise对象使用异步较难，<del>没研究明白</del>所以使用<code>setInterval</code>多次检测openid存在即可调用下一步函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">chooseUser:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">this</span>.getOpenId()<br>    <span class="hljs-keyword">let</span> inter = <span class="hljs-built_in">setInterval</span>(<span class="hljs-function">()=&gt;</span>&#123;    <span class="hljs-comment">//用定时器多次实验实现异步</span><br>      <span class="hljs-keyword">if</span>(<span class="hljs-built_in">this</span>.data.openid)&#123;<br>        <span class="hljs-built_in">this</span>.getMood()<br>        <span class="hljs-built_in">clearInterval</span>(inter)<br>      &#125;<br>    &#125;,<span class="hljs-number">100</span>)<br>&#125;,<br></code></pre></div></td></tr></table></figure>
+
+
+
 <h2 id="总结感想"><a href="#总结感想" class="headerlink" title="总结感想"></a>总结感想</h2><p>网络API对于构造http请求中header的referer有限制，只能写明由微信小程序发出。</p>
 <p>官方提供组件存在一些小问题，但是没有其他选择可以代替，否则只能从头写自定义组件。</p>
 <p>云函数端只能引入node.js库；本地微信开发者工具也难以导入已经<code>npm install</code>的sharp/jimp等图像处理库，扩展性受限。</p>
@@ -405,7 +435,7 @@
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -451,8 +481,8 @@
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -463,12 +493,16 @@
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/blogsite/js/events.js" ></script>
 <script  src="/blogsite/js/plugins.js" ></script>
 
 <!-- Plugins -->
+
+
+  <script  src="/blogsite/js/local-search.js" ></script>
+
 
 
   
@@ -481,36 +515,31 @@
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script  src="/blogsite/js/local-search.js" ></script>
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
   </script>

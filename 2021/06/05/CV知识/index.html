@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,35 +9,50 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/blogsite/img/apple-touch-icon.png">
   <link rel="icon" href="/blogsite/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f85e5">
-  <meta name="description" content="">
   <meta name="author" content="XT">
   <meta name="keywords" content="">
   
-  <title>YOLO笔记/MobileNet/pytorch CUDA踩坑 - SummerSecret</title>
+    <meta name="description" content="YOLO笔记&#x2F;MobileNet&#x2F;pytorch CUDA踩坑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CV知识">
+<meta property="og:url" content="https://mediocrityxt.github.io/blogsite/2021/06/05/CV%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="SummerSecret">
+<meta property="og:description" content="YOLO笔记&#x2F;MobileNet&#x2F;pytorch CUDA踩坑">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-367f4025a0d45fc8e2769db6a119a530_1440w.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190606161948714.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDQ3NDcxOA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019060616204688.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDQ3NDcxOA==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2021-06-05T00:54:48.000Z">
+<meta property="article:modified_time" content="2021-06-05T00:54:48.000Z">
+<meta property="article:author" content="XT">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-367f4025a0d45fc8e2769db6a119a530_1440w.jpg">
+  
+  
+  <title>CV知识 - SummerSecret</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/blogsite/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
   
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
     
   
 
   
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
   
-
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -46,7 +61,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/blogsite/css/main.css" />
@@ -56,19 +71,20 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"mediocrityxt.github.io","root":"/blogsite/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"mediocrityxt.github.io","root":"/blogsite/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blogsite/local-search.xml"};
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/blogsite/">&nbsp;<strong>SummerSecret</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/blogsite/">
+      <strong>SummerSecret</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -142,13 +158,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -163,7 +180,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="YOLO笔记/MobileNet/pytorch CUDA踩坑">
+            <span class="h2" id="subtitle" title="CV知识">
               
             </span>
 
@@ -171,37 +188,35 @@
               <div class="mt-3">
   
   
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-05 08:54" pubdate>
-        2021年6月5日 早上
-      </time>
+    <div class="mt-1">
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-06-05 08:54" pubdate>
+          2021年6月5日 早上
+        </time>
+        
+      </span>
+    </div>
+    <div class="mt-1">
       
-    </span>
+    </div>
   
 </div>
 
 <div class="mt-1">
   
-</div>
-
-<div class="mt-1">
-  
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      2k 字
     </span>
   
 
   
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13
-       分钟
+      17 分钟
     </span>
   
 
@@ -230,7 +245,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">YOLO笔记/MobileNet/pytorch CUDA踩坑</h1>
+            <h1 style="display: none">CV知识</h1>
             
             <div class="markdown-body">
               <h1 id="YOLO"><a href="#YOLO" class="headerlink" title="YOLO"></a>YOLO</h1><p>CV三任务：分类、目标检测、区域分割</p>
@@ -249,7 +264,7 @@
 <p>我理解的深度卷积Depthwise Conv是指沿着深度方向（不同通道）依次卷积。</p>
 <p>MobileNetV1的网络结构如上图所示。首先是一个3x3的标准卷积，s2进行下采样。然后就是堆积深度可分离卷积，并且其中的部分深度卷积会利用s2进行下采样。然后采用平均池化层将feature变成1x1，根据预测类别大小加上全连接层，最后是一个softmax层。整个网络有28层，其中深度卷积层有13层。</p>
 <h2 id="V2"><a href="#V2" class="headerlink" title="V2"></a>V2</h2><p>MobileNetV2：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-367f4025a0d45fc8e2769db6a119a530_1440w.jpg" srcset="/blogsite/img/loading2.gif" lazyload alt="v2结构"></p>
+<p><img src="https://pic1.zhimg.com/80/v2-367f4025a0d45fc8e2769db6a119a530_1440w.jpg" srcset="/blogsite/img/loading.gif" lazyload alt="v2结构"></p>
 <p>参考ResNet中三层残差神经元结构，但先PW升维，DW在6维度空间卷积来过滤数据，再PW降维，这就叫Inverted bottleneck</p>
 <blockquote>
 <p>ResNet的思想:output(x) = f(x)+x，学习f(x)=0能更快收敛、output里的x解决了梯度消失问题</p>
@@ -259,11 +274,9 @@
 <p>受到这个模型中的<a target="_blank" rel="noopener" href="https://muzhan.blog.csdn.net/article/details/108523659">Squeeze And Excitation</a>部分（看做一种轻型的attention模块）的启发，MobileNet V3的block也将SE加在DWconv之后，与MnasNet不同的是它将sigmoid函数换成了hard swish激活函数</p>
 <p>在用MnasNet和NetAdap搜索之后作者还主要对得到的网络进行了如下优化：</p>
 <ol>
-<li><p>原本最后几层的设计计算代价太高。原本在bottleneck和池化层之间还有一个1x1conv来生成高维特征；现在将这个1x1conv移到7x7池化层后面，在池化之后卷积的计算量从7x7倍减少到1倍。因为这个重要的特征生成层的计算量大大减小，那么前面的升维滤波的inverted bottleneck就多余了，直接删除。最后的结果就是在相似的准确度下减少了11%的Latency。<br><img src="https://img-blog.csdnimg.cn/20190606161948714.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDQ3NDcxOA==,size_16,color_FFFFFF,t_70" srcset="/blogsite/img/loading2.gif" lazyload alt=""></p>
+<li><p>原本最后几层的设计计算代价太高。原本在bottleneck和池化层之间还有一个1x1conv来生成高维特征；现在将这个1x1conv移到7x7池化层后面，在池化之后卷积的计算量从7x7倍减少到1倍。因为这个重要的特征生成层的计算量大大减小，那么前面的升维滤波的inverted bottleneck就多余了，直接删除。最后的结果就是在相似的准确度下减少了11%的Latency。<br><img src="https://img-blog.csdnimg.cn/20190606161948714.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDQ3NDcxOA==,size_16,color_FFFFFF,t_70" srcset="/blogsite/img/loading.gif" lazyload></p>
 </li>
-<li><p>V3的模型后半部分使用h-swish激活函数。</p>
-<script type="math/tex; mode=display">
-\text {h-swish}[x]=x\frac{\text {ReLU6} (x+3)} 6</script><p>相较于普通的swish函数，用ReLU代替Sigmoid大大减少计算量，且由于使用ReLU6还减少了不同的sigmoid计算方法带来的数值误差，且这个可被当分段函数计算还减少了内存访问带来的延迟。<br><img src="https://img-blog.csdnimg.cn/2019060616204688.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDQ3NDcxOA==,size_16,color_FFFFFF,t_70" srcset="/blogsite/img/loading2.gif" lazyload alt=""></p>
+<li><p>V3的模型后半部分使用h-swish激活函数。<br>$$<br>\text {h-swish}[x]=x\frac{\text {ReLU6} (x+3)} 6<br>$$<br>相较于普通的swish函数，用ReLU代替Sigmoid大大减少计算量，且由于使用ReLU6还减少了不同的sigmoid计算方法带来的数值误差，且这个可被当分段函数计算还减少了内存访问带来的延迟。<br><img src="https://img-blog.csdnimg.cn/2019060616204688.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDQ3NDcxOA==,size_16,color_FFFFFF,t_70" srcset="/blogsite/img/loading.gif" lazyload></p>
 </li>
 </ol>
 <h1 id="Pytorch-CUDA安装注意事项"><a href="#Pytorch-CUDA安装注意事项" class="headerlink" title="Pytorch CUDA安装注意事项"></a>Pytorch CUDA安装注意事项</h1><p>为了GPU训练，折磨了很久，踩了一些坑。</p>
@@ -313,8 +326,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blogsite/2021/01/08/%E6%9D%82%E7%BB%AA/">
-                        <span class="hidden-mobile">杂绪</span>
+                      <a href="/blogsite/2021/03/01/%E6%81%B6%E4%B9%8B%E8%8A%B1/">
+                        <span class="hidden-mobile">恶之花 & Night</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -347,7 +360,7 @@
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -393,8 +406,8 @@
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -405,12 +418,16 @@
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/blogsite/js/events.js" ></script>
 <script  src="/blogsite/js/plugins.js" ></script>
 
 <!-- Plugins -->
+
+
+  <script  src="/blogsite/js/local-search.js" ></script>
+
 
 
   
@@ -423,36 +440,31 @@
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script  src="/blogsite/js/local-search.js" ></script>
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
   </script>

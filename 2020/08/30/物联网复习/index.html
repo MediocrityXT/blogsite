@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,35 +9,52 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/blogsite/img/apple-touch-icon.png">
   <link rel="icon" href="/blogsite/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f85e5">
-  <meta name="description" content="传感器的“少部分”内容，这门课真是折磨...">
   <meta name="author" content="XT">
   <meta name="keywords" content="">
   
+    <meta name="description" content="传感器的“少部分”内容，这门课真是折磨...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="物联网复习">
+<meta property="og:url" content="https://mediocrityxt.github.io/blogsite/2020/08/30/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="SummerSecret">
+<meta property="og:description" content="传感器的“少部分”内容，这门课真是折磨...">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/08/30/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/image-20200830210426447.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/08/30/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/image-20200831094759259.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/08/30/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/image-20200831100059321.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/08/30/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/image-20200831111151205.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/08/30/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/image-20200831160631326.png">
+<meta property="article:published_time" content="2020-08-30T08:12:03.000Z">
+<meta property="article:modified_time" content="2020-08-30T08:12:03.000Z">
+<meta property="article:author" content="XT">
+<meta property="article:tag" content="复习">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mediocrityxt.github.io/blogsite/2020/08/30/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/image-20200830210426447.png">
+  
+  
   <title>物联网复习 - SummerSecret</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/blogsite/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
   
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
     
   
 
   
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
   
-
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -46,7 +63,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/blogsite/css/main.css" />
@@ -56,19 +73,20 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"mediocrityxt.github.io","root":"/blogsite/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"mediocrityxt.github.io","root":"/blogsite/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blogsite/local-search.xml"};
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/blogsite/">&nbsp;<strong>SummerSecret</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/blogsite/">
+      <strong>SummerSecret</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -142,13 +160,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -171,37 +190,35 @@
               <div class="mt-3">
   
   
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-08-30 16:12" pubdate>
-        2020年8月30日 下午
-      </time>
+    <div class="mt-1">
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-08-30 16:12" pubdate>
+          2020年8月30日 下午
+        </time>
+        
+      </span>
+    </div>
+    <div class="mt-1">
       
-    </span>
+    </div>
   
 </div>
 
 <div class="mt-1">
   
-</div>
-
-<div class="mt-1">
-  
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      9k 字
+      11k 字
     </span>
   
 
   
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-clock-fill"></i>
       
       
-      92
-       分钟
+      89 分钟
     </span>
   
 
@@ -240,8 +257,10 @@
 </li>
 <li><p>其输入是某种被测量，可能是物理量或化学量、生物量等;</p>
 </li>
-<li>其输出是某种便于传输、转换、处理和显示的物理量，如气、光、电等，目前主要是电量;</li>
-<li>输出量与输入量有单值确定的对应关系，且有一定精确度</li>
+<li><p>其输出是某种便于传输、转换、处理和显示的物理量，如气、光、电等，目前主要是电量;</p>
+</li>
+<li><p>输出量与输入量有单值确定的对应关系，且有一定精确度</p>
+</li>
 </ul>
 <h2 id="传感器类型"><a href="#传感器类型" class="headerlink" title="传感器类型"></a>传感器类型</h2><p>同种参量可用不同原理的传感器测量<br>基于一种传感原理可制作多种参量传感器</p>
 <ul>
@@ -254,7 +273,7 @@
 <li>按测量方式分类：接触式传感器和非接触式传感器</li>
 </ul>
 <h2 id="传感器组成"><a href="#传感器组成" class="headerlink" title="传感器组成"></a>传感器组成</h2><p>敏感元件：感知+输出<br>转换元件：参量类型变换<br>转换电路：有用信号输出<br>最基本的：敏感+转换</p>
-<p><img src="image-20200830210426447.png" srcset="/blogsite/img/loading2.gif" lazyload alt="image-20200830210426447"></p>
+<p><img src="image-20200830210426447.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20200830210426447"></p>
 <h2 id="传感器的信号调理与接口"><a href="#传感器的信号调理与接口" class="headerlink" title="传感器的信号调理与接口"></a>传感器的信号调理与接口</h2><h3 id="信号调理"><a href="#信号调理" class="headerlink" title="信号调理"></a>信号调理</h3><h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><p><strong>调理敏感/转换元件或者传感器的输出信号</strong>，使其更好地满足后续信号传输、处理或显示的要求。</p>
 <h4 id="位置："><a href="#位置：" class="headerlink" title="位置："></a>位置：</h4><p>敏感元件(非电量)—[检测电路]—&gt;电参量(电压、电流等)—[信号调理]—&gt;电压—[DAQ]—&gt;数字量</p>
 <h4 id="主要类型："><a href="#主要类型：" class="headerlink" title="主要类型："></a>主要类型：</h4><p>电平调整、线性化、信号形式变换、滤波、阻抗匹配等</p>
@@ -310,20 +329,15 @@
 <p>静态测量是指测量过程中<strong>被测量保持恒定不变</strong>(即，系统处于稳定状态)时的测量。当被测量为缓慢变化量，但在一次测量的时间段内变动的幅值在测量精度范围内，这时的测量也可当做静态测量来处理</p>
 <p><strong>静态标准条件</strong>是指没有加速度、振动、冲击(除非这些参数本身就是被测量)的影响，环境温度一般为室温20±5℃，相对湿度不大于85%，大气压力为101.3±8kPa(760±60mmHg)的情况</p>
 </blockquote>
-<h3 id="传感器的输出-输入静态函数关系："><a href="#传感器的输出-输入静态函数关系：" class="headerlink" title="传感器的输出- 输入静态函数关系："></a>传感器的输出- 输入静态函数关系：</h3><script type="math/tex; mode=display">
-y=a_0+a_1x+a_2x^2+\cdots+a_nx^n</script><h3 id="静态函数关系的特殊情况："><a href="#静态函数关系的特殊情况：" class="headerlink" title="静态函数关系的特殊情况："></a>静态函数关系的特殊情况：</h3><ul>
+<h3 id="传感器的输出-输入静态函数关系："><a href="#传感器的输出-输入静态函数关系：" class="headerlink" title="传感器的输出- 输入静态函数关系："></a>传感器的输出- 输入静态函数关系：</h3><p>$$<br>y=a_0+a_1x+a_2x^2+\cdots+a_nx^n<br>$$</p>
+<h3 id="静态函数关系的特殊情况："><a href="#静态函数关系的特殊情况：" class="headerlink" title="静态函数关系的特殊情况："></a>静态函数关系的特殊情况：</h3><ul>
 <li>理想线性关系</li>
 <li>非线性项中仅有奇次项， 有y(x)=−y(−x)的对称性</li>
 <li>非线性项中仅有偶次项，有y(x)=y(−x)的对称性</li>
 </ul>
 <h3 id="差动技术："><a href="#差动技术：" class="headerlink" title="差动技术："></a>差动技术：</h3><p>将两个相同特性的传感器差动组合，可有效消除偶次非线性项</p>
 <h3 id="测量范围和量程："><a href="#测量范围和量程：" class="headerlink" title="测量范围和量程："></a>测量范围和量程：</h3><p>量程是指检测系统测量上限和测量下限</p>
-<h3 id="评价指标-线性度（非线性偏差）："><a href="#评价指标-线性度（非线性偏差）：" class="headerlink" title="[评价指标]线性度（非线性偏差）："></a>[评价指标]线性度（非线性偏差）：</h3><p>表征传感器的校准曲线与拟合直线的偏差程度</p>
-<script type="math/tex; mode=display">
-\begin{gather}
-r_L=\pm\frac{\Delta_{Lmax}}{y_{FS}}\times100\%\\\\
-\Delta_{Lmax}为最大偏差；y_{FS}为满量程时的输出值
-\end{gather}</script><p><img src="image-20200831094759259.png" srcset="/blogsite/img/loading2.gif" lazyload alt="image-20200831094759259"></p>
+<h3 id="评价指标-线性度（非线性偏差）："><a href="#评价指标-线性度（非线性偏差）：" class="headerlink" title="[评价指标]线性度（非线性偏差）："></a>[评价指标]线性度（非线性偏差）：</h3><p>表征传感器的校准曲线与拟合直线的偏差程度<br>$$<br>\begin{gather}<br>r_L=\pm\frac{\Delta_{Lmax}}{y_{FS}}\times100%\\<br>\Delta_{Lmax}为最大偏差；y_{FS}为满量程时的输出值<br>\end{gather}<br>$$<br><img src="image-20200831094759259.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20200831094759259"></p>
 <p>方法(d)兼顾零点和最大偏差</p>
 <h3 id="评价指标-灵敏度："><a href="#评价指标-灵敏度：" class="headerlink" title="[评价指标]灵敏度："></a>[评价指标]灵敏度：</h3><p>传感器的输出增量与相应的输入增量之比</p>
 <ul>
@@ -335,7 +349,7 @@ r_L=\pm\frac{\Delta_{Lmax}}{y_{FS}}\times100\%\\\\
 <li>迟滞环：正、反向特性曲线形成的闭环</li>
 <li>迟滞误差：为正、反行程输出的最大差值与满量程输出值y<sub>FS</sub>之比</li>
 </ul>
-<h3 id="评价指标-重复性及其他："><a href="#评价指标-重复性及其他：" class="headerlink" title="[评价指标]重复性及其他："></a>[评价指标]重复性及其他：</h3><p><img src="image-20200831100059321.png" srcset="/blogsite/img/loading2.gif" lazyload alt="image-20200831100059321"></p>
+<h3 id="评价指标-重复性及其他："><a href="#评价指标-重复性及其他：" class="headerlink" title="[评价指标]重复性及其他："></a>[评价指标]重复性及其他：</h3><p><img src="image-20200831100059321.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20200831100059321"></p>
 <ul>
 <li><strong>综合误差</strong>(精度)：传感器的示值与被测量真值之间的最大偏差。通常是综合考虑室温下传感器的<strong>线性度</strong>r<sub>L</sub>（非线性误差）、<strong>迟滞误差</strong>r<sub>H</sub>和<strong>重复性误差</strong>r<sub>R</sub>的综合值</li>
 <li>量程（测量范围）、灵敏度、分辨力是衡量传感器<strong>基本功能特性</strong>的指标，决定其工作能力；</li>
@@ -353,10 +367,8 @@ r_L=\pm\frac{\Delta_{Lmax}}{y_{FS}}\times100\%\\\\
 </ul>
 <p>$0&lt;\omega &lt;\omega_1$内幅频特性稳定，相频特性线性</p>
 <h4 id="频率响应特性："><a href="#频率响应特性：" class="headerlink" title="频率响应特性："></a><strong>频率响应特性</strong>：</h4><p>拓宽固有频率，则在指定精度下的平坦区间也将拓宽</p>
-<p>典型一阶传感器的频率特性为：</p>
-<script type="math/tex; mode=display">
-H(j\omega)=\frac{A}{1+j\omega\tau}</script><p><strong>一阶频率特性</strong>的特征参数可用3 dB频率$\omega_c$表示，即: $\omega_c=1/\tau$。此处$\tau$称为传感器的时间常数。</p>
-<p><img src="image-20200831111151205.png" srcset="/blogsite/img/loading2.gif" lazyload alt="image-20200831111151205"></p>
+<p>典型一阶传感器的频率特性为：<br>$$<br>H(j\omega)=\frac{A}{1+j\omega\tau}<br>$$<br><strong>一阶频率特性</strong>的特征参数可用3 dB频率$\omega_c$表示，即: $\omega_c=1/\tau$。此处$\tau$称为传感器的时间常数。</p>
+<p><img src="image-20200831111151205.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20200831111151205"></p>
 <h2 id="传感器的时域响应与动态品质评价"><a href="#传感器的时域响应与动态品质评价" class="headerlink" title="传感器的时域响应与动态品质评价"></a>传感器的时域响应与动态品质评价</h2><p>时间响应特性与动态品质的关系</p>
 <ul>
 <li>时间常数$\tau_0$。传感器输出值由零上升到稳定值的63.2％所需要的时间</li>
@@ -406,7 +418,7 @@ H(j\omega)=\frac{A}{1+j\omega\tau}</script><p><strong>一阶频率特性</strong
 <h3 id="电桥法"><a href="#电桥法" class="headerlink" title="电桥法"></a>电桥法</h3><p>惠斯通电桥常用于测量小的阻值变化。</p>
 <p>采用远距离传感器进行高精度测量时，必须考虑引线电阻影响（有的电阻受温度变化带来误差）。</p>
 <p>惠斯通电桥的<strong>三引线平衡测量法</strong>可以克服上述问题</p>
-<p><img src="image-20200831160631326.png" srcset="/blogsite/img/loading2.gif" lazyload alt="image-20200831160631326"></p>
+<p><img src="image-20200831160631326.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20200831160631326"></p>
 <ul>
 <li>其引线1和3须相同且经受相同温度变化，引线2则无关紧要</li>
 <li>前述四引线法可完全克服引线影响，但成本相对增加</li>
@@ -414,9 +426,7 @@ H(j\omega)=\frac{A}{1+j\omega\tau}</script><p><strong>一阶频率特性</strong
 <hr>
 <p>不平衡电桥的非线性补偿法: <strong>差动测量</strong></p>
 <p>电桥法(半桥)/电桥法(全桥)</p>
-<p>全桥差动电路的输出也为线性，且灵敏度比半桥式高一倍。</p>
-<script type="math/tex; mode=display">
-k=R_1/R_4=R_2/R_3</script><p><strong>对于k=1的电桥，灵敏度高，但非线性严重</strong></p>
+<p>全桥差动电路的输出也为线性，且灵敏度比半桥式高一倍。<br>$$<br>k=R_1/R_4=R_2/R_3<br>$$<br><strong>对于k=1的电桥，灵敏度高，但非线性严重</strong></p>
 <p>非线性问题的其他对策：</p>
 <ol>
 <li><p>牺牲灵敏度换线性，例如取k=10或更大，并提高供电电压以提高灵敏度；</p>
@@ -518,17 +528,10 @@ k=R_1/R_4=R_2/R_3</script><p><strong>对于k=1的电桥，灵敏度高，但非�
 </ul>
 <h2 id="弹性效应"><a href="#弹性效应" class="headerlink" title="弹性效应"></a>弹性效应</h2><p>弹性材料在<strong>弹性变形范围</strong>内能感受相应的力作用而产生弹性变形，外力消失后又能恢复原状的现象。</p>
 <p>压力- 位移特性是<strong>非线性关系</strong>。</p>
-<h3 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h3><h4 id="刚度："><a href="#刚度：" class="headerlink" title="刚度："></a>刚度：</h4><p>弹性元件产生<strong>单位位移所需的力</strong>(或压力)；它反映弹性元件受外力作用时<strong>抵抗变形</strong>的能力。用符号<em>k</em>表示，则：</p>
-<script type="math/tex; mode=display">
-k=\lim\limits_{\Delta\omega\to0}\frac{\Delta F}{\Delta \omega}=\frac{dF}{d\omega}</script><h4 id="灵敏度："><a href="#灵敏度：" class="headerlink" title="灵敏度："></a>灵敏度：</h4><p>作用于弹性元件上单位力（或压力）所产生的变形；它是刚度的倒数；用符号K代表，</p>
-<script type="math/tex; mode=display">
-K=\frac{d\omega}{dF}\</script><p><strong>若弹性特性为线性，则灵敏度为常数</strong>；弹性特性为非线性，则灵敏度为变数，也即表示此弹性元件在弹性变形范围内，各种受力情况下的变形量不相等。</p>
-<h4 id="固有频率"><a href="#固有频率" class="headerlink" title="固有频率:"></a>固有频率:</h4><p>弹性元件的动态特性很大程度上由其固有频率决定，为减少动态误差应提高其固有频率。但实际计算时只给出<strong>最低固有频率</strong>，也可用下式估算：</p>
-<script type="math/tex; mode=display">
-\begin{gather}
-f=\frac{1}{2\pi}\sqrt{\frac{k}{m_e}}\\\\
-m_e为元件的等效质量
-\end{gather}</script><h4 id="其他因素"><a href="#其他因素" class="headerlink" title="其他因素"></a>其他因素</h4><p><strong>材料性能</strong>影响弹性元件的特性；<strong>元件结构</strong>对其功能和性能有影响；<strong>温度变化</strong>会改变材料的弹性模量。</p>
+<h3 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h3><h4 id="刚度："><a href="#刚度：" class="headerlink" title="刚度："></a>刚度：</h4><p>弹性元件产生<strong>单位位移所需的力</strong>(或压力)；它反映弹性元件受外力作用时<strong>抵抗变形</strong>的能力。用符号<em>k</em>表示，则：<br>$$<br>k=\lim\limits_{\Delta\omega\to0}\frac{\Delta F}{\Delta \omega}=\frac{dF}{d\omega}<br>$$</p>
+<h4 id="灵敏度："><a href="#灵敏度：" class="headerlink" title="灵敏度："></a>灵敏度：</h4><p>作用于弹性元件上单位力（或压力）所产生的变形；它是刚度的倒数；用符号K代表，<br>$$<br>K=\frac{d\omega}{dF}<br>$$<br><strong>若弹性特性为线性，则灵敏度为常数</strong>；弹性特性为非线性，则灵敏度为变数，也即表示此弹性元件在弹性变形范围内，各种受力情况下的变形量不相等。</p>
+<h4 id="固有频率"><a href="#固有频率" class="headerlink" title="固有频率:"></a>固有频率:</h4><p>弹性元件的动态特性很大程度上由其固有频率决定，为减少动态误差应提高其固有频率。但实际计算时只给出<strong>最低固有频率</strong>，也可用下式估算：<br>$$<br>\begin{gather}<br>f=\frac{1}{2\pi}\sqrt{\frac{k}{m_e}}\\<br>m_e为元件的等效质量<br>\end{gather}<br>$$</p>
+<h4 id="其他因素"><a href="#其他因素" class="headerlink" title="其他因素"></a>其他因素</h4><p><strong>材料性能</strong>影响弹性元件的特性；<strong>元件结构</strong>对其功能和性能有影响；<strong>温度变化</strong>会改变材料的弹性模量。</p>
 <h2 id="电阻应变效应"><a href="#电阻应变效应" class="headerlink" title="电阻应变效应"></a>电阻应变效应</h2><p>电阻应变是<strong>力作用的结果</strong>，涉及<strong>应力</strong>、<strong>应变</strong>、<strong>弹性模量</strong>和<strong>泊松比</strong>等概念。</p>
 <ul>
 <li><p>应力：</p>
@@ -546,9 +549,7 @@ m_e为元件的等效质量
 <h3 id="应变效应"><a href="#应变效应" class="headerlink" title="应变效应"></a>应变效应</h3><p>元件受力作用产生应变时，其电阻值发生变化的现象称应变效应；此效应工作的元件称应变片。</p>
 <p>灵敏系数k定义为<strong>电阻的相对变化与应变之比</strong>，即：$k=(\Delta R/R_0)/\varepsilon_L$,   其中R<sub>0</sub>是无应变时的电阻。</p>
 <p>应变片的电阻变化可用下式表示：</p>
-<script type="math/tex; mode=display">
-\Delta R/R_0=(1+2\mu)\varepsilon_L+C(1-2\mu)\varepsilon_L=k\varepsilon_L\\\\
-元件的纵向应变\varepsilon_L=\frac{\Delta l}{l}</script><p><strong>可知，金属材料的应变效应主要由结构尺寸变化造成，灵敏系数主要由$(1+2\mu)$决定</strong></p>
+<p>$$<br>\Delta R/R_0=(1+2\mu)\varepsilon_L+C(1-2\mu)\varepsilon_L=k\varepsilon_L\\<br>元件的纵向应变\varepsilon_L=\frac{\Delta l}{l}<br>$$<br><strong>可知，金属材料的应变效应主要由结构尺寸变化造成，灵敏系数主要由$(1+2\mu)$决定</strong></p>
 <h3 id="金属应变片"><a href="#金属应变片" class="headerlink" title="金属应变片"></a>金属应变片</h3><p>金属电阻应变片的<strong>组成</strong>：</p>
 <p>保护片+敏感栅+基底+引线</p>
 <blockquote>
@@ -714,7 +715,7 @@ m_e为元件的等效质量
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -760,8 +761,8 @@ m_e为元件的等效质量
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -772,12 +773,16 @@ m_e为元件的等效质量
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/blogsite/js/events.js" ></script>
 <script  src="/blogsite/js/plugins.js" ></script>
 
 <!-- Plugins -->
+
+
+  <script  src="/blogsite/js/local-search.js" ></script>
+
 
 
   
@@ -790,36 +795,31 @@ m_e为元件的等效质量
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script  src="/blogsite/js/local-search.js" ></script>
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
   </script>
@@ -836,6 +836,9 @@ m_e为元件的等效质量
       MathJax = {
         tex: {
           inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
         },
         options: {
           renderActions: {
@@ -863,7 +866,7 @@ m_e为元件的等效质量
       };
     </script>
 
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
 
   
 
