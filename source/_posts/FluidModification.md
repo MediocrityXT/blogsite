@@ -1,6 +1,6 @@
 ---
 title: 自定义Fluid主题
-typora-root-url: ./FluidModification
+typora-root-url: ./FluidModification/
 date: 2021-06-06 18:51:42
 updated: 2022-01-04 01:51:42
 categories: 配置
@@ -83,6 +83,6 @@ date:
 
 ## 效果
 
-![截屏2022-01-04 00.50.01](/截屏2022-01-04 00.50.01.png)
+![](截屏2022-01-04 00.50.01.png)
 
-![截屏2022-01-04 00.50.27](/截屏2022-01-04 00.50.27.png)
+![](截屏2022-01-04 00.50.27.png)

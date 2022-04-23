@@ -36,19 +36,19 @@ _斜体文本_
 
 每个Emoji对应一个Unicode
 
-在markdown里有两种表现方法：
-
-
+在typora markdown里表现方法：
 
 > &#x1f605；或者&#128517； (&#加编码加冒号为html里面标识特殊符号的方法；该表情Unicode为U+1F601，1F601前面加x表示十六进制/转为十进制)
 
 &#x1f605;&#128517;
 
-> : sweat_smile :      两冒号中间加英文 快速打法 有些地方可能不兼容
+> : sweat_smile :   两冒号中间加英文 typora中的快速打法 其他地方可能不兼容
 
 :sweat_smile:
 
+> 直接mac输入法打出来的也是可以显示的
 
+😅
 
 ## 数学公式
 
@@ -61,11 +61,15 @@ $$
 
 \begin{align}配合&可以自定义对齐点，没有&时靠右对齐
 
-**换行时因为编译转义反斜杠，需要输入四个\而不是两个\才能正确在页面中实现换行。**
+**\*注意⚠️：换行时因为hexo默认渲染引擎对mathjax支持不好，编译时转义反斜杠，需要输入四个\而不是两个\才能正确在页面中实现换行。\***
+
+[解决办法](https://wenghonghui.github.io/2020/03/05/hexo-mathjax/)：
+hexo-renderer-marked换成hexo-renderer-kramed
 
 > 在文章 Front-matter 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度
 
 H<sub>2</sub>O——typora自带`<sub>`标签实现下标
+
 
 ## 代码块
 
@@ -99,7 +103,11 @@ H<sub>2</sub>O——typora自带`<sub>`标签实现下标
 
 ![累了.jpg](QQ图片20200730152128.jpg)
 
-typora解析图片的根目录和hexo博客部署之后有点差别。typora可读入`![a](/a.jpg)`该相对路径下的图片。但是hexo部署之后只可读入`![a](a.jpg)`该相对路径下的图片。若需要在Front Matter部分加入`typora-root-url: ./$fileName`可以减少要删的，从删`$fileName/`到只删`/`，但实质没有区别
+## 图片问题
+
+typora解析图片的根目录和hexo博客部署之后有点差别。typora可读入`![a](/a.jpg)`该相对路径下的图片。但是hexo部署之后只可读入`![a](a.jpg)`该相对路径下的图片。若需要在Front Matter部分加入`typora-root-url: ./$fileName`可以减少要删的，从删`$fileName/`到只删`/`，但实质没有区别。
+
+如果有超多图片的可以考虑用正则表达式批量删除`/`
 
 ## 超链接
 
