@@ -16,12 +16,12 @@
   <meta name="author" content="XT">
   <meta name="keywords" content="">
   
-    <meta name="description" content="homebrew安装homebrew是mac下的包管理器，类似linux下的apt-get。下载和卸载都比较简单，而Windows上的包管理器还在曲折发展中…… 不过更新支持m1芯片的homebrew更换了根目录，所以我需要重新安装。 先 brew bundle dump将已安装的包目录备份下来。 卸载旧版本： 1&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;ra">
+    <meta name="description" content="homebrew安装homebrew是mac下的包管理器，类似linux下的apt-get。下载和卸载都比较简单，而Windows上的包管理器还在曲折发展中…… 不过更新支持m1芯片的homebrew更换了根目录，所以我需要重新安装。 先brew bundle dump将已安装的包目录备份下来。 卸载旧版本： 1&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Homebrew On Mac">
 <meta property="og:url" content="https://mediocrityxt.github.io/blogsite/2020/12/06/HomebrewOnMac/index.html">
 <meta property="og:site_name" content="SummerSecret">
-<meta property="og:description" content="homebrew安装homebrew是mac下的包管理器，类似linux下的apt-get。下载和卸载都比较简单，而Windows上的包管理器还在曲折发展中…… 不过更新支持m1芯片的homebrew更换了根目录，所以我需要重新安装。 先 brew bundle dump将已安装的包目录备份下来。 卸载旧版本： 1&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;ra">
+<meta property="og:description" content="homebrew安装homebrew是mac下的包管理器，类似linux下的apt-get。下载和卸载都比较简单，而Windows上的包管理器还在曲折发展中…… 不过更新支持m1芯片的homebrew更换了根目录，所以我需要重新安装。 先brew bundle dump将已安装的包目录备份下来。 卸载旧版本： 1&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-05T17:35:17.000Z">
 <meta property="article:modified_time" content="2020-12-05T17:35:17.000Z">
@@ -71,7 +71,7 @@
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -246,13 +246,11 @@
             <div class="markdown-body">
               <h1 id="homebrew安装"><a href="#homebrew安装" class="headerlink" title="homebrew安装"></a>homebrew安装</h1><p>homebrew是mac下的包管理器，类似linux下的apt-get。下载和卸载都比较简单，而Windows上的包管理器还在曲折发展中……</p>
 <p>不过更新支持m1芯片的homebrew更换了根目录，所以我需要重新安装。</p>
-<p>先<code> brew bundle dump</code>将已安装的包目录备份下来。</p>
+<p>先<code>brew bundle dump</code>将已安装的包目录备份下来。</p>
 <p>卸载旧版本：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">/bin/bash -c <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)</span>&quot;</span><br></code></pre></div></td></tr></table></figure>
-
 <p>官网上的使用终端一键安装的命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">/bin/bash -c <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span><br></code></pre></div></td></tr></table></figure>
-
 <p>可惜，raw.githubusercontent.com被dns污染了。</p>
 <p>我的解决方式是用vpn翻出去用浏览器访问这个所需脚本，然后把内容复制到本地。</p>
 <p><code>sudo chmod -R 777 文件目录</code> 提权之后把上面命令中字符串换成install.sh的本地路径。</p>
@@ -289,9 +287,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blogsite/2021/01/08/%E6%9D%82%E7%BB%AA/">
+                      <a href="/blogsite/2021/01/08/21%E5%B9%B4%E6%9D%82%E7%BB%AA/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">杂绪</span>
+                        <span class="hidden-mobile">21年杂绪</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

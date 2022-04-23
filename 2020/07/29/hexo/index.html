@@ -23,14 +23,14 @@
 <meta property="og:site_name" content="SummerSecret">
 <meta property="og:description" content="记录一些关于为hexo博客用typora写markdown的尝试">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/29/hexo/QQ%E5%9B%BE%E7%89%8720200730152128.jpg">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/29/hexo/QQ图片20200730152128.jpg">
 <meta property="article:published_time" content="2020-07-29T05:25:08.000Z">
 <meta property="article:modified_time" content="2021-12-03T18:20:08.000Z">
 <meta property="article:author" content="XT">
 <meta property="article:tag" content="折腾">
 <meta property="article:tag" content="感悟">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mediocrityxt.github.io/blogsite/2020/07/29/hexo/QQ%E5%9B%BE%E7%89%8720200730152128.jpg">
+<meta name="twitter:image" content="https://mediocrityxt.github.io/blogsite/2020/07/29/hexo/QQ图片20200730152128.jpg">
   
   
   <title>markdown笔记/hexo记录 - SummerSecret</title>
@@ -74,7 +74,7 @@
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      2.2k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      18 分钟
+      19 分钟
     </span>
   
 
@@ -262,52 +262,56 @@
 <h1 id="初出茅庐"><a href="#初出茅庐" class="headerlink" title="初出茅庐"></a>初出茅庐</h1><p><del>这typora怎么用微软输入法打第一个汉字的时候自动跑到Front-Matter字段去了 好烦</del></p>
 <p>第一次使用markdown，记录一下 <del>复制来的</del></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs undefined">*斜体文本*<br>_斜体文本_<br>**加粗文本**<br>***斜体加粗文本***<br>~~下划线文本~~<br></code></pre></div></td></tr></table></figure>
-
 <p>井号 <code>#</code> 加空格 产生标题</p>
 <h2 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h2><p>每个Emoji对应一个Unicode</p>
-<p>在markdown里有两种表现方法：</p>
+<p>在typora markdown里表现方法：</p>
 <blockquote>
 <p>&amp;#x1f605；或者&amp;#128517； (&amp;#加编码加冒号为html里面标识特殊符号的方法；该表情Unicode为U+1F601，1F601前面加x表示十六进制/转为十进制)</p>
 </blockquote>
 <p>&#x1f605;&#128517;</p>
 <blockquote>
-<p>: sweat_smile :      两冒号中间加英文 快速打法 有些地方可能不兼容</p>
+<p>: sweat_smile :   两冒号中间加英文 typora中的快速打法 其他地方可能不兼容</p>
 </blockquote>
 <p>:sweat_smile:</p>
-<h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><p>使用latex格式输入公式，<em>typora使用mathjax渲染</em><br>$$<br>{\frac{a}{(1+b)}\cdot2\pi\alpha}<br>$$</p>
-<p>\begin{gathered}实现公式全部居中对齐</p>
+<blockquote>
+<p>直接mac输入法打出来的也是可以显示的</p>
+</blockquote>
+<p>😅</p>
+<h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><p>使用latex格式输入公式，<em>typora使用mathjax渲染</em></p>
+<script type="math/tex; mode=display">
+\{\frac{a}{(1+b)}\cdot2\pi\alpha\}</script><p>\begin{gathered}实现公式全部居中对齐</p>
 <p>\begin{align}配合&amp;可以自定义对齐点，没有&amp;时靠右对齐</p>
-<p><strong>换行时因为编译转义反斜杠，需要输入四个\而不是两个\才能正确在页面中实现换行。</strong></p>
+<p><strong>*注意⚠️：换行时因为hexo默认渲染引擎对mathjax支持不好，编译时转义反斜杠，需要输入四个\而不是两个\才能正确在页面中实现换行。*</strong></p>
+<p><a target="_blank" rel="noopener" href="https://wenghonghui.github.io/2020/03/05/hexo-mathjax/">解决办法</a>：<br>hexo-renderer-marked换成hexo-renderer-kramed</p>
 <blockquote>
 <p>在文章 Front-matter 里指定 <code>math: true</code> 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度</p>
 </blockquote>
 <p>H<sub>2</sub>O——typora自带<code>&lt;sub&gt;</code>标签实现下标</p>
 <h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>这里截取一段微信小程序代码 来自<code>musicmood</code> <del>小程序真难做啊</del></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">getMood:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-keyword">const</span> db = wx.cloud.database()<br>  db.collection(<span class="hljs-string">&quot;musicmood&quot;</span>).where(&#123;<br>    <span class="hljs-attr">music</span>:<span class="hljs-built_in">this</span>.data.musicUrl,<br>    <span class="hljs-attr">openid</span>:<span class="hljs-built_in">this</span>.data.openid<br>  &#125;).get()<br>  .then(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>&#123;<br>    <span class="hljs-built_in">this</span>.setData(&#123;<br>      <span class="hljs-attr">timeSample</span>:res.data[<span class="hljs-number">0</span>].time,<br>      <span class="hljs-attr">resonanceSample</span>:res.data[<span class="hljs-number">0</span>].resonance,<br>      <span class="hljs-attr">feelingSample</span>:res.data[<span class="hljs-number">0</span>].feeling<br>    &#125;)<br>  &#125;)<br>  .catch(<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(err)<br>  &#125;)<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-attr">getMood</span>:<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-keyword">const</span> db = wx.<span class="hljs-property">cloud</span>.<span class="hljs-title function_">database</span>()<br>  db.<span class="hljs-title function_">collection</span>(<span class="hljs-string">&quot;musicmood&quot;</span>).<span class="hljs-title function_">where</span>(&#123;<br>    <span class="hljs-attr">music</span>:<span class="hljs-variable language_">this</span>.<span class="hljs-property">data</span>.<span class="hljs-property">musicUrl</span>,<br>    <span class="hljs-attr">openid</span>:<span class="hljs-variable language_">this</span>.<span class="hljs-property">data</span>.<span class="hljs-property">openid</span><br>  &#125;).<span class="hljs-title function_">get</span>()<br>  .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>&#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>      <span class="hljs-attr">timeSample</span>:res.<span class="hljs-property">data</span>[<span class="hljs-number">0</span>].<span class="hljs-property">time</span>,<br>      <span class="hljs-attr">resonanceSample</span>:res.<span class="hljs-property">data</span>[<span class="hljs-number">0</span>].<span class="hljs-property">resonance</span>,<br>      <span class="hljs-attr">feelingSample</span>:res.<span class="hljs-property">data</span>[<span class="hljs-number">0</span>].<span class="hljs-property">feeling</span><br>    &#125;)<br>  &#125;)<br>  .<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err)<br>  &#125;)<br>&#125;<br></code></pre></div></td></tr></table></figure>
 <p>-别来</p>
 <p>-危险</p>
 <p>-<strong>前</strong> <strong>后</strong> <strong>夹</strong> <strong>击</strong></p>
-<p><img src="QQ%E5%9B%BE%E7%89%8720200730152128.jpg" srcset="/blogsite/img/loading.gif" lazyload alt="累了.jpg"></p>
-<p>typora解析图片的根目录和hexo博客部署之后有点差别。typora可读入<code>![a](/a.jpg)</code>该相对路径下的图片。但是hexo部署之后只可读入<code>![a](a.jpg)</code>该相对路径下的图片。若需要在Front Matter部分加入<code>typora-root-url: ./$fileName</code>可以减少要删的，从删<code>$fileName/</code>到只删<code>/</code>，但实质没有区别</p>
+<p><img src="QQ图片20200730152128.jpg" srcset="/blogsite/img/loading.gif" lazyload alt="累了.jpg"></p>
+<h2 id="图片问题"><a href="#图片问题" class="headerlink" title="图片问题"></a>图片问题</h2><p>typora解析图片的根目录和hexo博客部署之后有点差别。typora可读入<code>![a](/a.jpg)</code>该相对路径下的图片。但是hexo部署之后只可读入<code>![a](a.jpg)</code>该相对路径下的图片。若需要在Front Matter部分加入<code>typora-root-url: ./$fileName</code>可以减少要删的，从删<code>$fileName/</code>到只删<code>/</code>，但实质没有区别。</p>
+<p>如果有超多图片的可以考虑用正则表达式批量删除<code>/</code></p>
 <h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">&lt;https:<span class="hljs-regexp">//</span>www.baidu.com&gt;<br></code></pre></div></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://www.baidu.com/" title="有标识的超链接，百度网">百度</a>有链接标记，_即下面的数字1，也可以是任何文字_，便于作者自己统一更新文章链接</p>
+<p><a target="_blank" rel="noopener" href="https://www.baidu.com" title="有标识的超链接，百度网">百度</a>有链接标记，<em>即下面的数字1，也可以是任何文字</em>，便于作者自己统一更新文章链接</p>
 <hr>
 <p>还有一种是脚注，与上面会标蓝的链接的注释不同。</p>
 <p>百度<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="网址为www.baidu.com
-"><a target="_blank" rel="noopener" href="https://www.baidu.com/" title="有标识的超链接，百度网">1</a></span></a></sup></p>
+"><a target="_blank" rel="noopener" href="https://www.baidu.com" title="有标识的超链接，百度网">1</a></span></a></sup></p>
 <hr>
 <p>不知道为什么分割线粗细随机</p>
 <blockquote>
-<p>还有[百度]（<a target="_blank" rel="noopener" href="https://www.baidu.com/">https://www.baidu.com</a>)</p>
+<p>还有[百度]（<a target="_blank" rel="noopener" href="https://www.baidu.com">https://www.baidu.com</a>)</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.baidu.com/#dada">百度</a></p>
 <hr>
 <p>这里也可以在括号中输入#(标题名称)做到<strong>页面内跳转</strong></p>
-<p><a href="#%E8%B6%85%E9%93%BE%E6%8E%A5">实例</a></p>
+<p><a href="#超链接">实例</a></p>
 <hr>
-<h1 id="解决的Hexo问题"><a href="#解决的Hexo问题" class="headerlink" title="解决的Hexo问题"></a>解决的Hexo问题</h1><p>banner加载不了    =&gt;     <em><strong>注意文件后缀名</strong></em></p>
+<h1 id="解决的Hexo问题"><a href="#解决的Hexo问题" class="headerlink" title="解决的Hexo问题"></a>解决的Hexo问题</h1><p>banner加载不了    =&gt;     <strong><em>注意文件后缀名</em></strong></p>
 <p>图片无法get    =&gt;    本地预览的时候在文件夹里，实际生成网址在根目录，需要手动删去图片前文件夹名</p>
 <p>能不能每次new的时候自动生成更多Front-Matter字段？ =&gt; 博客目录scaffolds文件夹下就是hexo new生成文件的模板</p>
 <p>Hexo-generator-index的lib里的generator负责index页面的文章排序。</p>
@@ -316,12 +320,10 @@
 <li>分行</li>
 </ol>
 <figure class="highlight subunit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs subunit"><span class="hljs-keyword">tags:</span><br>- tag1<br>- tag2<br></code></pre></div></td></tr></table></figure>
-
-<ol start="2">
+<ol>
 <li>元组</li>
 </ol>
 <figure class="highlight subunit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs subunit"><span class="hljs-keyword">tags:</span> [tag1,tag2]<br></code></pre></div></td></tr></table></figure>
-
 <p>对网站大图标和小图标都进行了优化：Apple-Touch-Icon是显示在Safari书签栏的大LOGO。<br>图标搜索的优先级如下：</p>
 <ul>
 <li>如果没有跟相应设备推荐尺寸一致的图标，那个会优先使用比推荐尺寸大，但最接近推荐尺寸的图标。</li>
@@ -329,7 +331,7 @@
 <li>如些有多个图标符合推荐尺寸，会优先选择包含关键字precomposed的图标。</li>
 </ul>
 <p>比如知乎的Size有60x60,76x76,120x120,152x152<br>不周山博客的Size只有180x180但显示了</p>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>网址为<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>网址为www.baidu.com
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>

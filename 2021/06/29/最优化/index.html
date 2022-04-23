@@ -97,7 +97,7 @@
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -229,7 +229,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      15k 字
+      8.3k 字
     </span>
   
 
@@ -238,7 +238,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      124 分钟
+      70 分钟
     </span>
   
 
@@ -280,11 +280,35 @@
 <p>张成子空间：向量集中任意向量之间所有线性组合的集合。张成子空间中的一组线性无关向量则称为子空间的一组基。</p>
 <h2 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h2><p>线性代数中的变换遵守两个原则，1. 所有直线还是直线（所有空间中的向量变换后线性组合系数依然不变，实质上是对基向量的变换实现了所有向量的变换。）、2. 原点不动。[若满足1不满足2则为仿射变换]</p>
 <h3 id="相似"><a href="#相似" class="headerlink" title="相似"></a>相似</h3><p>（基变换） 若存在非奇异矩阵T，令$A=T^{-1}BT$，则A与B相似。相似矩阵表示相同线性变换。证明：</p>
-<p>同一个空间可以用不同基向量形成的坐标系来描述。假设B是默认坐标系里的某种线性变换，A则是新坐标系下对空间相同的线性变换。<br>$$<br>A\vec x=T^{-1}BT\vec x<br>$$<br>可以看出当x用新坐标系描述的某向量，则Tx相当于默认坐标系下的该向量。而T就相当于将新坐标系变换到默认坐标系，T的逆则是将默认坐标系再变回新坐标系。</p>
+<p>同一个空间可以用不同基向量形成的坐标系来描述。假设B是默认坐标系里的某种线性变换，A则是新坐标系下对空间相同的线性变换。</p>
+<script type="math/tex; mode=display">
+A\vec x=T^{-1}BT\vec x</script><p>可以看出当x用新坐标系描述的某向量，则Tx相当于默认坐标系下的该向量。而T就相当于将新坐标系变换到默认坐标系，T的逆则是将默认坐标系再变回新坐标系。</p>
 <p><strong>一句话总结：</strong>将陌生坐标系下的向量，左乘T翻译为默认坐标系下的向量，所以左乘B得到默认坐标系下发生变换得到的结果向量，再左乘T的逆，将结果向量翻译成陌生坐标系下的结果向量。所以$A=T^{-1}BT$，陌生坐标系下的线性变换A与默认坐标系下的线性变换B相同。</p>
 <h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h3 id="直观理解"><a href="#直观理解" class="headerlink" title="直观理解"></a>直观理解</h3><p>矩阵本质是一组基。<strong>这组基是单位正交基经过线性变换后得到的向量。</strong>矩阵因为包含了这组变换后的基，可以表示这次线性变换。类似</p>
-<p>现在看三维的单位矩阵<br>$$<br>I=\begin{bmatrix}<br>1 &amp; 0 &amp; 0 \<br>0&amp;1&amp;0\<br>0&amp;0&amp;1\<br>\end{bmatrix}<br>$$<br>为什么$Ix=x$？</p>
-<p>因为右侧默认的三维空间基向量就是I的列向量，也即单位正交基。<br>$$<br>e_1=\begin{bmatrix}<br>1\0\0<br>\end{bmatrix}<br>,\quad<br>e_2=\begin{bmatrix}<br>0\1\0<br>\end{bmatrix}<br>,\quad<br>e_3=\begin{bmatrix}<br>0\0\1<br>\end{bmatrix}<br>$$<br>看一个n维矩阵<br>$$<br>A=\begin{bmatrix}<br>a_1,a_2,\cdots,a_n<br>\end{bmatrix}\<br>$$<br>$a_i$均为长度为n的列向量，表示某单位正交基**$e_i$在经过A表示的变换之后的基向量**在空间中的位置（向量$a_i$中的数字为用单位正交基表示该位置的线性组合系数）。</p>
+<p>现在看三维的单位矩阵</p>
+<script type="math/tex; mode=display">
+I=\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}</script><p>为什么$Ix=x$？</p>
+<p>因为右侧默认的三维空间基向量就是I的列向量，也即单位正交基。</p>
+<script type="math/tex; mode=display">
+e_1=\begin{bmatrix}
+1\\0\\0
+\end{bmatrix}
+,\quad
+e_2=\begin{bmatrix}
+0\\1\\0
+\end{bmatrix}
+,\quad
+e_3=\begin{bmatrix}
+0\\0\\1
+\end{bmatrix}</script><p>看一个n维矩阵</p>
+<script type="math/tex; mode=display">
+A=\begin{bmatrix}
+a_1,a_2,\cdots,a_n
+\end{bmatrix}\\</script><p>$a_i$均为长度为n的列向量，表示某单位正交基<strong>$e_i$在经过A表示的变换之后的基向量</strong>在空间中的位置（向量$a_i$中的数字为用单位正交基表示该位置的线性组合系数）。</p>
 <p>矩阵相乘，如AB=C，可理解为B中每列所表示的基向量都经历了A所表示的线性变换后，该列向量成为新的能够表示先B后A的两次线性变换的基向量保存在C中。</p>
 <h3 id="行列式：-detA、-A"><a href="#行列式：-detA、-A" class="headerlink" title="行列式：$detA、|A|$"></a>行列式：$detA、|A|$</h3><p>首先定义在原本空间$\mathbb{R}^n$中由单位正交基作为边，定义的<strong>单位大小空间</strong>（在2维空间中是单位正方形；3维空间中是单位立方体）。经过A的线性变换后得到的<strong>新空间$\mathbb{R}^m$的单位大小空间</strong>是由A中保存的新空间的基向量作为边定义的。</p>
 <p>而detA的值（绝对值）就是新空间$\mathbb{R}^m$的单位大小空间在原本空间$\mathbb{R}^n$中的大小，也表示空间大小变化的比例。</p>
@@ -298,39 +322,74 @@
 <p>保秩运算有：</p>
 <p>a)矩阵的初等变换；<br>b)矩阵中加入一列，且该列式列向量组的线性组合；<br>c)矩阵乘以可逆矩阵<br>d) 转置、旋转、镜像、……</p>
 </blockquote>
-<h3 id="列空间与零空间的关系"><a href="#列空间与零空间的关系" class="headerlink" title="列空间与零空间的关系"></a>列空间与零空间的关系</h3><p>【来自MIT公开课：以 2020 年的全新眼光审视线性代数】矩阵转置：$A$的列空间是$A^T$的行空间。$A^T$的列空间是$A$的行空间。<br>$$<br>\left{\begin{array}{r}<br>Ax=0\<br>A^Ty=0<br>\end{array}<br>\right.<br>$$<br>上式中所有$x$的集合为A的零空间，A的零空间中任意向量都与A的任意行向量正交，所以称A的零空间与A的行空间正交，又因为转置的性质，所以有：<br>$$<br>N(A)\perp C(A^T),N(A^T)\perp C(A)<br>\N(A)表示A的零空间，C(A)表示A的列空间<br>$$<br>根据零空间定义，所以A的行空间中任意向量x都有Ax=b，b不为0。b的全体集合为A的列空间。</p>
+<h3 id="列空间与零空间的关系"><a href="#列空间与零空间的关系" class="headerlink" title="列空间与零空间的关系"></a>列空间与零空间的关系</h3><p>【来自MIT公开课：以 2020 年的全新眼光审视线性代数】矩阵转置：$A$的列空间是$A^T$的行空间。$A^T$的列空间是$A$的行空间。</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{r}
+Ax=0\\
+A^Ty=0
+\end{array}
+\right.</script><p>上式中所有$x$的集合为A的零空间，A的零空间中任意向量都与A的任意行向量正交，所以称A的零空间与A的行空间正交，又因为转置的性质，所以有：</p>
+<script type="math/tex; mode=display">
+N(A)\perp C(A^T),N(A^T)\perp C(A)
+\\N(A)表示A的零空间，C(A)表示A的列空间</script><p>根据零空间定义，所以A的行空间中任意向量x都有Ax=b，b不为0。b的全体集合为A的列空间。</p>
 <p><img src="image-20210303205435001.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210303205435001"></p>
 <h2 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h2><p>$Ax=b$</p>
 <p>指找到某向量x能经过A变换为b；或者找到b经过$A^{-1}$变换后的向量x。</p>
 <p>特解+基础解系：对A的0空间进行平移(Manifold,流形)</p>
 <h2 id="向量的内积与范数（欧氏空间）"><a href="#向量的内积与范数（欧氏空间）" class="headerlink" title="向量的内积与范数（欧氏空间）"></a>向量的内积与范数（欧氏空间）</h2><p>两向量内积可以刻画两向量相差的角度，内积函数具有非负性、对称性、可加性、齐次性。</p>
 <p><img src="image-20210309092601106.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210309092601106"></p>
-<p>欧式内积为$&lt;x,y&gt;=x^T y$，还可以定义许多不同内积函数。&lt;x,y&gt;=0则x,y正交。</p>
+<p>欧式内积为$<x,y>=x^T y$，还可以定义许多不同内积函数。<x,y>=0则x,y正交。</p>
 <p>复空间内积定义与实空间不同。</p>
-<h3 id="【来自线性代数的本质】向量点积："><a href="#【来自线性代数的本质】向量点积：" class="headerlink" title="【来自线性代数的本质】向量点积："></a>【来自线性代数的本质】向量点积：</h3><p>$$<br>u\cdot v=\begin{bmatrix}u_1\u_2\end{bmatrix}\cdot \begin{bmatrix}v_1\v_2\end{bmatrix}<br>\Leftrightarrow\begin{bmatrix}u_1\space u_2\end{bmatrix} \begin{bmatrix}v_1\v_2\end{bmatrix}=Uv<br>$$</p>
-<p>$u\cdot v=|u||v|cos\theta$可以理解为v向u做投影，投影与u相乘；或者理解为将二维平面进行降维的线性变换U——因为$[1,0]$投影到u所在直线上的长度为$cos\theta$，因为$[0,1]$投影到u所在直线上的长度为$sin\theta$，而$\frac{u_1}{u_2}=|u|\frac{cos\theta}{sin\theta}$所以这个变换U相当于<strong>把整个二维平面投影到u所在的直线上然后进行|u|倍缩放</strong>。</p>
+<h3 id="【来自线性代数的本质】向量点积："><a href="#【来自线性代数的本质】向量点积：" class="headerlink" title="【来自线性代数的本质】向量点积："></a>【来自线性代数的本质】向量点积：</h3><script type="math/tex; mode=display">
+u\cdot v=\begin{bmatrix}u_1\\u_2\end{bmatrix}\cdot \begin{bmatrix}v_1\\v_2\end{bmatrix}
+\Leftrightarrow\begin{bmatrix}u_1\space u_2\end{bmatrix} \begin{bmatrix}v_1\\v_2\end{bmatrix}=Uv</script><p>$u\cdot v=|u||v|cos\theta$可以理解为v向u做投影，投影与u相乘；或者理解为将二维平面进行降维的线性变换U——因为$[1,0]$投影到u所在直线上的长度为$cos\theta$，因为$[0,1]$投影到u所在直线上的长度为$sin\theta$，而$\frac{u_1}{u_2}=|u|\frac{cos\theta}{sin\theta}$所以这个变换U相当于<strong>把整个二维平面投影到u所在的直线上然后进行|u|倍缩放</strong>。</p>
 <p>引申到n维向量uv点乘，可以理解为n维空间中的v向量投影到u所在直线然后缩放，输入为n维，输出为1维。</p>
-<h3 id="向量范数"><a href="#向量范数" class="headerlink" title="向量范数"></a>向量范数</h3><p>范数可以刻画向量长度。范数有非负性、齐次性、三角不等式。欧式范数（2范数）$||x||=\sqrt{&lt;x,x&gt;}=\sqrt{x^Tx}$。还有1-范数、p-范数、inf-范数。范数等价性：某范数的上下界能被其他范数表示。</p>
+<h3 id="向量范数"><a href="#向量范数" class="headerlink" title="向量范数"></a>向量范数</h3><p>范数可以刻画向量长度。范数有非负性、齐次性、三角不等式。欧式范数（2范数）$||x||=\sqrt{<x,x>}=\sqrt{x^Tx}$。还有1-范数、p-范数、inf-范数。范数等价性：某范数的上下界能被其他范数表示。</p>
 <p>1范数：所有分量绝对值之和<br>2范数：所有元素平方和的平方根（欧氏距离）<br>inf-范数（无穷范数）：元素绝对值中最大的一个<br>p范数：2范数的平方、开平方改为p次方、开p次方(p&gt;=1)</p>
-<h3 id="柯西-施瓦兹不等式"><a href="#柯西-施瓦兹不等式" class="headerlink" title="柯西-施瓦兹不等式"></a>柯西-施瓦兹不等式</h3><p>$$<br>对于R^n中任意x,y有\<br>|\langle x,y\rangle|\le||x||\space||y||<br>$$</p>
-<h3 id="叉积"><a href="#叉积" class="headerlink" title="叉积"></a>叉积</h3><p>$$<br>二维情况下：\<br>|\vec{v} \times\vec{w}|=det([\vec{v},\vec{w}])=det(<br>\begin{bmatrix}v_1 &amp;w_1\<br>v_2&amp;w_2<br>\end{bmatrix})<br>\<br>|\vec{v} \times\vec{w}|=|\vec v||\vec w|sin\theta<br>$$</p>
-<p>两向量作为列向量组合成一个矩阵，叉乘得到两向量平面的法向量（右手定则确定方向），长度等于该矩阵行列式。【一般只考虑3维情况】</p>
-<h4 id="叉乘计算方法证明："><a href="#叉乘计算方法证明：" class="headerlink" title="叉乘计算方法证明："></a>叉乘计算方法证明：</h4><p>三维空间下，将任意向量x投影到法向量直线上，长度再与v和w夹成的平行四边形面积相乘，等于矩阵$[\vec x,\vec v,\vec w]$的行列式，也即这三个向量夹成的平行六面体的体积。只要定义$\vec{v} \times\vec{w}$表示其长度为平行四边形面积，根据空间定向有其正方向的法向量则得到：<br>$$<br>设\quad\vec{v} \times\vec{w}=p_1\hat i+p_2\hat j+p_3\hat k\<br>det([\vec x,\vec v,\vec w])=(\vec{v} \times\vec{w})\cdot \vec x=p_1x_1+p_2x_2+p_3x_3\</p>
-<p>将x_1,x_2,x_3替换为\hat i,\hat j,\hat k\<br>则\quad\vec{v} \times\vec{w}=det(\begin{bmatrix}\hat i&amp;v_1&amp;w_1\<br>\hat j&amp;v_2&amp;w_2\<br>\hat k&amp;v_3&amp;w_3\<br>\end{bmatrix})<br>$$<br>四维下：vw也依然是一个法向量。需要解决非方阵行列式。$det(A_{3\times 4})$</p>
+<h3 id="柯西-施瓦兹不等式"><a href="#柯西-施瓦兹不等式" class="headerlink" title="柯西-施瓦兹不等式"></a>柯西-施瓦兹不等式</h3><script type="math/tex; mode=display">
+对于R^n中任意x,y有\\
+|\langle x,y\rangle|\le||x||\space||y||</script><h3 id="叉积"><a href="#叉积" class="headerlink" title="叉积"></a>叉积</h3><script type="math/tex; mode=display">
+二维情况下：\\
+|\vec{v} \times\vec{w}|=det([\vec{v},\vec{w}])=det(
+\begin{bmatrix}v_1 &w_1\\
+v_2&w_2
+\end{bmatrix})
+\\
+|\vec{v} \times\vec{w}|=|\vec v||\vec w|sin\theta</script><p>两向量作为列向量组合成一个矩阵，叉乘得到两向量平面的法向量（右手定则确定方向），长度等于该矩阵行列式。【一般只考虑3维情况】</p>
+<h4 id="叉乘计算方法证明："><a href="#叉乘计算方法证明：" class="headerlink" title="叉乘计算方法证明："></a>叉乘计算方法证明：</h4><p>三维空间下，将任意向量x投影到法向量直线上，长度再与v和w夹成的平行四边形面积相乘，等于矩阵$[\vec x,\vec v,\vec w]$的行列式，也即这三个向量夹成的平行六面体的体积。只要定义$\vec{v} \times\vec{w}$表示其长度为平行四边形面积，根据空间定向有其正方向的法向量则得到：</p>
+<script type="math/tex; mode=display">
+设\quad\vec{v} \times\vec{w}=p_1\hat i+p_2\hat j+p_3\hat k\\
+det([\vec x,\vec v,\vec w])=(\vec{v} \times\vec{w})\cdot \vec x=p_1x_1+p_2x_2+p_3x_3\\
+
+将x_1,x_2,x_3替换为\hat i,\hat j,\hat k\\
+则\quad\vec{v} \times\vec{w}=det(\begin{bmatrix}\hat i&v_1&w_1\\
+\hat j&v_2&w_2\\
+\hat k&v_3&w_3\\
+\end{bmatrix})</script><p>四维下：vw也依然是一个法向量。需要解决非方阵行列式。$det(A_{3\times 4})$</p>
 <h2 id="矩阵范数与其他性质"><a href="#矩阵范数与其他性质" class="headerlink" title="矩阵范数与其他性质"></a>矩阵范数与其他性质</h2><h3 id="矩阵范数"><a href="#矩阵范数" class="headerlink" title="矩阵范数"></a>矩阵范数</h3><p>F范数：所有元素平方和的平方根<br>1范数：各列中最大的列元素绝对值之和<br>2范数：$\sqrt \lambda，\lambda $是$A^HA$的最大特征值。（AH是共轭转置矩阵，对每个元素取共轭复数，再转置。A全为实数时AH等于A的转置。）<br>无穷范数：各行中最大的行元素绝对值之和</p>
 <p>导出范数：（如谱范数）<br><img src="image-20210617143201449.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210617143201449"></p>
-<h3 id="特征值"><a href="#特征值" class="headerlink" title="特征值"></a>特征值</h3><p>$$<br>\begin{aligned}<br>A\vec v&amp;=\lambda\vec v\<br>A\vec v&amp;=\lambda I\vec v\<br>(A- \lambda I)\vec v&amp;=0\</p>
-<p>\end{aligned}<br>$$</p>
-<p>该线性方程组要有非零解则需<br>$$<br>det(A- \lambda I)=0<br>$$<br>按定义展开行列式则得到矩阵A的特征多项式，多项式的根则为特征值（若根为虚数，则一般对应旋转变换，行列式不为0）</p>
-<p>特征向量矩阵P<br>$$<br>\Lambda=P^{-1}AP<br>$$</p>
-<h3 id="实对称矩阵"><a href="#实对称矩阵" class="headerlink" title="实对称矩阵"></a>实对称矩阵</h3><p>实对称矩阵特征值全是实数；反对称矩阵特征值为0或纯虚数。</p>
-<p>实对称矩阵A可以被特征分解为<br>$$<br>A=Q^{-1}\Lambda Q<br>$$<br>所以A相当于对原本空间只在正交的特征向量方向上缩放而不旋转空间。</p>
+<h3 id="特征值"><a href="#特征值" class="headerlink" title="特征值"></a>特征值</h3><script type="math/tex; mode=display">
+\begin{aligned}
+A\vec v&=\lambda\vec v\\
+A\vec v&=\lambda I\vec v\\
+(A- \lambda I)\vec v&=0\\
+
+\end{aligned}</script><p>该线性方程组要有非零解则需</p>
+<script type="math/tex; mode=display">
+det(A- \lambda I)=0</script><p>按定义展开行列式则得到矩阵A的特征多项式，多项式的根则为特征值（若根为虚数，则一般对应旋转变换，行列式不为0）</p>
+<p>特征向量矩阵P</p>
+<script type="math/tex; mode=display">
+\Lambda=P^{-1}AP</script><h3 id="实对称矩阵"><a href="#实对称矩阵" class="headerlink" title="实对称矩阵"></a>实对称矩阵</h3><p>实对称矩阵特征值全是实数；反对称矩阵特征值为0或纯虚数。</p>
+<p>实对称矩阵A可以被特征分解为</p>
+<script type="math/tex; mode=display">
+A=Q^{-1}\Lambda Q</script><p>所以A相当于对原本空间只在正交的特征向量方向上缩放而不旋转空间。</p>
 <h3 id="正交矩阵"><a href="#正交矩阵" class="headerlink" title="正交矩阵"></a>正交矩阵</h3><p>$Q^T=Q^{-1}$，它的转置矩阵等于它的逆矩阵。该方阵的列向量都是标准正交(orthonormal)向量。</p>
 <h3 id="正交投影"><a href="#正交投影" class="headerlink" title="正交投影"></a>正交投影</h3><p>子空间与其正交补空间可以张成全空间。</p>
 <p>正交分解</p>
 <p>正交投影算子P，能使所有Px与x-Px正交</p>
-<h2 id="二次型"><a href="#二次型" class="headerlink" title="二次型"></a>二次型</h2><p>$$<br>f(x) = x^\top Q x\<br>一般令Q为对称矩阵<br>$$</p>
-<p>正定二次型/半正定/负定</p>
+<h2 id="二次型"><a href="#二次型" class="headerlink" title="二次型"></a>二次型</h2><script type="math/tex; mode=display">
+f(x) = x^\top Q x\\
+一般令Q为对称矩阵</script><p>正定二次型/半正定/负定</p>
 <p>Q是否为正定矩阵的判定方法：</p>
 <ul>
 <li><p>Q行列式小于等于0，则不可能正定</p>
@@ -345,9 +404,11 @@
 </li>
 </ul>
 <h2 id="瑞利不等式"><a href="#瑞利不等式" class="headerlink" title="瑞利不等式"></a>瑞利不等式</h2><p><img src="image-20210617152537264.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210617152537264"></p>
-<h1 id="解析几何"><a href="#解析几何" class="headerlink" title="解析几何"></a>解析几何</h1><h2 id="R-N-线段"><a href="#R-N-线段" class="headerlink" title="$R^N$线段"></a>$R^N$线段</h2><p>x,y两向量（可以看做两个点）<br>$$<br>{\alpha \textbf x +(1-\alpha)\textbf y }<br>$$<br><strong>凸组合</strong>=&gt;线段 ：$\alpha \in [0,1]$</p>
+<h1 id="解析几何"><a href="#解析几何" class="headerlink" title="解析几何"></a>解析几何</h1><h2 id="R-N-线段"><a href="#R-N-线段" class="headerlink" title="$R^N$线段"></a>$R^N$线段</h2><p>x,y两向量（可以看做两个点）</p>
+<script type="math/tex; mode=display">
+\{\alpha \textbf x +(1-\alpha)\textbf y \}</script><p><strong>凸组合</strong>=&gt;线段 ：$\alpha \in [0,1]$</p>
 <p>线性组合=&gt;直线</p>
-<h2 id="超平面"><a href="#超平面" class="headerlink" title="超平面"></a>超平面</h2><p>相当于n维空间中找一个法向量u,令&lt;u,x&gt;=v的所有向量x集合就是一个超平面。</p>
+<h2 id="超平面"><a href="#超平面" class="headerlink" title="超平面"></a>超平面</h2><p>相当于n维空间中找一个法向量u,令<u,x>=v的所有向量x集合就是一个超平面。</p>
 <h2 id="线性簇"><a href="#线性簇" class="headerlink" title="线性簇"></a>线性簇</h2><p>满足Ax=b的x集合</p>
 <p>b=0则线性簇是A的零空间，过零点，所以是R^n的子空间；<br>b不为0，则线性簇是一个流形。</p>
 <blockquote>
@@ -364,8 +425,9 @@
 <p>k维多面体的面：边界中的任何一个k-1维多面体，以及组成该k-1维多面体的k-2维多面体，以及组成k-2维多面体的……<br>每个k维多面体都具有维数为k-1、k-2、…、1、0的多个面。</p>
 <p>一个多面体的零维面称为顶点，一维面称为棱。</p>
 <h2 id="凸函数"><a href="#凸函数" class="headerlink" title="凸函数"></a>凸函数</h2><p>函数曲线上方所有点形成一个凸集。</p>
-<p>凸函数定义域上任意两点x1、x2，总有<br>$$<br>f(\frac{x1+x2}{2})\le \frac {f(x1)+f(x2)} 2<br>$$</p>
-<h1 id="微积分"><a href="#微积分" class="headerlink" title="微积分"></a>微积分</h1><h2 id="雅可比矩阵（导数）"><a href="#雅可比矩阵（导数）" class="headerlink" title="雅可比矩阵（导数）"></a>雅可比矩阵（导数）</h2><p>第i行第j列是f_i对x_j的偏导。函数值为标量则雅可比矩阵是行向量。</p>
+<p>凸函数定义域上任意两点x1、x2，总有</p>
+<script type="math/tex; mode=display">
+f(\frac{x1+x2}{2})\le \frac {f(x1)+f(x2)} 2</script><h1 id="微积分"><a href="#微积分" class="headerlink" title="微积分"></a>微积分</h1><h2 id="雅可比矩阵（导数）"><a href="#雅可比矩阵（导数）" class="headerlink" title="雅可比矩阵（导数）"></a>雅可比矩阵（导数）</h2><p>第i行第j列是f_i对x_j的偏导。函数值为标量则雅可比矩阵是行向量。</p>
 <h2 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h2><p>雅可比矩阵的转置得到梯度。</p>
 <p>梯度是函数具有最大变化率的方向。</p>
 <h2 id="方向导数"><a href="#方向导数" class="headerlink" title="方向导数"></a>方向导数</h2><p>梯度与指向某方向的单位向量的内积。</p>
@@ -373,7 +435,9 @@
 <p>对雅可比矩阵在另一维展开，第i行第j列是f先对x_i求偏导再对x_j求偏导的二阶导数。</p>
 <p><strong>若标量函数二次连续可微，则黑塞矩阵对称。</strong></p>
 <h2 id="链式法则"><a href="#链式法则" class="headerlink" title="链式法则"></a>链式法则</h2><p>可以先用偏导方法确定好雅可比矩阵的维度匹配，再计算。<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yifanrensheng/p/12639539.html">参考</a></p>
-<p>比如当z为标量，x,y为m,n维列向量时，若x-&gt;y-&gt;z，则<br>$$<br>\frac {\partial z}{\partial \textbf x}= (\frac {\partial y}{\partial \textbf x})^\top \frac {\partial z}{\partial \textbf y}<br>$$<br><img src="image-20210620132314622.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210620132314622"></p>
+<p>比如当z为标量，x,y为m,n维列向量时，若x-&gt;y-&gt;z，则</p>
+<script type="math/tex; mode=display">
+\frac {\partial z}{\partial \textbf x}= (\frac {\partial y}{\partial \textbf x})^\top \frac {\partial z}{\partial \textbf y}</script><p><img src="image-20210620132314622.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210620132314622"></p>
 <h2 id="求导公式"><a href="#求导公式" class="headerlink" title="求导公式"></a>求导公式</h2><p><img src="image-20210402144741983.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210402144741983"></p>
 <h2 id="局部极小点-条件"><a href="#局部极小点-条件" class="headerlink" title="局部极小点-条件"></a>局部极小点-条件</h2><h3 id="一阶必要条件"><a href="#一阶必要条件" class="headerlink" title="一阶必要条件"></a>一阶必要条件</h3><p>（内点）驻点 梯度为0</p>
 <p>（边界点）任意可行方向与梯度内积大于等于0</p>
@@ -389,7 +453,17 @@
 <h2 id="黄金分割法"><a href="#黄金分割法" class="headerlink" title="黄金分割法"></a>黄金分割法</h2><p>计算两个分割点的函数值大小，两个分割点形成三个区间，极小值在<strong>函数值较小的点的左右两区间</strong>范围内。</p>
 <p>黄金分割比的特性令上一次的较小分割点依然是下一次迭代中的一个分割点，减少计算量。</p>
 <blockquote>
-<p>e.g.<br>[0,1]区间内设定两个左右分割点$\lambda,\mu$满足<br>$$<br>\begin{cases}<br>\lambda = 1-\mu \<br>\frac \mu 1 = \frac \lambda \mu<br>\end{cases}<br>\Rightarrow<br>\begin{cases}<br>\lambda = \frac {3-\sqrt 5}2 \approx 0.382 \<br>\mu = \frac {\sqrt 5 -1}2 \approx 0.618<br>\end{cases}<br>$$<br>意思是缩小到$[0,\mu]$区间后，只需要再加一个左分割点，原本的$\lambda$成为新区间的右分割点。</p>
+<p>e.g.<br>[0,1]区间内设定两个左右分割点$\lambda,\mu$满足</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\lambda = 1-\mu \\
+\frac \mu 1 = \frac \lambda \mu
+\end{cases}
+\Rightarrow
+\begin{cases}
+\lambda = \frac {3-\sqrt 5}2 \approx 0.382 \\
+\mu = \frac {\sqrt 5 -1}2 \approx 0.618
+\end{cases}</script><p>意思是缩小到$[0,\mu]$区间后，只需要再加一个左分割点，原本的$\lambda$成为新区间的右分割点。</p>
 </blockquote>
 <p>总压缩比：0.618^N</p>
 <blockquote>
@@ -400,8 +474,9 @@
 <p>且这个动态的压缩比序列依然满足上一次迭代的较小分割点是下一次迭代的分割点的条件，也就是说计算量没有增加。</p>
 <h2 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h2><p>利用连续可导单峰函数的<strong>一阶导数</strong>信息。每次找区间中点，根据导数正负选择缩小为左区间或右区间，导数为0则找到极值点。</p>
 <p>总压缩比：0.5^N</p>
-<h2 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h2><p>利用一阶二阶导数信息。将f(x)在x(k)点二阶泰勒展开得到二次多项式q(x)用来近似f(x)，取q’(x)=0则有牛顿法公式：<br>$$<br>x^{(k+1)}=x^{(k)}-\frac{f’(x^{(k)})}{f’’(x^{(k)})}<br>$$</p>
-<blockquote>
+<h2 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h2><p>利用一阶二阶导数信息。将f(x)在x(k)点二阶泰勒展开得到二次多项式q(x)用来近似f(x)，取q’(x)=0则有牛顿法公式：</p>
+<script type="math/tex; mode=display">
+x^{(k+1)}=x^{(k)}-\frac{f'(x^{(k)})}{f''(x^{(k)})}</script><blockquote>
 <p>若f’’(x)&gt;0对于区间恒成立则牛顿法正常收敛到极小点；<br>若某些点处f’’(x)&lt;0则牛顿法可能收敛到极大点</p>
 </blockquote>
 <h3 id="牛顿切线法"><a href="#牛顿切线法" class="headerlink" title="牛顿切线法"></a>牛顿切线法</h3><p>令f’(x)=g(x),f’’(x)=g’(x)可以用牛顿法来求解方程g(x)=0</p>
@@ -409,8 +484,11 @@
 <blockquote>
 <p>如果起始点迭代变化值g(x0)/g’(x0)不是足够小，可能不收敛。</p>
 </blockquote>
-<h2 id="割线法"><a href="#割线法" class="headerlink" title="割线法"></a>割线法</h2><p>牛顿法的二次导数可用近似来代替。<br>$$<br>f’’(x^{(k)})\approx\frac{f’(x^{(k)})-f’(x^{(k-1)})}{x^{(k)}-x^{(k-1)}}\<br>割线法需要两个起始点x^{(-1)}和x^{(0)}\<br>x^{(k+1)}=\frac{f’(x^{(k)})x^{(k-1)}-f’(x^{(k-1)})x^{(k)}}{f’(x^{(k)})-f’(x^{(k-1)})}<br>$$</p>
-<h2 id="插值类方法"><a href="#插值类方法" class="headerlink" title="插值类方法"></a>插值类方法</h2><p>搜索区间用低次（不超过三次）多项式插值近似目标函数。上一个点处插值多项式的驻点，就是下一个迭代点。</p>
+<h2 id="割线法"><a href="#割线法" class="headerlink" title="割线法"></a>割线法</h2><p>牛顿法的二次导数可用近似来代替。</p>
+<script type="math/tex; mode=display">
+f''(x^{(k)})\approx\frac{f'(x^{(k)})-f'(x^{(k-1)})}{x^{(k)}-x^{(k-1)}}\\
+割线法需要两个起始点x^{(-1)}和x^{(0)}\\
+x^{(k+1)}=\frac{f'(x^{(k)})x^{(k-1)}-f'(x^{(k-1)})x^{(k)}}{f'(x^{(k)})-f'(x^{(k-1)})}</script><h2 id="插值类方法"><a href="#插值类方法" class="headerlink" title="插值类方法"></a>插值类方法</h2><p>搜索区间用低次（不超过三次）多项式插值近似目标函数。上一个点处插值多项式的驻点，就是下一个迭代点。</p>
 <ul>
 <li>牛顿法：一点二次插值（用该点的一阶导、二阶导来求多项式）</li>
 <li>割线法：两点二次插值（用两个点的一阶导来求多项式）</li>
@@ -431,29 +509,40 @@
 <h1 id="步长选取（第7章附-PPT）"><a href="#步长选取（第7章附-PPT）" class="headerlink" title="步长选取（第7章附-PPT）"></a>步长选取（第7章附-PPT）</h1><p>Armijo准则：该条直线之上的点不能选，比如离原点远的，防止步长过大。<br><img src="image-20210622100047166.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210622100047166"></p>
 <p>Goldstein准则：基于Armijo再加一条直线，该条直线之下的点不能选，比如离原点近的，防止步长过小。<br><img src="image-20210622100100902.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210622100100902"></p>
 <p>Wolfe准则：除了Armijo准则之外，还要求下一个迭代点处的斜率比较平缓——比xk点的切线斜率（小于0）的c2倍还大。这样它的区间大于Armijo-Goldstein准则，将迭代点邻域的极小值也包括了进去。<br><img src="image-20210622100122542.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210622100122542"></p>
-<h1 id="无约束优化方法"><a href="#无约束优化方法" class="headerlink" title="无约束优化方法"></a>无约束优化方法</h1><p>多维函数优化问题的迭代公式<br>$$<br>\textbf x^{(k+1)} = \textbf x^{(k)} + \alpha_k \textbf d^{(k)}<br>$$<br>不同方法决定了不同的搜索方向；<br>对应的最优步长$\alpha_k$经常使用一维搜索来寻找。（参看步长选取）</p>
+<h1 id="无约束优化方法"><a href="#无约束优化方法" class="headerlink" title="无约束优化方法"></a>无约束优化方法</h1><p>多维函数优化问题的迭代公式</p>
+<script type="math/tex; mode=display">
+\textbf x^{(k+1)} = \textbf x^{(k)} + \alpha_k \textbf d^{(k)}</script><p>不同方法决定了不同的搜索方向；<br>对应的最优步长$\alpha_k$经常使用一维搜索来寻找。（参看步长选取）</p>
 <p><img src="image-20210621145917491.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210621145917491"></p>
 <h2 id="最速下降法！"><a href="#最速下降法！" class="headerlink" title="最速下降法！"></a>最速下降法！</h2><blockquote>
 <p>用临近点逼近来近似目标函数f(x)，该多项式满足一阶必要条件则得到梯度方向迭代公式</p>
 </blockquote>
 <p>每次沿负梯度方向一维搜索寻找最优步长，使得下一个迭代点的梯度方向与上一个梯度方向正交。</p>
 <p>最速梯度下降法单调下降且对于任意初始点一定收敛。</p>
-<p>用其求解二次型<br>$$<br>min\quad f(x)= \frac {1}{2}x^\top Qx-b^\top x<br>$$<br>二次型问题最优步长计算公式：<br>$$<br>\alpha_k =\frac{g^{k\top}g^{k}}{g^{k\top}Qg^{k}}\<br>梯度g^k=Qx-b<br>$$<br>若Q所有特征值相等，一步得到极值点（等值线是圆，各点梯度均直接指向极值点）；若不等，则只能无限步迭代尝试逼近。<br>最速下降法求解二次型的<strong>收敛率</strong>（下一个迭代点函数值与上一个迭代点函数值之比小于等于收敛率）：<br>$$<br>\frac{\lambda _{max}(\mathbf Q)-\lambda _{min}(\mathbf Q)}{\lambda _{max}(\mathbf Q)}<br>$$</p>
-<blockquote>
+<p>用其求解二次型</p>
+<script type="math/tex; mode=display">
+min\quad f(x)= \frac {1}{2}x^\top Qx-b^\top x</script><p>二次型问题最优步长计算公式：</p>
+<script type="math/tex; mode=display">
+\alpha_k =\frac{g^{k\top}g^{k}}{g^{k\top}Qg^{k}}\\
+梯度g^k=Qx-b</script><p>若Q所有特征值相等，一步得到极值点（等值线是圆，各点梯度均直接指向极值点）；若不等，则只能无限步迭代尝试逼近。<br>最速下降法求解二次型的<strong>收敛率</strong>（下一个迭代点函数值与上一个迭代点函数值之比小于等于收敛率）：</p>
+<script type="math/tex; mode=display">
+\frac{\lambda _{max}(\mathbf Q)-\lambda _{min}(\mathbf Q)}{\lambda _{max}(\mathbf Q)}</script><blockquote>
 <p>注意与收敛阶的区分，收敛阶是迭代点</p>
 </blockquote>
-<p>定理8.3 P101：<strong>固定步长梯度法</strong>迭代收敛，当且仅当<br>$$<br>0&lt;\alpha&lt;\frac 2 {\lambda_{max}(Q)}<br>$$</p>
-<h2 id="收敛阶"><a href="#收敛阶" class="headerlink" title="收敛阶"></a>收敛阶</h2><p><img src="image-20210623205907085.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210623205907085"></p>
-<h2 id="牛顿法！"><a href="#牛顿法！" class="headerlink" title="牛顿法！"></a>牛顿法！</h2><p>用二阶泰勒展开来近似目标函数f(x)，根据一阶必要条件可得迭代公式<br>$$<br>x^{(k+1)}=x^{(k)}-\textbf F(x^{(k)})^{-1}g^{(k)}<br>$$<br>牛顿法步骤</p>
+<p>定理8.3 P101：<strong>固定步长梯度法</strong>迭代收敛，当且仅当</p>
+<script type="math/tex; mode=display">
+0<\alpha<\frac 2 {\lambda_{max}(Q)}</script><h2 id="收敛阶"><a href="#收敛阶" class="headerlink" title="收敛阶"></a>收敛阶</h2><p><img src="image-20210623205907085.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210623205907085"></p>
+<h2 id="牛顿法！"><a href="#牛顿法！" class="headerlink" title="牛顿法！"></a>牛顿法！</h2><p>用二阶泰勒展开来近似目标函数f(x)，根据一阶必要条件可得迭代公式</p>
+<script type="math/tex; mode=display">
+x^{(k+1)}=x^{(k)}-\textbf F(x^{(k)})^{-1}g^{(k)}</script><p>牛顿法步骤</p>
 <ol>
 <li>先解方程求迭代方向</li>
 </ol>
-<p>$$<br>\textbf F(x^{(k)})d^{(k)}=-g^{(k)}=-\nabla f(x^{(k)})<br>$$</p>
-<ol start="2">
+<script type="math/tex; mode=display">
+\textbf F(x^{(k)})d^{(k)}=-g^{(k)}=-\nabla f(x^{(k)})</script><ol>
 <li>然后</li>
 </ol>
-<p>$$<br>x^{(k+1)}=x^{(k)}+d^{(k)}<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+x^{(k+1)}=x^{(k)}+d^{(k)}</script><ul>
 <li>黑塞矩阵非正定时搜索方向不一定是函数值下降方向</li>
 <li>就算正定，某些初始点远离极小点时也可能不下降</li>
 </ul>
@@ -471,8 +560,16 @@
 </blockquote>
 <h2 id="拟牛顿法"><a href="#拟牛顿法" class="headerlink" title="拟牛顿法"></a>拟牛顿法</h2><p>在拟牛顿法中构造黑塞矩阵的近似矩阵H时，只需要用到目标函数值和梯度，不涉及任何黑塞矩阵和线性方程求解的计算工作。</p>
 <p><em>以下各种近似，我们都假定目标函数为二次型函数，使得黑塞矩阵为常数矩阵Q，与x的取值无关。</em></p>
-<p>因为二次型的黑塞矩阵Q对于任意k满足<br>$$<br>\Delta g^{(k)} = Q \Delta x^{(k)}<br>$$<br>我们希望第n次迭代中的近似矩阵Hn能够满足<br>$$<br>\textbf H_n \Delta g^{(k)} =\Delta x^{(k)}\quad (0 \le k \le n-1)<br>$$<br>这样就可以用近似矩阵（并不唯一）替换牛顿法迭代公式里的黑塞矩阵的逆。<strong>能在n次迭代内完成n维二次型问题的求解。</strong><br><img src="image-20210623115237869.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210623115237869"></p>
-<h3 id="秩1算法"><a href="#秩1算法" class="headerlink" title="秩1算法"></a>秩1算法</h3><p>秩1矫正公式中，Hk到Hk+1迭代方向是秩1矩阵<br>$$<br>H_{k+1} = H_k + a_{k}z^{(k)}z^{(k)\top}<br>$$<br>H0可以取为单位阵I，那么d0也是负梯度方向<br>拟牛顿法也是一种共轭方向法，所以$\alpha_k$计算公式依然为<br>$$<br>\alpha_k=-\frac{(g^k)^\top d^k}{(d^k)^\top Qd^k}<br>$$<br><img src="image-20210520141649994.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210520141649994"></p>
+<p>因为二次型的黑塞矩阵Q对于任意k满足</p>
+<script type="math/tex; mode=display">
+\Delta g^{(k)} = Q \Delta x^{(k)}</script><p>我们希望第n次迭代中的近似矩阵Hn能够满足</p>
+<script type="math/tex; mode=display">
+\textbf H_n \Delta g^{(k)} =\Delta x^{(k)}\quad (0 \le k \le n-1)</script><p>这样就可以用近似矩阵（并不唯一）替换牛顿法迭代公式里的黑塞矩阵的逆。<strong>能在n次迭代内完成n维二次型问题的求解。</strong><br><img src="image-20210623115237869.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210623115237869"></p>
+<h3 id="秩1算法"><a href="#秩1算法" class="headerlink" title="秩1算法"></a>秩1算法</h3><p>秩1矫正公式中，Hk到Hk+1迭代方向是秩1矩阵</p>
+<script type="math/tex; mode=display">
+H_{k+1} = H_k + a_{k}z^{(k)}z^{(k)\top}</script><p>H0可以取为单位阵I，那么d0也是负梯度方向<br>拟牛顿法也是一种共轭方向法，所以$\alpha_k$计算公式依然为</p>
+<script type="math/tex; mode=display">
+\alpha_k=-\frac{(g^k)^\top d^k}{(d^k)^\top Qd^k}</script><p><img src="image-20210520141649994.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210520141649994"></p>
 <p>秩1算法缺点：</p>
 <ul>
 <li>首先，该算法产生的矩阵 Hk+1 并不一定是正定的，导致d(k+l) 可能不是下降方向。即使对于二次型问题这种情况也有可能发生。<br>（秩2算法DFP可以避免这个问题）</li>
@@ -483,27 +580,42 @@
 <p>缺点：当处理一些规模较大的非二次型问题时， DFP 有时会被”卡住”，即迭代无法继续开展。造成这一现象的原因在于矩阵 Hk接近成为奇异矩阵了。</p>
 <h3 id="BFGS算法"><a href="#BFGS算法" class="headerlink" title="BFGS算法"></a>BFGS算法</h3><p>类似DFP公式，但去近似黑塞矩阵本身。<br>最后迭代使用近似矩阵Bk+1的逆。</p>
 <p>求Bk+1的逆，需要用两次Sherman-Morrison公式。</p>
-<h2 id="共轭方向法"><a href="#共轭方向法" class="headerlink" title="共轭方向法"></a>共轭方向法</h2><p>A是实对称正定矩阵<br>$$<br>\alpha^\top A\beta=0<br>$$<br>则这两个向量共轭</p>
+<h2 id="共轭方向法"><a href="#共轭方向法" class="headerlink" title="共轭方向法"></a>共轭方向法</h2><p>A是实对称正定矩阵</p>
+<script type="math/tex; mode=display">
+\alpha^\top A\beta=0</script><p>则这两个向量共轭</p>
 <blockquote>
 <p>核心思想：在空间中每个方向只走一次，所有搜索方向正交</p>
 <p>拟牛顿法也是一种共轭方向法（书p135定理11.1）</p>
 </blockquote>
-<p>共轭方向法算法最耗时的是找二次型矩阵Q的所有共轭向量，复杂度O(n^3)<br>题目一般会给定一组Q共轭方向。<br>二次型目标函数有显式的精确步长<br>$$<br>\alpha_k=-\frac{(g^k)^\top d^k}{(d^k)^\top Qd^k}<br>$$</p>
-<p>任意初始点，基本的共轭方向算法都能在n次迭代之内收敛到唯一的全局极小点，因为只要步长（共轭向量的线性系数）正确，初始点+n个共轭向量能表示处在空间内任何位置的全局极小点。【书上p121有证明，最后公式Q(x*-xk)=-gk利用了二次型一阶导数性质】</p>
-<p>共轭方向算法都有性质:<br>$$<br>g^{(k+1)\top}d^{(i)}=0\qquad(i\le k)<br>$$<br>每个新迭代点梯度一定正交于之前所有共轭方向所在子空间</p>
+<p>共轭方向法算法最耗时的是找二次型矩阵Q的所有共轭向量，复杂度O(n^3)<br>题目一般会给定一组Q共轭方向。<br>二次型目标函数有显式的精确步长</p>
+<script type="math/tex; mode=display">
+\alpha_k=-\frac{(g^k)^\top d^k}{(d^k)^\top Qd^k}</script><p>任意初始点，基本的共轭方向算法都能在n次迭代之内收敛到唯一的全局极小点，因为只要步长（共轭向量的线性系数）正确，初始点+n个共轭向量能表示处在空间内任何位置的全局极小点。【书上p121有证明，最后公式Q(x*-xk)=-gk利用了二次型一阶导数性质】</p>
+<p>共轭方向算法都有性质:</p>
+<script type="math/tex; mode=display">
+g^{(k+1)\top}d^{(i)}=0\qquad(i\le k)</script><p>每个新迭代点梯度一定正交于之前所有共轭方向所在子空间</p>
 <h2 id="共轭梯度法！"><a href="#共轭梯度法！" class="headerlink" title="共轭梯度法！"></a>共轭梯度法！</h2><p>不需要先用施密特方法找所有共轭方向，可以用-g(k+1)和d(k)迭代计算xk+1点处搜索方向（也就是下一个共轭方向d(k+1)）</p>
 <p><img src="image-20210519102120451.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210519102120451"></p>
 <p>$\alpha_k$是x点迭代步长，$\beta_k$是共轭方向迭代步长。两者迭代公式推导过程：</p>
 <ol>
 <li>每个共轭方向上行动步长$\alpha_k$到一维搜索得到的极小点，有性质(书P123)。行动步长$\alpha_k$和最速下降法一致，dk换成gk。</li>
 </ol>
-<p>$$<br>g^{(k+1)\top}d^{(k)}=0\<br>所以需要<br>\alpha_k = -\frac{g^{(k)\top}d^{(k)}}{d^{(k)\top}Qd^{(k)}}<br>$$</p>
-<ol start="2">
+<script type="math/tex; mode=display">
+g^{(k+1)\top}d^{(k)}=0\\
+所以需要
+\alpha_k = -\frac{g^{(k)\top}d^{(k)}}{d^{(k)\top}Qd^{(k)}}</script><ol>
 <li>将共轭定义带入迭代公式</li>
 </ol>
-<p>$$<br>\begin{cases}<br>d^{(k+1)\top}Qd^{(k)} = 0\<br>d^{(k+1)} = -g^{(k+1)}+\beta_kd^{(k)}<br>\end{cases}\<br>所以得到\beta_k = \frac{g^{(k+1)\top}Qd^{(k)}}{d^{(k)\top}Qd^{(k)}}<br>$$</p>
-<h1 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h1><h2 id="标准型"><a href="#标准型" class="headerlink" title="标准型"></a>标准型</h2><p>$$<br>\begin{array}l<br>min\quad &amp;\mathbf {c^\top x}\<br>s.t. \quad &amp;\bf Ax=b\<br>&amp;x\ge 0<br>\end{array}<br>$$</p>
-<blockquote>
+<script type="math/tex; mode=display">
+\begin{cases}
+d^{(k+1)\top}Qd^{(k)} = 0\\
+d^{(k+1)} = -g^{(k+1)}+\beta_kd^{(k)}
+\end{cases}\\
+所以得到\beta_k = \frac{g^{(k+1)\top}Qd^{(k)}}{d^{(k)\top}Qd^{(k)}}</script><h1 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h1><h2 id="标准型"><a href="#标准型" class="headerlink" title="标准型"></a>标准型</h2><script type="math/tex; mode=display">
+\begin{array}l
+min\quad &\mathbf {c^\top x}\\
+s.t. \quad &\bf Ax=b\\
+&x\ge 0
+\end{array}</script><blockquote>
 <p>书P220说明如何把不等式约束转换成等式</p>
 <p>不等式蕴含几个线性无关基之间的约束关系，引入剩余变量/松弛变量xi（其实也是这几个线性无关基的线性组合）来量化这种约束要求，也就是对原本的x1向量<strong>升维</strong>；不等式本质是一个半空间，将这个半空间的限制放到增加的那一维的xi&gt;=0里</p>
 </blockquote>
@@ -520,9 +632,26 @@
 <p>基本可行解对应极点，不同基本可行解线性组合得到解空间所有点；直观上与对极点进行凸组合得到凸集内点非常相像。</p>
 </blockquote>
 <h2 id="单纯形法"><a href="#单纯形法" class="headerlink" title="单纯形法"></a>单纯形法</h2><p>利用增广矩阵规范性的枢轴变换，从一个基本可行解切换到另一个基本可行解，检验该基本可行解是否为最优解。</p>
-<h3 id="检验数"><a href="#检验数" class="headerlink" title="检验数"></a>检验数</h3><p>基变量检验数等于0；<br>非基变量检验数$r_q$，用到c第q项，c前m项，非基变量对应那列y<br>$$<br>r_q=c_q-z_q \<br>z_q = c_1y_{1q}+\cdots+c_my_{mq}<br>$$<br>若该基本可行解所有非基变量检验数大于等于0，则为最优解。<br>否则，选择检验数最小的那个列向量作为进基向量。</p>
-<h3 id="枢轴变换"><a href="#枢轴变换" class="headerlink" title="枢轴变换"></a>枢轴变换</h3><p>选择离基向量$\alpha_p$<br>$$<br>p = \text{arg min}{ y_{i0}/y_{iq}:y_{iq}\gt 0}   \quad(计算中其实y_{i0} = b_i)<br>$$<br>$\alpha_q$进基，$\alpha_p$（第p列的基向量）离基。以(p,q)元素进行枢轴变换<br>$$<br>y_{ij}’= y_{ij} - \frac{y_{pj}}{y_{pq}}y_{iq} ,\quad i\ne p,m\lt j \le n\<br>y_{pj}’=\frac {y_{pj}} {y_{pq}}<br>$$</p>
-<h3 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h3><p>价值系数加在[A,b]下方，初等行变换为关于基B的标准单纯形表。<br>$$<br>\begin{bmatrix}<br>A&amp;b\<br>c^\top&amp;0<br>\end{bmatrix}<br>\Leftrightarrow<br>\begin{bmatrix}<br>I_m&amp;B^{-1}D&amp;B^{-1}b\<br>0^\top&amp; c_D^\top-c_B^\top B^{-1}D&amp; -c_B^\top B^{-1}b<br>\end{bmatrix}<br>$$<br>更新单纯形表的过程中能同时得到关于基B的基变量$B^{-1}b$和非基变量检验数$c_D^\top-c_B^\top B^{-1}D$，以及当前基本可行解下目标函数值取负的结果$-c_B^\top B^{-1}b$</p>
+<h3 id="检验数"><a href="#检验数" class="headerlink" title="检验数"></a>检验数</h3><p>基变量检验数等于0；<br>非基变量检验数$r_q$，用到c第q项，c前m项，非基变量对应那列y</p>
+<script type="math/tex; mode=display">
+r_q=c_q-z_q \\
+z_q = c_1y_{1q}+\cdots+c_my_{mq}</script><p>若该基本可行解所有非基变量检验数大于等于0，则为最优解。<br>否则，选择检验数最小的那个列向量作为进基向量。</p>
+<h3 id="枢轴变换"><a href="#枢轴变换" class="headerlink" title="枢轴变换"></a>枢轴变换</h3><p>选择离基向量$\alpha_p$</p>
+<script type="math/tex; mode=display">
+p = \text{arg min}\{ y_{i0}/y_{iq}:y_{iq}\gt 0\}   \quad(计算中其实y_{i0} = b_i)</script><p>$\alpha_q$进基，$\alpha_p$（第p列的基向量）离基。以(p,q)元素进行枢轴变换</p>
+<script type="math/tex; mode=display">
+y_{ij}'= y_{ij} - \frac{y_{pj}}{y_{pq}}y_{iq} ,\quad i\ne p,m\lt j \le n\\
+y_{pj}'=\frac {y_{pj}} {y_{pq}}</script><h3 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h3><p>价值系数加在[A,b]下方，初等行变换为关于基B的标准单纯形表。</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+A&b\\
+c^\top&0
+\end{bmatrix}
+\Leftrightarrow
+\begin{bmatrix}
+I_m&B^{-1}D&B^{-1}b\\
+0^\top& c_D^\top-c_B^\top B^{-1}D& -c_B^\top B^{-1}b
+\end{bmatrix}</script><p>更新单纯形表的过程中能同时得到关于基B的基变量$B^{-1}b$和非基变量检验数$c_D^\top-c_B^\top B^{-1}D$，以及当前基本可行解下目标函数值取负的结果$-c_B^\top B^{-1}b$</p>
 <h3 id="两阶段单纯形法"><a href="#两阶段单纯形法" class="headerlink" title="两阶段单纯形法"></a>两阶段单纯形法</h3><p>用于原问题没有明显的基本可行解的时候。</p>
 <blockquote>
 <p>定理：原线性规划问题存在基本可行解，当且仅当相应的人工问题存在一个使目标函数值为0的最优解</p>
@@ -544,56 +673,85 @@
 <h2 id="分支定界法"><a href="#分支定界法" class="headerlink" title="分支定界法"></a>分支定界法</h2><p>整数规划松弛为普通的线性规划标准型，若最优解有分量不是整数，则分成两个整数规划。</p>
 <h1 id="等式约束优化"><a href="#等式约束优化" class="headerlink" title="等式约束优化"></a>等式约束优化</h1><h2 id="概念铺垫"><a href="#概念铺垫" class="headerlink" title="概念铺垫"></a>概念铺垫</h2><h3 id="正则点"><a href="#正则点" class="headerlink" title="正则点"></a>正则点</h3><p>该点满足所有约束函数等于0，且所有约束函数的梯度都线性无关</p>
 <h3 id="维度"><a href="#维度" class="headerlink" title="维度"></a>维度</h3><p>曲面维度n-m，n是空间维度，m是约束方程组的秩</p>
-<h3 id="切空间、法空间"><a href="#切空间、法空间" class="headerlink" title="切空间、法空间"></a>切空间、法空间</h3><p>切空间过原点<br>$$<br>T(\mathbf x^*) = {\mathbf y:D\mathbf {h(x^*)y} = 0}<br>$$<br>切平面过x*<br>$$<br>TP(\mathbf x^*)  = T(\mathbf x^*)+x^*= {\mathbf {x+x^*:x}\in T(\mathbf x^*)}<br>$$<br>法线空间就是约束函数梯度张成子空间，过原点<br>$$<br>N(\mathbf x^*) = \mathcal R(D\mathbf {h(x^*)^\top})<br>$$<br>法平面过x*<br>$$<br>NP(\mathbf x^*)  = N(\mathbf x^*)+x^*<br>$$</p>
-<h2 id="拉格朗日条件"><a href="#拉格朗日条件" class="headerlink" title="拉格朗日条件"></a>拉格朗日条件</h2><p>优化问题<br>$$<br>\text{min}\quad f(x)\ s.t.\quad h(x)=0<br>$$<br>因为x*也是约束路径（h(x)=0的等值线）上的极小点，所以该处目标函数梯度与约束路径（满足约束函数为0）的参数方程一阶导正交；<br>又因为该点约束函数h(x)梯度与该约束路径参数方程一阶导（等值线该点处切线）正交；所以得到这两个梯度一定平行，线性相关。</p>
+<h3 id="切空间、法空间"><a href="#切空间、法空间" class="headerlink" title="切空间、法空间"></a>切空间、法空间</h3><p>切空间过原点</p>
+<script type="math/tex; mode=display">
+T(\mathbf x^*) = \{\mathbf y:D\mathbf {h(x^*)y} = 0\}</script><p>切平面过x*</p>
+<script type="math/tex; mode=display">
+TP(\mathbf x^*)  = T(\mathbf x^*)+x^*= \{\mathbf {x+x^*:x}\in T(\mathbf x^*)\}</script><p>法线空间就是约束函数梯度张成子空间，过原点</p>
+<script type="math/tex; mode=display">
+N(\mathbf x^*) = \mathcal R(D\mathbf {h(x^*)^\top})</script><p>法平面过x*</p>
+<script type="math/tex; mode=display">
+NP(\mathbf x^*)  = N(\mathbf x^*)+x^*</script><h2 id="拉格朗日条件"><a href="#拉格朗日条件" class="headerlink" title="拉格朗日条件"></a>拉格朗日条件</h2><p>优化问题</p>
+<script type="math/tex; mode=display">
+\text{min}\quad f(x)\\ s.t.\quad h(x)=0</script><p>因为x*也是约束路径（h(x)=0的等值线）上的极小点，所以该处目标函数梯度与约束路径（满足约束函数为0）的参数方程一阶导正交；<br>又因为该点约束函数h(x)梯度与该约束路径参数方程一阶导（等值线该点处切线）正交；所以得到这两个梯度一定平行，线性相关。</p>
 <blockquote>
 <p>可以理解为：极小点处的目标函数梯度是多个约束函数梯度的线性组合。</p>
 </blockquote>
-<p>得到拉格朗日定理：<br>上述优化问题的局部极小点$x^*$若为<em><strong>正则点</strong></em>，必存在拉格朗日乘子向量$\lambda^*$使得<br>$$<br>Df(\textbf x^*)+\lambda^{<em>\top }Dh(\textbf x^</em>)=0^\top<br>$$<br>其实这个拉格朗日条件只是极小点一阶必要条件。</p>
+<p>得到拉格朗日定理：<br>上述优化问题的局部极小点$x^<em>$若为**</em>正则点<em>**，必存在拉格朗日乘子向量$\lambda^</em>$使得</p>
+<script type="math/tex; mode=display">
+Df(\textbf x^*)+\lambda^{*\top }Dh(\textbf x^*)=0^\top</script><p>其实这个拉格朗日条件只是极小点一阶必要条件。</p>
 <h2 id="二阶必要条件-1"><a href="#二阶必要条件-1" class="headerlink" title="二阶必要条件"></a>二阶必要条件</h2><ol>
 <li><p>满足拉格朗日条件</p>
 </li>
-<li><p>x<em>切空间内任意点y，有<br>$$<br>y^\top \textbf L(x^</em>,\lambda^*)y\ge0<br>$$</p>
-</li>
+<li><p>x*切空间内任意点y，有</p>
+<script type="math/tex; mode=display">
+y^\top \textbf L(x^*,\lambda^*)y\ge0</script></li>
 </ol>
 <h2 id="二阶充分条件-1"><a href="#二阶充分条件-1" class="headerlink" title="二阶充分条件"></a>二阶充分条件</h2><ol>
 <li><p>满足拉格朗日条件</p>
 </li>
-<li><p>x<em>切空间内任意不为0的点y，有<br>$$<br>y^\top \textbf L(x^</em>,\lambda^*)y\gt0<br>$$</p>
-</li>
+<li><p>x*切空间内任意不为0的点y，有</p>
+<script type="math/tex; mode=display">
+y^\top \textbf L(x^*,\lambda^*)y\gt0</script></li>
 </ol>
 <p>则x*为严格局部极小点</p>
 <h2 id="线性约束二次型极小化"><a href="#线性约束二次型极小化" class="headerlink" title="线性约束二次型极小化"></a>线性约束二次型极小化</h2><p><img src="image-20210625214639143.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210625214639143"></p>
 <h1 id="不等式约束优化"><a href="#不等式约束优化" class="headerlink" title="不等式约束优化"></a>不等式约束优化</h1><p>约束条件里的不等式分为【积极/起作用约束、非积极/不起作用约束】</p>
-<h2 id="KKT条件-重要！"><a href="#KKT条件-重要！" class="headerlink" title="KKT条件[重要！]"></a>KKT条件[重要！]</h2><p>对于最小化问题<br>$$<br>\begin{array}<br>\text{min}\quad &amp;f(x)\<br>s.t.\quad&amp;\textbf h(\textbf x)=\textbf 0\<br>&amp;\textbf g(\textbf x)\le \textbf 0\<br>\end{array}<br>$$<br>若x*是<strong>正则点</strong>和局部极小点，存在以下性质</p>
+<h2 id="KKT条件-重要！"><a href="#KKT条件-重要！" class="headerlink" title="KKT条件[重要！]"></a>KKT条件[重要！]</h2><p>对于最小化问题</p>
+<script type="math/tex; mode=display">
+\begin{array}
+\text{min}\quad &f(x)\\
+s.t.\quad&\textbf h(\textbf x)=\textbf 0\\
+&\textbf g(\textbf x)\le \textbf 0\\
+\end{array}</script><p>若x<em>是<em>*正则点</em></em>和局部极小点，存在以下性质</p>
 <ol>
-<li><p>原始可行性（满足所有约束）<br>$$<br>\textbf h(\textbf x^*)=\textbf 0\<br>\textbf g(\textbf x^*)\le \textbf 0\<br>$$</p>
-</li>
-<li><p>对偶可行性（不等式约束的KKT乘子非负）<br>$$<br>\bf{\mu^*}\ge \textbf 0\<br>$$</p>
-</li>
-<li><p>原始最优性（拉格朗日函数对x求导等于0）<br>$$<br>Df(\textbf x^*)+\lambda^{<em>\top }D\textbf h(\textbf x^</em>)+\mu^{<em>\top }D\textbf g(\textbf x^</em>)=\bf 0^\top<br>$$</p>
-</li>
-<li><p>互补松弛性（非积极约束处乘子必为0）<br>$$<br>\mu^{<em>\top }\textbf g(\textbf x^</em>)=\bf 0<br>$$</p>
-</li>
+<li><p>原始可行性（满足所有约束）</p>
+<script type="math/tex; mode=display">
+\textbf h(\textbf x^*)=\textbf 0\\
+\textbf g(\textbf x^*)\le \textbf 0\\</script></li>
+<li><p>对偶可行性（不等式约束的KKT乘子非负）</p>
+<script type="math/tex; mode=display">
+\bf{\mu^*}\ge \textbf 0\\</script></li>
+<li><p>原始最优性（拉格朗日函数对x求导等于0）</p>
+<script type="math/tex; mode=display">
+Df(\textbf x^*)+\lambda^{*\top }D\textbf h(\textbf x^*)+\mu^{*\top }D\textbf g(\textbf x^*)=\bf 0^\top</script></li>
+<li><p>互补松弛性（非积极约束处乘子必为0）</p>
+<script type="math/tex; mode=display">
+\mu^{*\top }\textbf g(\textbf x^*)=\bf 0</script></li>
 </ol>
 <p>解KKT条件时，可以按照KKT乘子大于0（积极约束），等于0（非积极约束）进行分情况讨论。</p>
 <p>KKT条件也只是一阶必要条件，是拉格朗日条件在不等式约束情况下的拓展。</p>
 <h2 id="二阶必要条件-2"><a href="#二阶必要条件-2" class="headerlink" title="二阶必要条件"></a>二阶必要条件</h2><ol>
 <li><p>满足KKT条件</p>
 </li>
-<li><p>x<em>切空间（应该正交于所有此处等式约束h(x)和起作用约束gi(x)的梯度）内任意点y，有<br>$$<br>y^\top \textbf L(x^</em>,\lambda^*,\mu^*)y\ge0<br>$$</p>
-</li>
+<li><p>x*切空间（应该正交于所有此处等式约束h(x)和起作用约束gi(x)的梯度）内任意点y，有</p>
+<script type="math/tex; mode=display">
+y^\top \textbf L(x^*,\lambda^*,\mu^*)y\ge0</script></li>
 </ol>
 <h2 id="二阶充分条件-2"><a href="#二阶充分条件-2" class="headerlink" title="二阶充分条件"></a>二阶充分条件</h2><ol>
 <li><p>满足KKT条件</p>
 </li>
-<li><p>$\widetilde T(x^*,\mu^*)$内任意不为0的点y，有<br>$$<br>y^\top \textbf L(x^*,\lambda^*,\mu^*)y\gt0<br>$$<br>该空间正交于等式约束的梯度和所有积极且起作用约束（mu&gt;0，意思是这个约束真的有限制作用）的梯度<br><img src="image-20210626141924234.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210626141924234"></p>
+<li><p>$\widetilde T(x^<em>,\mu^</em>)$内任意不为0的点y，有</p>
+<script type="math/tex; mode=display">
+y^\top \textbf L(x^*,\lambda^*,\mu^*)y\gt0</script><p>该空间正交于等式约束的梯度和所有积极且起作用约束（mu&gt;0，意思是这个约束真的有限制作用）的梯度<br><img src="image-20210626141924234.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210626141924234"></p>
 </li>
 </ol>
 <p>则x*为严格局部极小点</p>
 <h1 id="凸函数与凸优化"><a href="#凸函数与凸优化" class="headerlink" title="凸函数与凸优化"></a>凸函数与凸优化</h1><p>凸函数的“凸”来源于定义，该函数图形上方点集为凸集。</p>
 <p>凸函数定义域必是凸集。</p>
-<p>凸函数当且仅当定义域内任意两点x,y满足<br>$$<br>f(\alpha x +(1-\alpha)y)\le\alpha f(x) +(1-\alpha)f(y)  \qquad \forall \alpha \in (0,1)<br>$$<br>严格凸函数——不等式严格小于</p>
+<p>凸函数当且仅当定义域内任意两点x,y满足</p>
+<script type="math/tex; mode=display">
+f(\alpha x +(1-\alpha)y)\le\alpha f(x) +(1-\alpha)f(y)  \qquad \forall \alpha \in (0,1)</script><p>严格凸函数——不等式严格小于</p>
 <p>强凸函数——不等式右侧加入二次项</p>
 <p><img src="image-20210626163618322.png" srcset="/blogsite/img/loading.gif" lazyload alt="image-20210626163618322"></p>
 <p>凸集上凸函数的全局最小点=局部极小点</p>

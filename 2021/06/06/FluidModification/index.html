@@ -23,11 +23,14 @@
 <meta property="og:site_name" content="SummerSecret">
 <meta property="og:description" content="对于本博客主题Fluid的客制化更改。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2021/06/06/FluidModification/截屏2022-01-04%2000.50.01.png">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2021/06/06/FluidModification/截屏2022-01-04%2000.50.27.png">
 <meta property="article:published_time" content="2021-06-06T10:51:42.000Z">
 <meta property="article:modified_time" content="2022-01-03T17:51:42.000Z">
 <meta property="article:author" content="XT">
 <meta property="article:tag" content="折腾">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mediocrityxt.github.io/blogsite/2021/06/06/FluidModification/截屏2022-01-04%2000.50.01.png">
   
   
   <title>自定义Fluid主题 - SummerSecret</title>
@@ -71,7 +74,7 @@
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -213,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.5k 字
+      2.3k 字
     </span>
   
 
@@ -222,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      21 分钟
+      20 分钟
     </span>
   
 
@@ -255,7 +258,7 @@
             
             <div class="markdown-body">
               <p>现在的根目录下<code>_config.fluid.yml</code>才是主题配置文件，覆盖themes/fluid中的配置文件。记得主题大版本更新时需要注意config内容是否随之更改。</p>
-<h1 id="对Fluid主题的修改"><a href="#对Fluid主题的修改" class="headerlink" title="对Fluid主题的修改"></a>对Fluid主题的修改</h1><p>**强烈推荐博客设置<code>updated_option: &#39;date&#39;</code>**。否则下列修改启用后如果进行版本管理（如git pull)会导致涉及的所有未设置updated字段的博文全都自动显示updated时间为文件修改时间（如git pull时间），而非正常情况：若无updated字段/updated时间不晚于date（按天比较），则不显示updated时间。</p>
+<h1 id="对Fluid主题的修改"><a href="#对Fluid主题的修改" class="headerlink" title="对Fluid主题的修改"></a>对Fluid主题的修改</h1><p><strong>强烈推荐博客设置<code>updated_option: &#39;date&#39;</code></strong>。否则下列修改启用后如果进行版本管理（如git pull)会导致涉及的所有未设置updated字段的博文全都自动显示updated时间为文件修改时间（如git pull时间），而非正常情况：若无updated字段/updated时间不晚于date（按天比较），则不显示updated时间。</p>
 <p>改动目标：</p>
 <ol>
 <li>首页的每篇文章除了创建时间之外还能显示文档更新时间。</li>
@@ -264,15 +267,12 @@
 <h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>主题配置config文件中post_meta加入<code>updated: true</code></p>
 <p>在主题的layout文件夹index.ejs内的<code>class=&quot;index-btm post-metas&quot;</code>的代码块加入下列代码，让index页面显示文章更新时间。</p>
 <figure class="highlight applescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs applescript">&lt;% <span class="hljs-keyword">if</span>(theme.index.post_meta.updated &amp;&amp; (post.updated &gt; post.<span class="hljs-built_in">date</span>)) &#123; %&gt;<br>	&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;post-meta mr-3&quot;</span>&gt;<br>    &lt;i <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;iconfont icon-pen&quot;</span>&gt;&lt;/i&gt;<br>    &lt;<span class="hljs-built_in">time</span> datetime=<span class="hljs-string">&quot;&lt;%= full_date(post.updated, &#x27;YYYY-MM-DD HH:mm&#x27;) %&gt;&quot;</span>&gt;<br>      &lt;%- <span class="hljs-built_in">date</span>(post.updated, config.date_format) %&gt;<br>    &lt;/<span class="hljs-built_in">time</span>&gt;<br>	&lt;/<span class="hljs-keyword">div</span>&gt;<br>&lt;% &#125; %&gt;<br></code></pre></div></td></tr></table></figure>
-
 <h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>主题配置config文件中post:meta:date部分加入updated选项。</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql"># 文章日期，优先根据 front-matter 里 <span class="hljs-type">date</span> 字段，其次是 md 文件日期<br># updated_enable 显示 front-matter 里 updated 字段，如果updated晚于<span class="hljs-type">date</span>。如果<span class="hljs-keyword">enable</span>，则用两个单词区别两行日期。<br><span class="hljs-type">date</span>:<br>      <span class="hljs-keyword">enable</span>: <span class="hljs-keyword">true</span><br>      updated_enable: <span class="hljs-keyword">true</span><br>      date_updated_words: [<span class="hljs-string">&#x27;创建&#x27;</span>, <span class="hljs-string">&#x27;更新&#x27;</span>]<br>      # 格式参照 ISO<span class="hljs-number">-8601</span> 日期格式化<br>      # ISO<span class="hljs-number">-8601</span> <span class="hljs-type">date</span> <span class="hljs-keyword">format</span><br>      # See: http://momentjs.cn/docs/#/parsing/string-<span class="hljs-keyword">format</span>/<br>      <span class="hljs-keyword">format</span>: &quot;LL a&quot;<br></code></pre></div></td></tr></table></figure>
-
 <p>找到_partial文件夹内post-meta.ejs，增加文章最近修改时间。显示updated时间时同时也要显示两个提示词来辨别两行日期，因为图标信息还是不够明确。</p>
-<figure class="highlight applescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs applescript">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;mt-1&quot;</span>&gt;<br>      &lt;span <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;post-meta&quot;</span>&gt;<br>        &lt;i <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;iconfont icon-date-fill&quot;</span> aria-hidden=<span class="hljs-string">&quot;true&quot;</span>&gt;&lt;/i&gt;<br>        &lt;<span class="hljs-built_in">time</span> datetime=<span class="hljs-string">&quot;&lt;%= full_date(page.date, &#x27;YYYY-MM-DD HH:mm&#x27;) %&gt;&quot;</span> pubdate&gt;<br>          &lt;%= full_date(page.<span class="hljs-built_in">date</span>, theme.post.meta.<span class="hljs-built_in">date</span>.format) %&gt;<br>        &lt;/<span class="hljs-built_in">time</span>&gt;<br>        &lt;% <span class="hljs-keyword">if</span> (theme.post.meta.<span class="hljs-built_in">date</span>.updated_enable &amp;&amp; (page.updated &gt; page.<span class="hljs-built_in">date</span>)) &#123; %&gt;<br>          &lt;%- theme.post.meta.<span class="hljs-built_in">date</span>.date_updated_words[<span class="hljs-number">0</span>] %&gt;<br>        &lt;% &#125; %&gt;<br>      &lt;/span&gt;<br>    &lt;/<span class="hljs-keyword">div</span>&gt;<br>    <br>    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;mt-1&quot;</span>&gt;<br>      &lt;% <span class="hljs-keyword">if</span> (theme.post.meta.<span class="hljs-built_in">date</span>.updated_enable &amp;&amp; (page.updated &gt; page.<span class="hljs-built_in">date</span>)) &#123; %&gt;<br>        &lt;span <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;post-meta&quot;</span>&gt;<br>          &lt;i <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;iconfont icon-pen&quot;</span> aria-hidden=<span class="hljs-string">&quot;true&quot;</span>&gt;&lt;/i&gt;<br>          &lt;<span class="hljs-built_in">time</span> datetime=<span class="hljs-string">&quot;&lt;%= full_date(page.updated, &#x27;YYYY-MM-DD HH:mm&#x27;) %&gt;&quot;</span> pubdate&gt;<br>            &lt;%= full_date(page.updated, theme.post.meta.<span class="hljs-built_in">date</span>.format) %&gt;<br>          &lt;/<span class="hljs-built_in">time</span>&gt;<br>          &lt;%- theme.post.meta.<span class="hljs-built_in">date</span>.date_updated_words[<span class="hljs-number">1</span>] %&gt;<br>        &lt;/span&gt;<br>      &lt;% &#125; %&gt;<br>    &lt;/<span class="hljs-keyword">div</span>&gt;<br></code></pre></div></td></tr></table></figure>
-
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>![截屏2022-01-04 00.50.01](/截屏2022-01-04 00.50.01.png)</p>
-<p>![截屏2022-01-04 00.50.27](/截屏2022-01-04 00.50.27.png)</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs reasonml">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;mt-1&quot;</span>&gt;<br>      &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;post-meta&quot;</span>&gt;<br>        &lt;i <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;iconfont icon-date-fill&quot;</span> aria-hidden=<span class="hljs-string">&quot;true&quot;</span>&gt;&lt;/i&gt;<br>        &lt;time datetime=<span class="hljs-string">&quot;&lt;%= full_date(page.date, &#x27;YYYY-MM-DD HH:mm&#x27;) %&gt;&quot;</span> pubdate&gt;<br>          &lt;%= full<span class="hljs-constructor">_date(<span class="hljs-params">page</span>.<span class="hljs-params">date</span>, <span class="hljs-params">theme</span>.<span class="hljs-params">post</span>.<span class="hljs-params">meta</span>.<span class="hljs-params">date</span>.<span class="hljs-params">format</span>)</span> %&gt;<br>        &lt;/time&gt;<br>        &lt;% <span class="hljs-keyword">if</span> (theme.post.meta.date.updated_enable<span class="hljs-operator"> &amp;&amp; </span>(page.updated &gt; page.date)) &#123; %&gt;<br>          &lt;%- theme.post.meta.date.date_updated_words<span class="hljs-literal">[<span class="hljs-number">0</span>]</span> %&gt;<br>        &lt;% &#125; %&gt;<br>      &lt;/span&gt;<br>    &lt;/div&gt;<br>    <br>    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;mt-1&quot;</span>&gt;<br>      &lt;% <span class="hljs-keyword">if</span> (theme.post.meta.date.updated_enable<span class="hljs-operator"> &amp;&amp; </span>(page.updated &gt; page.date)) &#123; %&gt;<br>        &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;post-meta&quot;</span>&gt;<br>          &lt;i <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;iconfont icon-pen&quot;</span> aria-hidden=<span class="hljs-string">&quot;true&quot;</span>&gt;&lt;/i&gt;<br>          &lt;time datetime=<span class="hljs-string">&quot;&lt;%= full_date(page.updated, &#x27;YYYY-MM-DD HH:mm&#x27;) %&gt;&quot;</span> pubdate&gt;<br>            &lt;%= full<span class="hljs-constructor">_date(<span class="hljs-params">page</span>.<span class="hljs-params">updated</span>, <span class="hljs-params">theme</span>.<span class="hljs-params">post</span>.<span class="hljs-params">meta</span>.<span class="hljs-params">date</span>.<span class="hljs-params">format</span>)</span> %&gt;<br>          &lt;/time&gt;<br>          &lt;%- theme.post.meta.date.date_updated_words<span class="hljs-literal">[<span class="hljs-number">1</span>]</span> %&gt;<br>        &lt;/span&gt;<br>      &lt;% &#125; %&gt;<br>    &lt;/div&gt;<br></code></pre></div></td></tr></table></figure>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="截屏2022-01-04 00.50.01.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
+<p><img src="截屏2022-01-04 00.50.27.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
 
             </div>
             <hr>

@@ -71,7 +71,7 @@
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -246,7 +246,6 @@
             <div class="markdown-body">
               <p>损失函数中常用到的KL散度、交叉熵，与最大似然估计，本质上是一样的啊！<br>就是希望我预测出来的与我的标注的概率分布越接近越好。</p>
 <span id="more"></span>
-
 <p>比较熵、KL散度和交叉熵的数学定义会发现：<br><code>KL散度 = 交叉熵 - 熵</code></p>
 <h2 id="从编码的角度理解交叉熵"><a href="#从编码的角度理解交叉熵" class="headerlink" title="从编码的角度理解交叉熵"></a>从编码的角度理解交叉熵</h2><p><strong>熵</strong>的意义是：对一个随机变量A编码所需要的<strong>最小字节数</strong>，也就是使用哈夫曼编码根据A的概率分布对A进行编码所需要的字节数；</p>
 <p><strong>KL散度</strong>的意义是：使用随机变量B的最优编码方式对随机变量A编码所需要的<strong>额外字节数</strong>，具体来说就是使用哈夫曼编码却根据B的概率分布对A进行编码，所需要的编码数比A编码所需要的最小字节数多的数量；</p>

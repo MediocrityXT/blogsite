@@ -82,7 +82,7 @@
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -257,7 +257,6 @@
             <div class="markdown-body">
               <p>期末考试前复习<code>数据挖掘与大数据分析</code>课程，做一个笔记总结，也以便以后查阅。</p>
 <span id="more"></span>
-
 <h1 id="Chapter-1-简介"><a href="#Chapter-1-简介" class="headerlink" title="Chapter.1 简介"></a>Chapter.1 简介</h1><p><a target="_blank" rel="noopener" href="https://ke.qq.com/webcourse/index.html#cid=968590&amp;term_id=101064256&amp;taid=32603282&amp;lite=1&amp;vid=5285890804313344045">https://ke.qq.com/webcourse/index.html#cid=968590&amp;term_id=101064256&amp;taid=32603282&amp;lite=1&amp;vid=5285890804313344045</a></p>
 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="什么是大数据？"><a href="#什么是大数据？" class="headerlink" title="什么是大数据？"></a>什么是大数据？</h3><p>大数据指，数据量规模巨大到无法通过传统数据库和软件技术在合理时间内处理、并整理成为人类所能解读的信息的，巨量的结构化或非结构化的数据。</p>
 <h3 id="什么是数据挖掘？"><a href="#什么是数据挖掘？" class="headerlink" title="什么是数据挖掘？"></a>什么是数据挖掘？</h3><p>广义上指，从大量数据中挖掘有趣模式和知识的过程。</p>
@@ -273,7 +272,7 @@
 <li>关联规则挖掘</li>
 <li>离群点检测</li>
 </ol>
-<h2 id="KDD过程"><a href="#KDD过程" class="headerlink" title="KDD过程"></a>KDD过程</h2><p><em><strong>数据挖掘是KDD的核心！</strong></em></p>
+<h2 id="KDD过程"><a href="#KDD过程" class="headerlink" title="KDD过程"></a>KDD过程</h2><p><strong><em>数据挖掘是KDD的核心！</em></strong></p>
 <p><img src="kdd.png" srcset="/blogsite/img/loading.gif" lazyload alt="kdd"></p>
 <h1 id="Chapter-2-认识数据以及数据预处理"><a href="#Chapter-2-认识数据以及数据预处理" class="headerlink" title="Chapter.2 认识数据以及数据预处理"></a>Chapter.2 认识数据以及数据预处理</h1><h2 id="属性类型"><a href="#属性类型" class="headerlink" title="属性类型"></a>属性类型</h2><h3 id="分类型（Categorical）"><a href="#分类型（Categorical）" class="headerlink" title="分类型（Categorical）"></a>分类型（Categorical）</h3><p><strong>标称（Nominal）-（特殊：二元）</strong><br>例: ID 号、眼球颜色、邮政编码<br><strong>序数（ Ordinal ）</strong><br>例: 军阶 、 GPA、用 {tall, medium, short}表示的高</p>
 <p>此两者一般为离散的。</p>
@@ -299,7 +298,7 @@
 </li>
 <li><p>中位数(median)</p>
 <p>近似值估计(线性插值方法)：</p>
-<p><img src="image-20200804232835061.png" srcset="/blogsite/img/loading.gif" lazyload></p>
+<p><img src="image-20200804232835061.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
 </li>
 <li><p>中列数(midrange)</p>
 <p><strong>数据集的最大和最小值的平均值</strong></p>
@@ -317,11 +316,17 @@
 <li><p>标准差</p>
 </li>
 <li><p>五数概括：[min,Q1,median,Q3,max]</p>
-<p>可以用**盒图(boxplot)**表示</p>
+<p>可以用<strong>盒图(boxplot)</strong>表示</p>
 </li>
 </ul>
-<h2 id="相似性度量"><a href="#相似性度量" class="headerlink" title="相似性度量"></a>相似性度量</h2><h3 id="标称属性"><a href="#标称属性" class="headerlink" title="标称属性"></a>标称属性</h3><p>i与j两个对象相异度度量方法:<br>$$<br>\begin{gathered}<br>d(i,j)=\frac{p-m}{p}\\<br>m：状态相同的变量数目,p：变量总数<br>\end{gathered}<br>$$<br><strong>计算二元变量的相似度：</strong></p>
+<h2 id="相似性度量"><a href="#相似性度量" class="headerlink" title="相似性度量"></a>相似性度量</h2><h3 id="标称属性"><a href="#标称属性" class="headerlink" title="标称属性"></a>标称属性</h3><p>i与j两个对象相异度度量方法:</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+d(i,j)=\frac{p-m}{p}\\\\
+m：状态相同的变量数目,p：变量总数
+\end{gathered}</script><p><strong>计算二元变量的相似度：</strong></p>
 <p>首先获取列联表</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -332,7 +337,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td></td>
 <td></td>
 <td>1</td>
@@ -360,35 +366,54 @@
 <td>r+t</td>
 <td>p</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <blockquote>
 <p><strong>对称:</strong> 二元变量的两个状态具有同等价值</p>
 <p><strong>不对称</strong>: 二元变量的两个状态的输出不是同样重要</p>
 </blockquote>
-<p><strong>对称</strong>二元变量的相异度计算——简单匹配：<br>$$<br>d(i,j)=\frac{r+s}{q+r+s+t}<br>$$<br><strong>不对称</strong>二元变量的相异度计算：</p>
+<p><strong>对称</strong>二元变量的相异度计算——简单匹配：</p>
+<script type="math/tex; mode=display">
+d(i,j)=\frac{r+s}{q+r+s+t}</script><p><strong>不对称</strong>二元变量的相异度计算：</p>
 <blockquote>
-<p><em><strong>对于非对称二元变量，负匹配数目t被忽略，即分母中删去0与0的匹配数。</strong></em></p>
+<p><strong><em>对于非对称二元变量，负匹配数目t被忽略，即分母中删去0与0的匹配数。</em></strong></p>
 </blockquote>
-<p>$$<br>\begin{gathered}<br>d(i,j)=\frac{r+s}{q+r+s}=1-\frac{q}{q+r+s}=1-Jaccard(i,j)\\<br>Jaccard系数用于比较有限样本集之间的相似性，该系数越大，相似度越高。<br>\end{gathered}<br>$$</p>
-<h3 id="数值属性"><a href="#数值属性" class="headerlink" title="数值属性"></a>数值属性</h3><p>常使用<strong>距离</strong>来度量两个数据对象之间的相异性</p>
-<p><strong>闵可夫斯基(Minkowski)距离</strong>：<br>$$<br>\begin{gathered}<br>d(i,j)=\sqrt[q]{|x_{i1}-x_{j1}|^{q}+|x_{i2}-x_{j2}|^{q}+\cdots+|x_{ip}-x_{jp}|^{q}}\\<br>其中i和j是两个p-维数据对象(q为正整数)<br>\end{gathered}<br>$$<br><strong>曼哈顿(Manhattan)距离</strong>：上式中q=1</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+d(i,j)=\frac{r+s}{q+r+s}=1-\frac{q}{q+r+s}=1-Jaccard(i,j)\\\\
+Jaccard系数用于比较有限样本集之间的相似性，该系数越大，相似度越高。
+\end{gathered}</script><h3 id="数值属性"><a href="#数值属性" class="headerlink" title="数值属性"></a>数值属性</h3><p>常使用<strong>距离</strong>来度量两个数据对象之间的相异性</p>
+<p><strong>闵可夫斯基(Minkowski)距离</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+d(i,j)=\sqrt[q]{|x_{i1}-x_{j1}|^{q}+|x_{i2}-x_{j2}|^{q}+\cdots+|x_{ip}-x_{jp}|^{q}}\\\\
+其中i和j是两个p-维数据对象(q为正整数)
+\end{gathered}</script><p><strong>曼哈顿(Manhattan)距离</strong>：上式中q=1</p>
 <p><strong>欧几里德(Euclidean)距离</strong>：上式中q=2</p>
 <p>另外距离也可以加权计算。</p>
 <h3 id="数据标准化-归一化"><a href="#数据标准化-归一化" class="headerlink" title="数据标准化/归一化"></a>数据标准化/归一化</h3><h4 id="数据标准化："><a href="#数据标准化：" class="headerlink" title="数据标准化："></a>数据标准化：</h4><ol>
-<li>计算平均绝对偏差<br>$$<br>\begin{gathered}<br>s_{f}=\frac{1}{n}(|x_{1f}-m_{f}|+|x_{2f}-m_{f}|+\cdots+|x_{nf}-m_{f}|)\\<br>其中m_{f}=\frac{1}{n}(x_{1f}+x_{2f}+\cdots+x_{nf})<br>\end{gathered}<br>$$</li>
-<li>计算标准化的度量值<br>$$<br>Z_{if}=\frac{x_{if}-m_{f}}{s_{f}}<br>$$</li>
+<li><p>计算平均绝对偏差</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+s_{f}=\frac{1}{n}(|x_{1f}-m_{f}|+|x_{2f}-m_{f}|+\cdots+|x_{nf}-m_{f}|)\\\\
+其中m_{f}=\frac{1}{n}(x_{1f}+x_{2f}+\cdots+x_{nf})
+\end{gathered}</script></li>
+<li><p>计算标准化的度量值</p>
+<script type="math/tex; mode=display">
+Z_{if}=\frac{x_{if}-m_{f}}{s_{f}}</script></li>
 </ol>
 <p>使用<strong>平均绝对偏差</strong>比使用<strong>标准差</strong>更具有鲁棒性</p>
 <h4 id="数据归一化-！！-："><a href="#数据归一化-！！-：" class="headerlink" title="数据归一化[！！]："></a>数据归一化[！！]：</h4><p>计算混合类型变量描述的对象的相异度的基本思想是，将不同类型的变量组合在单个相异度矩阵中, <strong>把所有变量转换到共同的值域区间[0.0, 1.0]上</strong> 。</p>
 <ul>
 <li>最大最小法</li>
 </ul>
-<p>$$<br>x’=\frac{x-x_{min}}{x_{max}-x_{min}}<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+x'=\frac{x-x_{min}}{x_{max}-x_{min}}</script><ul>
 <li>z-score</li>
 </ul>
-<p>$$<br>x’=\frac{x-\mu}{\sigma}<br>$$</p>
-<h3 id="其他相似性度量方式"><a href="#其他相似性度量方式" class="headerlink" title="其他相似性度量方式"></a>其他相似性度量方式</h3><p>余弦相似性（向量内积空间的夹角）<br>马氏距离 （考虑数据局部分布）<br>相关系数 （<a href="#%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90%EF%BC%9A%E8%AE%A1%E7%AE%97%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0-%E7%9A%AE%E5%B0%94%E9%80%8A%E7%B3%BB%E6%95%B0">皮尔森系数</a>）<br>KL散度（数据分布比较） </p>
+<script type="math/tex; mode=display">
+x'=\frac{x-\mu}{\sigma}</script><h3 id="其他相似性度量方式"><a href="#其他相似性度量方式" class="headerlink" title="其他相似性度量方式"></a>其他相似性度量方式</h3><p>余弦相似性（向量内积空间的夹角）<br>马氏距离 （考虑数据局部分布）<br>相关系数 （<a href="#相关分析：计算相关系数-皮尔逊系数">皮尔森系数</a>）<br>KL散度（数据分布比较） </p>
 <h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="数据清理-！！"><a href="#数据清理-！！" class="headerlink" title="数据清理[！！]"></a>数据清理[！！]</h3><ul>
 <li>空缺值。<strong>用平均值或相近的样本平均值或用空值替代空缺值。</strong></li>
 <li>处理噪声数据，删除孤立点。可用分箱、聚类、回归等方法处理噪声。</li>
@@ -401,9 +426,20 @@
 </li>
 <li>集成多个数据库、数据立方体或文件</li>
 </ul>
-<h4 id="相关分析：计算相关系数-皮尔逊系数"><a href="#相关分析：计算相关系数-皮尔逊系数" class="headerlink" title="相关分析：计算相关系数(皮尔逊系数)"></a>相关分析：计算相关系数(皮尔逊系数)</h4><p>$$<br>\begin{align}<br>r_{A,B}&amp;=\frac{\sum_{i=1}^{n}(a_{i}-\overline{A})(b_{i}-\overline{B})}{(n-1)\sigma_{A}\sigma_{B}}\<br>&amp;=\frac{\sum_{i=1}^{n}(a_{i}b_{i})-n\overline{A}\overline{B}}{(n-1)\sigma_{A}\sigma_{B}}\\<br>\sigma_{A}，\sigma_{B}&amp;为各自标准差,\sum_{i=1}^{n}(a_{i}b_{i})=A\cdot B<br>\end{align}\<br>$$<br>r=0不相关，r&gt;0正相关，r&lt;0负相关</p>
+<h4 id="相关分析：计算相关系数-皮尔逊系数"><a href="#相关分析：计算相关系数-皮尔逊系数" class="headerlink" title="相关分析：计算相关系数(皮尔逊系数)"></a>相关分析：计算相关系数(皮尔逊系数)</h4><script type="math/tex; mode=display">
+\begin{align}
+r_{A,B}&=\frac{\sum_{i=1}^{n}(a_{i}-\overline{A})(b_{i}-\overline{B})}{(n-1)\sigma_{A}\sigma_{B}}\\
+&=\frac{\sum_{i=1}^{n}(a_{i}b_{i})-n\overline{A}\overline{B}}{(n-1)\sigma_{A}\sigma_{B}}\\\\
+\sigma_{A}，\sigma_{B}&为各自标准差,\sum_{i=1}^{n}(a_{i}b_{i})=A\cdot B
+\end{align}\\</script><p>r=0不相关，r&gt;0正相关，r&lt;0负相关</p>
 <h4 id="卡方检验-！！重要！！"><a href="#卡方检验-！！重要！！" class="headerlink" title="卡方检验[！！重要！！]"></a><strong>卡方检验[！！重要！！]</strong></h4><p>σij是(ai,bj)的观测频度（实际计数）<br>eij是(ai,bj)的期望频度（单位是次数）<br>N是数据元组的个数</p>
-<p>$$<br>\begin{gathered}<br>\chi^2=\sum_{i=1}^c\sum_{j=1}^r\frac{(\sigma_{ij}-e_{ij})^2}{e_{ij}}\\<br>e_{ij}=\frac{count(A=a_{i})<em>count(b=b_{j})}{N}\\<br>自由度:(c-1)</em>(r-1)\\<br>\chi^2越大，两者无关系的概率越小，有关系的概率越大<br>\end{gathered}<br>$$<br><img src="chi-square.png" srcset="/blogsite/img/loading.gif" lazyload alt="chi-square"></p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\chi^2=\sum_{i=1}^c\sum_{j=1}^r\frac{(\sigma_{ij}-e_{ij})^2}{e_{ij}}\\\\
+e_{ij}=\frac{count(A=a_{i})*count(b=b_{j})}{N}\\\\
+自由度:(c-1)*(r-1)\\\\
+\chi^2越大，两者无关系的概率越小，有关系的概率越大
+\end{gathered}</script><p><img src="chi-square.png" srcset="/blogsite/img/loading.gif" lazyload alt="chi-square"></p>
 <h3 id="数据归约"><a href="#数据归约" class="headerlink" title="数据归约"></a>数据归约</h3><ul>
 <li>得到数据集的压缩表示，但可以得到相同或相近的结果</li>
 <li>数据归约策略：<ul>
@@ -419,7 +455,16 @@
 <p><strong>PCA——Principal component analysis（主成分分析），K-L变换:</strong></p>
 <p>基本思想是找到一个投影，其能表示数据的最大变化</p>
 <h4 id="特征筛选-！！-用到信息熵"><a href="#特征筛选-！！-用到信息熵" class="headerlink" title="特征筛选[！！] 用到信息熵"></a>特征筛选[！！] 用到信息熵</h4><p><a name='信息熵'></a></p>
-<p><strong>信息熵</strong>：刻画系统的混乱程度<br>$$<br>\begin{gathered}<br>H(X)=-\sum_{i=1}^np(x_{i})\log p(x_{i})\\<br>p(x_i)为X出现x_i的概率<br>\end{gathered}<br>$$<br>条件信息熵：在已知X的基础上需要多少信息来描述Y<br>$$<br>H(Y|X)=\sum_{x\in\chi}p(x)H(Y|X=x)<br>$$<br><strong>信息增益</strong>：刻画在已知X的基础上需要节约多少信息来描述Y<br>$$<br>IG(Y|X)=H(Y)-H(Y|X)<br>$$<br>特征筛选即<strong>选择对分类变量Y信息增益大的特征</strong>，删去信息增益小的特征。</p>
+<p><strong>信息熵</strong>：刻画系统的混乱程度</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+H(X)=-\sum_{i=1}^np(x_{i})\log p(x_{i})\\\\
+p(x_i)为X出现x_i的概率
+\end{gathered}</script><p>条件信息熵：在已知X的基础上需要多少信息来描述Y</p>
+<script type="math/tex; mode=display">
+H(Y|X)=\sum_{x\in\chi}p(x)H(Y|X=x)</script><p><strong>信息增益</strong>：刻画在已知X的基础上需要节约多少信息来描述Y</p>
+<script type="math/tex; mode=display">
+IG(Y|X)=H(Y)-H(Y|X)</script><p>特征筛选即<strong>选择对分类变量Y信息增益大的特征</strong>，删去信息增益小的特征。</p>
 <h3 id="数据变换"><a href="#数据变换" class="headerlink" title="数据变换"></a>数据变换</h3><ul>
 <li>规范化（归一化）和聚集</li>
 </ul>
@@ -450,11 +495,16 @@
 </li>
 <li><p>关联规则：关联规则是形如 X→Y的蕴含表达式, 其中 X 和 Y 是不相交的项集<br>例子:    {Milk, Diaper} → {Beer} </p>
 <ul>
-<li>支持度 support (X→Y): 确定<strong>项集的频繁程度</strong>。<br>$$<br>\begin{gathered}<br>support(X\rightarrow Y)=P(X\cup Y)\\<br>P(X\cup Y) 表示事务包含集合A和B中每个项的概率<br>\end{gathered}<br>$$</li>
+<li>支持度 support (X→Y): 确定<strong>项集的频繁程度</strong>。<script type="math/tex; mode=display">
+\begin{gathered}
+support(X\rightarrow Y)=P(X\cup Y)\\\\
+P(X\cup Y) 表示事务包含集合A和B中每个项的概率 
+\end{gathered}</script></li>
 </ul>
 </li>
-<li><p>置信度confidence(X→Y)：确定<strong>Y在包含X的事务中出现的频繁程度</strong>。<br>  $$<br>  confidence(X\rightarrow Y)=P(X|Y)=\frac{support(X\cup Y)}{support(X)}<br>  $$</p>
-</li>
+<li><p>置信度confidence(X→Y)：确定<strong>Y在包含X的事务中出现的频繁程度</strong>。</p>
+<script type="math/tex; mode=display">
+  confidence(X\rightarrow Y)=P(X|Y)=\frac{support(X\cup Y)}{support(X)}</script></li>
 </ul>
 <h2 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h2><h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p><strong>如果一个项集是频繁的，则它的所有子集一定也是频繁的。相反，如果一个项集是非频繁的，则它的所有超集也一定是非频繁的</strong>。</p>
 <blockquote>
@@ -509,8 +559,8 @@
 <blockquote>
 <p>注意：尽管前两个事务具有一个共同项b，但是它们的路径不相交，因为这两个事务没有共同的前缀</p>
 </blockquote>
-<p><img src="image-20200807133204031.png" srcset="/blogsite/img/loading.gif" lazyload></p>
-<p><img src="image-20200807133307221.png" srcset="/blogsite/img/loading.gif" lazyload></p>
+<p><img src="image-20200807133204031.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
+<p><img src="image-20200807133307221.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
 <h3 id="如何挖掘频繁模式-！！"><a href="#如何挖掘频繁模式-！！" class="headerlink" title="如何挖掘频繁模式[！！]"></a>如何挖掘频繁模式[！！]</h3><ol>
 <li><p>对于头表中每项构建条件模式基（一个“子数据库”，由FP树中与该后缀模式一起出现的前缀路径集组成）</p>
 </li>
@@ -546,13 +596,29 @@
 <li>信息增益率</li>
 <li>Gini指标</li>
 </ul>
-<p><a href="#%E4%BF%A1%E6%81%AF%E7%86%B5">信息增益</a></p>
-<p>信息增益率<br>$$<br>\begin{gathered}<br>Info(D)=-\sum_{i=1}^mp_i\log <em>2(p_i)\\<br>Info_A(D)=\sum</em>{j=1}^v\frac{|D_{j}|}{|D|}\times Info(D)\\<br>(用A分裂D得到v个部分需要的信息)\\<br>Gain_{A}(D)=Info(D)-Info_A(D)\\<br>(信息增益)\\<br>SplitInfo_{A}(D)=-\sum_{j=1}^v\frac{|D_{j}|}{|D|}\times\log_{2}(\frac{|D_{j}|}{|D|})\\<br>GainRatio_{A}=\frac{Gain_{A}(D)}{SplitInfo_{A}(D)}\\<br>(增益率)<br>\end{gathered}<br>$$<br><img src="image-20200807195604165.png" srcset="/blogsite/img/loading.gif" lazyload></p>
+<p><a href="#信息熵">信息增益</a></p>
+<p>信息增益率</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+Info(D)=-\sum_{i=1}^mp_i\log _2(p_i)\\\\
+Info_A(D)=\sum_{j=1}^v\frac{|D_{j}|}{|D|}\times Info(D)\\\\
+(用A分裂D得到v个部分需要的信息)\\\\
+Gain_{A}(D)=Info(D)-Info_A(D)\\\\
+(信息增益)\\\\
+SplitInfo_{A}(D)=-\sum_{j=1}^v\frac{|D_{j}|}{|D|}\times\log_{2}(\frac{|D_{j}|}{|D|})\\\\
+GainRatio_{A}=\frac{Gain_{A}(D)}{SplitInfo_{A}(D)}\\\\
+(增益率)
+\end{gathered}</script><p><img src="image-20200807195604165.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
 <h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h3><h4 id="基本思想-1"><a href="#基本思想-1" class="headerlink" title="基本思想"></a>基本思想</h4><p>选择与待分类样本距离最小的K个样本作为X的K个最近邻，最后以X的K个最近邻中的大多数所属的类别作为X的类别。</p>
 <h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>算距离：给定测试对象，计算它与训练集中的每个对象的距离；<br>找邻居：圈定距离最近的k个训练对象，作为测试对象的近邻；<br>做分类：根据这k个近邻归属的主要类别，来对测试对象分类。</p>
 <h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><p>简单。适合多标签问题。</p>
 <p>懒惰学习(收到样本后保存整个训练集，预测时才计算，而非用训练集提前算出模型)算法计算量大，内存开销大。样本不平衡时效果不好。可解释性差。</p>
-<h3 id="朴素贝叶斯分类"><a href="#朴素贝叶斯分类" class="headerlink" title="朴素贝叶斯分类"></a>朴素贝叶斯分类</h3><p><strong>计算</strong><br>$$<br>\begin{gather}<br>P(H|X)=\frac{P(X|H)P(H)}{P(X)}\\<br>[H后验概率=X似然概率\times H先验概率\div X先验概率]<br>\end{gather}<br>$$<br>将有最高后验概率的类作为预测结果，</p>
+<h3 id="朴素贝叶斯分类"><a href="#朴素贝叶斯分类" class="headerlink" title="朴素贝叶斯分类"></a>朴素贝叶斯分类</h3><p><strong>计算</strong></p>
+<script type="math/tex; mode=display">
+\begin{gather}
+P(H|X)=\frac{P(X|H)P(H)}{P(X)}\\\\
+[H后验概率=X似然概率\times H先验概率\div X先验概率]
+\end{gather}</script><p>将有最高后验概率的类作为预测结果，</p>
 <p>即让P(X|C<sub>i </sub>)P(C<sub>i </sub>)最大化。</p>
 <p><strong>假设</strong></p>
 <p>类条件独立：</p>
@@ -560,11 +626,17 @@
 <h3 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h3><p>追求结构风险最小化</p>
 <p>支持向量/小样本 </p>
 <p>最大间隔化思想-有泛化能力</p>
-<h4 id="基本思想-2"><a href="#基本思想-2" class="headerlink" title="基本思想"></a>基本思想</h4><p><img src="image-20200807201347022.png" srcset="/blogsite/img/loading.gif" lazyload></p>
+<h4 id="基本思想-2"><a href="#基本思想-2" class="headerlink" title="基本思想"></a>基本思想</h4><p><img src="image-20200807201347022.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
 <p>分类面H的表达式：wx+b=0</p>
 <p>支持向量为两分界面Plus-Plane(H1)\Minus-Plane(H2)上的样本点对应向量。</p>
-<p>线性可分：<br>求解使得超平面具有最大内间间隔的w，b参数；（<strong>条件最优化问题！！！</strong>）<br>$$<br>\begin{gather}<br>\min\limits_{w,b}\frac{1}{2}||w||^2 \\<br>s.t.<br>y_i(wx_i+b)\ge 1\\<br>(乘以y_i相当于判断绝对值，将所有点分开)<br>\end{gather}<br>$$</p>
-<p>将问题转化为对偶问题进行快速求解；（凸二次规划问题利用Lagrange乘子法）</p>
+<p>线性可分：<br>求解使得超平面具有最大内间间隔的w，b参数；（<strong>条件最优化问题！！！</strong>）</p>
+<script type="math/tex; mode=display">
+\begin{gather}
+\min\limits_{w,b}\frac{1}{2}||w||^2 \\\\
+s.t.     
+y_i(wx_i+b)\ge 1\\\\
+(乘以y_i相当于判断绝对值，将所有点分开)
+\end{gather}</script><p>将问题转化为对偶问题进行快速求解；（凸二次规划问题利用Lagrange乘子法）</p>
 <p>改进：加入松弛变量和惩罚因子的SVM</p>
 <p>非线性问题：核函数</p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>过拟合问题</p>
@@ -576,8 +648,7 @@
 </ul>
 <p>决策树中的过拟合</p>
 <ul>
-<li><p>限制层高</p>
-</li>
+<li>限制层高</li>
 <li><p>数少的节点不再分割</p>
 </li>
 <li><p>先剪枝/后剪枝</p>
@@ -677,7 +748,7 @@
 <p>n对象<em>p</em>的局部异常因子表示<em>p</em>的异常程度，局部异常因子愈大，就认为它更可能异常；反之则可能性小。</p>
 <p>n簇内靠近核心点的对象的<em>LOF</em>接近于1，那么不应该被认为是局部异常。而处于簇的边缘或是簇的外面的对象的LOF相对较大，如前面图中对象o1， o2。 </p>
 </blockquote>
-<h1 id="Chapter-6-大数据分析"><a href="#Chapter-6-大数据分析" class="headerlink" title="Chapter.6 大数据分析"></a>Chapter.6 大数据分析</h1><h2 id="哈希技术"><a href="#哈希技术" class="headerlink" title="哈希技术"></a>哈希技术</h2><h3 id="整体框架"><a href="#整体框架" class="headerlink" title="整体框架"></a>整体框架</h3><p><img src="image-20200824102425400.png" srcset="/blogsite/img/loading.gif" lazyload></p>
+<h1 id="Chapter-6-大数据分析"><a href="#Chapter-6-大数据分析" class="headerlink" title="Chapter.6 大数据分析"></a>Chapter.6 大数据分析</h1><h2 id="哈希技术"><a href="#哈希技术" class="headerlink" title="哈希技术"></a>哈希技术</h2><h3 id="整体框架"><a href="#整体框架" class="headerlink" title="整体框架"></a>整体框架</h3><p><img src="image-20200824102425400.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
 <h3 id="Shingling"><a href="#Shingling" class="headerlink" title="Shingling"></a>Shingling</h3><p>一个文档的 k-shingle (或 k-gram) 是指连续k个字符一起出现的序列。</p>
 <blockquote>
 <p>Example: k=2; doc = abcab.  Set of 2-shingles = {ab, bc, ca}.<br>Option: regard shingles as a bag, and count ab twice.</p>
@@ -691,8 +762,9 @@
 <p>假设原数据矩阵为[X,Y]大小。</p>
 <p>通过对C列从Row1到RowX的<strong>每个为1的元素的行号r</strong>依次计算多个哈希h(r)，找出并保留得到的对于C列来说每种哈希函数的最小哈希值。</p>
 <p>得到一个签名矩阵[n,Y]，其中位于(x,y)的元素代表第y列的<strong>所有对应元素为1的行号</strong>在第x个哈希函数下计算得到的最小哈希值。</p>
-<p>而这时<br>$$<br>Sim(C_i,C_j)=Pr(h(C_i)=h(C_j))<br>$$</p>
-<h4 id="通过签名矩阵寻找相似的签名"><a href="#通过签名矩阵寻找相似的签名" class="headerlink" title="通过签名矩阵寻找相似的签名"></a>通过签名矩阵寻找相似的签名</h4><p>计算<strong>签名矩阵</strong>两列中相同数字占比。</p>
+<p>而这时</p>
+<script type="math/tex; mode=display">
+Sim(C_i,C_j)=Pr(h(C_i)=h(C_j))</script><h4 id="通过签名矩阵寻找相似的签名"><a href="#通过签名矩阵寻找相似的签名" class="headerlink" title="通过签名矩阵寻找相似的签名"></a>通过签名矩阵寻找相似的签名</h4><p>计算<strong>签名矩阵</strong>两列中相同数字占比。</p>
 <p>签名矩阵中相似的两项在输入矩阵中也可能相似。</p>
 <h4 id="检测签名相似的是否真的相似"><a href="#检测签名相似的是否真的相似" class="headerlink" title="检测签名相似的是否真的相似"></a>检测签名相似的是否真的相似</h4><p>【注意】计算<strong>输入矩阵</strong>中的两列二元非对称变量（0-1变量）的相似度Similarity：需要删去负匹配数目（0与0匹配）后，计算正匹配（1与1匹配）所占比例</p>
 <h3 id="局部敏感哈希Locality-Sensitive-Hashing，LSH"><a href="#局部敏感哈希Locality-Sensitive-Hashing，LSH" class="headerlink" title="局部敏感哈希Locality-Sensitive Hashing，LSH"></a>局部敏感哈希Locality-Sensitive Hashing，LSH</h3><p>将签名矩阵按行分块(band)，比如r行1块，对于每一块中的每列计算哈希（哈希桶数目尽量多）。</p>
@@ -747,7 +819,7 @@
 <li><p><strong>Clean and simple programming abstraction</strong><br>Users only provide two functions “map” and “reduce”</p>
 </li>
 </ul>
-<h3 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h3><p><img src="6422782-fbfd2b834ed3707d.png" srcset="/blogsite/img/loading.gif" lazyload></p>
+<h3 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h3><p><img src="6422782-fbfd2b834ed3707d.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
 <h3 id="HDFS-——-存储"><a href="#HDFS-——-存储" class="headerlink" title="HDFS —— 存储[!]"></a>HDFS —— 存储[!]</h3><p>Hadoop Distributed File System</p>
 <h4 id="Namenode"><a href="#Namenode" class="headerlink" title="Namenode"></a>Namenode</h4><p>维护文件分块存储信息的元数据。（文件本身默认按64M每block分块。）</p>
 <p>Namenode通过心跳机制持续检测Datanode。</p>
@@ -773,7 +845,7 @@
 <li><p>Spark提供多个语言的API以供调用。</p>
 </li>
 </ul>
-<h3 id="RDD-操作"><a href="#RDD-操作" class="headerlink" title="RDD 操作"></a>RDD 操作</h3><p><img src="image-20200824144319721.png" srcset="/blogsite/img/loading.gif" lazyload></p>
+<h3 id="RDD-操作"><a href="#RDD-操作" class="headerlink" title="RDD 操作"></a>RDD 操作</h3><p><img src="image-20200824144319721.png" srcset="/blogsite/img/loading.gif" lazyload alt=""></p>
 <p>transformations类似map，在已有数据集上得到新的数据集。</p>
 <blockquote>
 <p>所有transformations都是lazy的，只有需要actions时才进行前置的transformations</p>
