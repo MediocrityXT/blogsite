@@ -107,3 +107,8 @@ deploy:
   repo: git@github.com:MediocrityXT/blogsite.git
   branch: gh-pages
   message: 
+
+# plugin of katex
+markdown:
+  plugins:
+    - "@traptitech/markdown-it-katex"

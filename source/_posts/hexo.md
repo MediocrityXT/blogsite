@@ -170,6 +170,8 @@ tags:
 tags: [tag1,tag2]
 ```
 
+本地favicon预览不到 => safari不给localhost显示favicon，chrome可以
+
 对网站大图标和小图标都进行了优化：Apple-Touch-Icon是显示在Safari书签栏的大LOGO。
 图标搜索的优先级如下：
 
