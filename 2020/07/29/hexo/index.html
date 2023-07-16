@@ -23,14 +23,14 @@
 <meta property="og:site_name" content="SummerSecret">
 <meta property="og:description" content="记录一些关于为hexo博客用typora写markdown的尝试">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/29/hexo/QQ图片20200730152128.jpg">
+<meta property="og:image" content="https://mediocrityxt.github.io/blogsite/2020/07/29/hexo/QQ%E5%9B%BE%E7%89%8720200730152128.jpg">
 <meta property="article:published_time" content="2020-07-29T05:25:08.000Z">
 <meta property="article:modified_time" content="2021-12-03T18:20:08.000Z">
 <meta property="article:author" content="XT">
-<meta property="article:tag" content="折腾">
 <meta property="article:tag" content="感悟">
+<meta property="article:tag" content="折腾">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mediocrityxt.github.io/blogsite/2020/07/29/hexo/QQ图片20200730152128.jpg">
+<meta name="twitter:image" content="https://mediocrityxt.github.io/blogsite/2020/07/29/hexo/QQ%E5%9B%BE%E7%89%8720200730152128.jpg">
   
   
   <title>markdown笔记/hexo记录 - SummerSecret</title>
@@ -74,7 +74,7 @@
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -350,9 +350,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/blogsite/tags/%E6%8A%98%E8%85%BE/">折腾</a>
-                    
                       <a class="hover-with-bg" href="/blogsite/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+                    
+                      <a class="hover-with-bg" href="/blogsite/tags/%E6%8A%98%E8%85%BE/">折腾</a>
                     
                   </div>
                 
@@ -523,43 +523,8 @@
   
 
   
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        loader: {
-          load: ['ui/lazy']
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
-
+    <!-- KaTeX -->
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css" />
   
 
 

@@ -18,19 +18,19 @@
   
     <meta name="description" content="损失函数中常用到的KL散度、交叉熵，与最大似然估计，本质上是一样的啊！就是希望我预测出来的与我的标注的概率分布越接近越好。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KL散度&#x3D;交叉熵&#x3D;最大似然估计">
+<meta property="og:title" content="交叉熵&#x3D;KL散度&#x3D;最大似然估计">
 <meta property="og:url" content="https://mediocrityxt.github.io/blogsite/2021/06/12/KL%E6%95%A3%E5%BA%A6%E4%B8%8E%E4%BA%A4%E5%8F%89%E7%86%B5/index.html">
 <meta property="og:site_name" content="SummerSecret">
 <meta property="og:description" content="损失函数中常用到的KL散度、交叉熵，与最大似然估计，本质上是一样的啊！就是希望我预测出来的与我的标注的概率分布越接近越好。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-12T02:09:03.000Z">
-<meta property="article:modified_time" content="2021-06-12T02:09:03.000Z">
+<meta property="article:modified_time" content="2023-07-13T11:09:00.000Z">
 <meta property="article:author" content="XT">
 <meta property="article:tag" content="感悟">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>KL散度=交叉熵=最大似然估计 - SummerSecret</title>
+  <title>交叉熵=KL散度=最大似然估计 - SummerSecret</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -71,7 +71,7 @@
   </script>
   <script  src="/blogsite/js/utils.js" ></script>
   <script  src="/blogsite/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -176,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="KL散度=交叉熵=最大似然估计">
+            <span class="h2" id="subtitle" title="交叉熵=KL散度=最大似然估计">
               
             </span>
 
@@ -191,9 +191,19 @@
           2021年6月12日 上午
         </time>
         
+          创建
+        
       </span>
     </div>
     <div class="mt-1">
+      
+        <span class="post-meta">
+          <i class="iconfont icon-pen" aria-hidden="true"></i>
+          <time datetime="2023-07-13 19:09" pubdate>
+            2023年7月13日 晚上
+          </time>
+          更新
+        </span>
       
     </div>
   
@@ -203,7 +213,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      387 字
+      4.6k 字
     </span>
   
 
@@ -212,7 +222,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      39 分钟
     </span>
   
 
@@ -241,18 +251,64 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">KL散度=交叉熵=最大似然估计</h1>
+            <h1 style="display: none">交叉熵=KL散度=最大似然估计</h1>
             
             <div class="markdown-body">
               <p>损失函数中常用到的KL散度、交叉熵，与最大似然估计，本质上是一样的啊！<br>就是希望我预测出来的与我的标注的概率分布越接近越好。</p>
 <span id="more"></span>
-<p>比较熵、KL散度和交叉熵的数学定义会发现：<br><code>KL散度 = 交叉熵 - 熵</code></p>
-<h2 id="从编码的角度理解交叉熵"><a href="#从编码的角度理解交叉熵" class="headerlink" title="从编码的角度理解交叉熵"></a>从编码的角度理解交叉熵</h2><p><strong>熵</strong>的意义是：对一个随机变量A编码所需要的<strong>最小字节数</strong>，也就是使用哈夫曼编码根据A的概率分布对A进行编码所需要的字节数；</p>
+<p>比较x变量在p概率分布下的熵、KL散度和交叉熵的数学定义</p>
+<script type="math/tex; mode=display">
+H(X)=-\sum{p(x)\log p(x)}\\\\
+H(p,q)=-\sum{p(x)\log q(x)}\\\\
+D_{KL}(p||q)=-\sum{p(x)\log \frac{p(x)}{q(x)}}</script><p>会发现</p>
+<script type="math/tex; mode=display">
+D_{KL}(p||q)=H(p,q)-H(p)</script><p>即<code>KL散度 = 交叉熵 - 熵</code></p>
+<h1 id="从编码的角度理解交叉熵"><a href="#从编码的角度理解交叉熵" class="headerlink" title="从编码的角度理解交叉熵"></a>从编码的角度理解交叉熵</h1><p><strong>熵</strong>的意义是：对任意一个随机变量A编码所需要的<strong>最小字节数</strong>，也就是使用哈夫曼编码根据A的概率分布对A进行编码所需要的字节数；</p>
 <p><strong>KL散度</strong>的意义是：使用随机变量B的最优编码方式对随机变量A编码所需要的<strong>额外字节数</strong>，具体来说就是使用哈夫曼编码却根据B的概率分布对A进行编码，所需要的编码数比A编码所需要的最小字节数多的数量；</p>
 <p><strong>交叉熵</strong>的意义是：使用随机变量B的最优编码方式对随机变量A编码所需要的<strong>字节数</strong>，具体来说就是使用哈夫曼编码却根据B的概率分布对A进行编码，所需要的编码数。</p>
 <p>在损失函数中，ground-truth当做随机变量A，这个熵是常数。</p>
 <p>最大似然估计的公式与这种情况下的交叉熵相同。</p>
-
+<blockquote>
+<p>坏了，我现在自己看不懂了。。。2022/9/12。</p>
+<p>不过使用交叉熵作为loss的原因有一条“当使用Softmax函数作为输出节点的激活函数的时候，一般使用交叉熵作为损失函数。由于Softmax函数的数值计算过程中，很容易因为输出节点的输出值比较大而发生数值溢出的现象，在计算交叉熵的时候也可能会出现数值溢出的问题。为了数值计算的稳定性，TensorFlow提供了一个统一的接口，将Softmax与交叉熵损失函数同时实现，同时也处理了数值不稳定的异常，使用TensorFlow深度学习框架的时候，一般推荐使用这个统一的接口，避免分开使用Softmax函数与交叉熵损失函数。”</p>
+</blockquote>
+<h1 id="Pytorch-loss-fucntion"><a href="#Pytorch-loss-fucntion" class="headerlink" title="Pytorch loss fucntion"></a>Pytorch loss fucntion</h1><p>2023/7/12 面试时考到了用torch手写交叉熵loss和huber loss这两个类</p>
+<p>这里可以用<code>jupytext --to markdown RewriteLossFunctions.ipynb</code>将jupyter notebook的调试代码转成md形式放上来，当然，运行结果是无法保存的了。</p>
+<h2 id="CrossEntropyLoss"><a href="#CrossEntropyLoss" class="headerlink" title="CrossEntropyLoss"></a>CrossEntropyLoss</h2><p>（公式扒自pytorch文档）</p>
+<p>假设输入$x$是具有[B, C, N]三个个维度，B是minibatch的样本数目，C表示token的class数目，N表示单个样本内token数。weights是C维度的，对于特定的类乘以特定的权重。ignore_index表示特定的类被忽略，不为交叉熵贡献，但是实际上这些类仍然参与了softmax运算。</p>
+<blockquote>
+<p>样本是1D的句子，所以样本是1D的句子，所以除了B，C多一个N维度。</p>
+<p>对于高维输入如2D图片的每个像素做CELoss，输入x是[B,C,d1,d2]。</p>
+</blockquote>
+<p>y有两种可选的输入：</p>
+<ol>
+<li><p>y是[N]维度的class indices，每个元素作为类标签都在[0,C)范围内。此时交叉熵计算方法如下</p>
+<script type="math/tex; mode=display">
+\ell(x, y) = L = \{l_1,\dots,l_N\}^\top, \quad
+l_n = - w_{y_n} \log \frac{\exp(x_{n,y_n})}{\sum_{c=1}^C \exp(x_{n,c})}
+\cdot \mathbb{1}\{y_n \not= \text{ignore\_index}\}</script><p>这个公式可以用nn.LogSoftmax和nn.NLLLoss简单实现。</p>
+</li>
+</ol>
+<ol>
+<li>可能由于进行了label smoothing，标签y是[N,C]维度的class probabilities，每个元素作为该token属于某类的概率，C维度元素之和都为1。此时交叉熵计算方法如下。这个情况不考虑ignore_index。【torch 1.7.1版本还未支持这种输入。torch版本和CUDAToolkit版本强相关所以不能随便升级，所以这里不考虑这种标签输入】<script type="math/tex; mode=display">
+\ell(x, y) = L = \{l_1,\dots,l_N\}^\top, \quad
+l_n = - \sum_{c=1}^C w_c \log \frac{\exp(x_{n,c})}{\sum_{i=1}^C \exp(x_{n,i})} y_{n,c}</script></li>
+</ol>
+<blockquote>
+<p>注：L可以用mean()或者sum()的方法进行reduction。这里默认是mean()，即在batch维度所有样本取平均。【对于高维输入，同样应该是所有元素取平均】</p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="输入初始化"><a href="#输入初始化" class="headerlink" title="输入初始化"></a>输入初始化</h3><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><br><span class="hljs-comment"># batch size B, sequence length N, class nums C</span><br>B = <span class="hljs-number">2</span><br>N = <span class="hljs-number">2</span><br>C = <span class="hljs-number">4</span><br>logits = torch.randn(B,C,N)<br>labels= torch.randint(<span class="hljs-number">0</span>,C,(B,N))<br>weights = torch.randn(C)<br>ignore_index = torch.randint(<span class="hljs-number">0</span>,C,()).item()<br><br><span class="hljs-comment"># 注释这下面两行可以获得随机weights和ignore_index</span><br>weights = <span class="hljs-literal">None</span><br>ignore_index = -<span class="hljs-number">100</span><br><span class="hljs-built_in">print</span>(weights)<br><span class="hljs-built_in">print</span>(ignore_index)<br><span class="hljs-built_in">print</span>(logits)<br><span class="hljs-built_in">print</span>(labels)<br></code></pre></div></td></tr></table></figure>
+<h3 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h3><p>通过<code>nn.LogSoftmax</code>, <code>nn.NLLLoss</code>两行代码实现交叉熵Loss。</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CrossEntropyLoss_Simple</span>(nn.Module):<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, weight = <span class="hljs-literal">None</span>,ignore_index= -<span class="hljs-number">100</span></span>):<br>        <span class="hljs-built_in">super</span>().__init__()<br>        self.weight = weight<br>        self.ignore_index = ignore_index<br>        <span class="hljs-comment"># LogSoftmax实现有特殊处理，避免了上下溢出</span><br>            <span class="hljs-comment"># log_softmax与softmax的区别在哪里？ - 秋乏术的回答 - 知乎</span><br>            <span class="hljs-comment"># https://www.zhihu.com/question/358069078/answer/2845782335</span><br>        self.log_softmax = nn.LogSoftmax(dim=<span class="hljs-number">1</span>)<br>        <span class="hljs-comment"># 注意kwargs必须写key，省略key传进去不起作用</span><br>        self.nll_loss = nn.NLLLoss(weight = weight,ignore_index = ignore_index)<br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self,logits,labels</span>):<br>        <span class="hljs-comment"># logits [B,C,N], labels[B,N]</span><br>        log_prob = self.log_softmax(logits)<br>        loss = self.nll_loss(log_prob, labels)<br>        <span class="hljs-keyword">return</span> loss<br></code></pre></div></td></tr></table></figure>
+<h3 id="底层实现"><a href="#底层实现" class="headerlink" title="底层实现"></a>底层实现</h3><p>使用基本pytorch操作实现交叉熵。但没有设计防止softmax的上下溢出。</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CrossEntropyLoss</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,weight = <span class="hljs-literal">None</span>,ignore_index= -<span class="hljs-number">100</span></span>):<br>        <span class="hljs-built_in">super</span>().__init__()<br>        self.weight = weight<br>        self.ignore_index = ignore_index<br>    <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self,logits,labels</span>):<br>        C = logits.shape[<span class="hljs-number">1</span>]<br>        <span class="hljs-comment"># logits [B,C,N], labels[B,N]</span><br>        s = logits.exp().<span class="hljs-built_in">sum</span>(dim=<span class="hljs-number">1</span>,keepdim=<span class="hljs-literal">True</span>).repeat(<span class="hljs-number">1</span>,C,<span class="hljs-number">1</span>)<br>        <span class="hljs-comment"># log_result [B,C,N]</span><br>        log_prob = (logits.exp()/s).log()<br>        <span class="hljs-keyword">if</span> self.weight != <span class="hljs-literal">None</span>:<br>            weight = self.weight.view(<span class="hljs-number">1</span>,C,<span class="hljs-number">1</span>).repeat(logits.shape[<span class="hljs-number">0</span>],<span class="hljs-number">1</span>,logits.shape[<span class="hljs-number">2</span>])<br>            log_prob *= weight<br><br>            <span class="hljs-keyword">if</span> self.ignore_index <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,C):<br>            <span class="hljs-comment"># 后面算mean的时候weight要忽略一个值</span><br>                weight[:,self.ignore_index] = <span class="hljs-number">0</span><br>            <br>            <span class="hljs-comment"># 用标签gather weight w_yn</span><br>            w_y = torch.gather(weight, dim = <span class="hljs-number">1</span>, index = labels.unsqueeze(<span class="hljs-number">1</span>))<br>            weightSum = w_y.view(-<span class="hljs-number">1</span>).<span class="hljs-built_in">sum</span>()<br><br>        <span class="hljs-comment"># labels [B,N] 直接作为index进行gather</span><br>            <span class="hljs-comment"># 或者labels也可以转成one hot向量作为mask进行masked_select（或者点乘），转成one-hot的方法：</span><br>            <span class="hljs-comment"># nn.functional.one_hot() / scatter_ / torch.where(index == target, ones, zeros)</span><br><br>        <span class="hljs-keyword">if</span> self.ignore_index <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,C):<br>            <span class="hljs-comment"># 直接在log_prob该列全部置0</span><br>            log_prob[:,self.ignore_index] = <span class="hljs-number">0</span><br>            <br><br>        l = - torch.gather(log_prob, dim=<span class="hljs-number">1</span>, index=labels.unsqueeze(<span class="hljs-number">1</span>)).squeeze()<br>        <span class="hljs-comment"># reduction默认为在B维度上平均</span><br>        <span class="hljs-keyword">if</span> self.weight == <span class="hljs-literal">None</span>:<br>            loss = l.view(-<span class="hljs-number">1</span>).mean()<br>        <span class="hljs-keyword">else</span>:<br>            loss = l.view(-<span class="hljs-number">1</span>).<span class="hljs-built_in">sum</span>()/weightSum<br>        <span class="hljs-keyword">return</span> loss<br></code></pre></div></td></tr></table></figure>
+<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>随机logits, labels, weights和ignore_index情况下，两种实现和<code>nn.CrossEntropyLoss</code>返回值都完全相同。</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">loss1 = nn.CrossEntropyLoss(weight=weights,ignore_index=ignore_index)<br><span class="hljs-built_in">print</span>(loss1(logits,labels))<br>loss2 = CrossEntropyLoss_Simple(weight=weights,ignore_index=ignore_index)<br><span class="hljs-built_in">print</span>(loss2(logits,labels))<br>loss3 = CrossEntropyLoss(weight=weights,ignore_index=ignore_index)<br><span class="hljs-built_in">print</span>(loss3(logits,labels))<br><span class="hljs-comment"># tensor(1.1413)</span><br><span class="hljs-comment"># tensor(1.1413)</span><br><span class="hljs-comment"># tensor(1.1413)</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="NLLLoss"><a href="#NLLLoss" class="headerlink" title="NLLLoss"></a>NLLLoss</h2><p>输入x是所有标签上的log probabilities。负对数概率Loss是最大似然估计的思想。</p>
+<script type="math/tex; mode=display">
+\ell(x, y) = L = \{l_1,\dots,l_N\}^\top, \quad
+l_n = - w_{y_n} x_{n,y_n}, \quad
+w_{c} = \text{weight}[c] \cdot \mathbb{1}\{c \not= \text{ignore\_index}\}</script>
             </div>
             <hr>
             <div>
@@ -436,6 +492,13 @@
 
 
 
+
+  
+
+  
+    <!-- KaTeX -->
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css" />
+  
 
 
 
