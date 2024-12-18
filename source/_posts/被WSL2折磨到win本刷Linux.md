@@ -1,6 +1,6 @@
 ---
 title: 被WSL2折磨到win本刷Linux
-date: '2020-12-03 15:41:50'
+date: 2020-09-08 17:02:06
 math: false
 excerpt: 用WSL2安装linux，实现图形化界面以及安装docker。
 tags:

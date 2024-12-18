@@ -1,6 +1,6 @@
 ---
 title: markdown笔记/hexo记录
-date: '2020-12-03 15:41:50'
+date: 2020-07-29 13:25:08
 math: true
 excerpt: 记录一些关于为hexo博客用typora写markdown的尝试
 tags:
