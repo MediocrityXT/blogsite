@@ -2,7 +2,7 @@
 title: Github使用小知识
 date: 2024-12-18 18:46:53
 math: false
-excerpt: 本地仓库如何合并到Github新建仓库？已push的上上一个commit名字写错了怎么改
+excerpt: 本地仓库如何合并到Github新建仓库？已push的上上一个commit名字写错了怎么改？看我吧～
 tags:
 - linux
 - github
